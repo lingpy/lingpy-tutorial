@@ -2,6 +2,12 @@
 __pycache__/
 *.py[cod]
 *$py.class
+*-aligned.tsv
+*-lexstat.tsv
+*.bin.tsv
+*.paps.nex
+*.dst
+*.swp
 
 # C extensions
 *.so

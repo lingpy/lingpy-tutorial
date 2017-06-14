@@ -1,3 +1,5 @@
+# *-* coding:utf-8 *-*
+from __future__ import unicode_literals, division, print_function
 from lingpy import *
 from sys import argv
 from lingpy.compare.sanity import mutual_coverage_check, mutual_coverage_subset
