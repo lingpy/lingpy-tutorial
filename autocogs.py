@@ -117,7 +117,7 @@ def alignments2():
     
 
 def alignments3():
-    words = ['j a b l o k o', 'j a b ə l k o', 'j a b l k o', 'j a p k o']
+    words = ['j a b l o k o', 'j a b ə l k o', 'j a b l̩ k o', 'j a p k o']
     msa = Multiple(words)
     msa.prog_align()
     print(msa)
