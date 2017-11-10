@@ -1,0 +1,127 @@
+Grapheme	IPA	NOTE
+q	ʔ	
+ŋg	ⁿg	account for pre-nasalization 
+0	NULL	
+ng	ŋ	
+t	t	
+th	tʰ	
+hì	ʔ i	
+k	k	
+p	p	
+f	f	
+s	s	
+v	v	
+d	d	
+b	b	
+G	G/ɢ	check manually (voiced uvular stop or error)
+β	β	
+č	tʃ	
+j	ʃ	
+pʷ	pʷ	
+fʷ	fʷ	
+ɣ	ɣ	
+š	ʃ	
+x	x	
+ᵐb	ᵐb	
+ʃ	ʃ	
+kʰ	kʰ	
+S	s	
+ʰl	ʰl	
+hg	ʰŋ	
+hk	kʰ	
+sh	ʃ	
+hl	ʰl	
+hm	ʰm	
+ht	tʰ	
+hp	pʰ	
+hn	ʰn	
+hs	ʰs	
+lh	lʰ	
+paʻa	p a ʔ a	
+g	g	check manually (g or ŋ)
+w	w	
+y	j	clarification pending
+___	_	
+*	NULL	
+|	NULL	
+c	c/ts	
+?	NULL	
+?_	NULL	
+?_*_	NULL	
+?*	NULL	
+_<	NULL	
+ä	ä/a	
+__	__	
+_ᵐ	_ᵐ	
+_____	_____	
+_ʻ	NULL	
+_‘burnt’	NULL	
+’	NULL	
+_	_	
+·	+	
+=	+	
+/$	NULL	
+^/	NULL	
+$	NULL	
+^	NULL	
+/	+	
+m	m	
+n	n	
+ŋ	ŋ	
+m̥	m̥	
+mʷ	mʷ	
+nʷ	nʷ	
+ŋʷ	ŋʷ	
+n̥	n̥	
+ñ	nʲ	
+h	h	
+'	ʔ	
+ʔ	ʔ	
+ì	ʔ i	
+è	è/ʔ è/e	
+ò	ò/ʔ ò/o	
+é	é/ʔ é/e	
+á	á/ʔ á/a	
+ú	ú/ʔ ú/u	
+í	í/ʔ í/i	
+ó	ó/ʔ ó/o	
+î	î/ʔ î/iː	
+û	û/ʔ û/uː	
+â	â/ʔ â/aː	
+ô	ô/ʔ ô/oː	
+r	r	
+l	l	
+l̥	l̥	
+a	a	
+u	u	
+i	i	
+o	o	
+e	e	
+ë	e	
+õ	õ/o	
+iŋ0a	i ŋ o a	
+ē	eː	
+ī	iː	
+ă	aː	
+aː	aː	
+oː	oː	
+eː	eː	
+iː	iː	
+uː	uː	
+ā	aː	
+ō	oː	
+ū	uː	
+aa	a ʔ a	test different ways of representation: VV or VQV
+uu	u ʔ u	test different ways of representation: VV or VQV
+ee	e ʔ e	test different ways of representation: VV or VQV
+ii	i ʔ i	test different ways of representation: VV or VQV
+oo	o ʔ o	test different ways of representation: VV or VQV
+à	à/ʔ à/a	
+^=	NULL	
+^-	NULL	
+-$	NULL	
+#NAME?	NULL	
+-	+	
+^_	NULL	
+_$	NULL	
+*_	NULL	

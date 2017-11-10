@@ -19,8 +19,8 @@ except:
     for k in wl:
         wl[k, 'segments'] = [k for k in wl[k, 'segments'] if k not in '_+']
 
-    lex = LexStat(wl, segments='segments')
-    lex.get_scorer(runs=10000)
+    lex = LexStat(wl, segments='segments', model='asjp')
+    lex.get_scorer(runs=1000)
     lex.output('tsv', filename='east-polynesian-6.bin', ignore=[])
 
 try:
@@ -39,7 +39,7 @@ except:
         if '0' in cls:
             print(wl[k, 'doculect'], cls, wl[k, 'segments'])
 
-    lex2 = LexStat(D, segments='segments')
+    lex2 = LexStat(D, segments='segments', model='asjp')
     lex2.get_scorer(runs=10000)
     lex2.output('tsv', filename='east-polynesian-6.bin2', ignore=[])
     
