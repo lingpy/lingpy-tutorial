@@ -6,4 +6,5 @@ clldutils>=1.6
 tqdm
 six
 pycldf
+python-newick
 segments
