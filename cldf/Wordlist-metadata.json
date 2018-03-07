@@ -38,13 +38,13 @@
                     },
                     {
                         "datatype": "string",
-                        "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#lexicalUnit",
+                        "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#form",
                         "required": true,
                         "name": "Form"
                     },
                     {
                         "datatype": "string",
-                        "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#soundSequence",
+                        "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#segments",
                         "required": false,
                         "separator": " ",
                         "name": "Segments"
@@ -150,7 +150,7 @@
                         "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#glottocode",
                         "required": false,
                         "valueUrl": "http://glottolog.org/resource/languoid/id/{glottocode}",
-                        "name": "glottocode"
+                        "name": "Glottocode"
                     },
                     {
                         "datatype": {
@@ -159,7 +159,7 @@
                         },
                         "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#iso639P3code",
                         "required": false,
-                        "name": "Iso"
+                        "name": "ISO639P3code"
                     }
                 ],
                 "primaryKey": [
@@ -228,6 +228,16 @@
                         "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#cognatesetReference",
                         "required": true,
                         "name": "Cognateset_ID"
+                    },
+                    {
+                        "datatype": {
+                            "base": "string",
+                            "format": "\\d+(:\\d+)?"
+                        },
+                        "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#segmentSlice",
+                        "required": false,
+                        "separator": " ",
+                        "name": "Segment_Slice"
                     },
                     {
                         "datatype": "string",

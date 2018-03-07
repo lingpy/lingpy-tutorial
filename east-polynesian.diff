@@ -32,9 +32,9 @@ Ra’ivavae      	e   	   2	   1
 Rurutuan       	ʔeː 	   2	   1
 Tahitian       	ʔeː 	   2	   1
 Rapanui        	e   	   2	   1
-Maori          	hoki	   3	   3
-Rapanui        	piri	   5	   5
-Rapanui        	pe  	  11	   1
+Rapanui        	pe  	   5	   1
+Maori          	hoki	  10	  10
+Rapanui        	piri	  13	  13
 #
 Concept: ash, False Positives: yes, False Negatives: yes
 Hawaiian       	lehu     	   1	   1
@@ -90,18 +90,6 @@ Sikaiana       	hakakinokino	   1	   8
 North_Marquesan	hauhau      	   4	   4
 Rurutuan       	manuenu     	   7	   7
 #
-Concept: branch, False Positives: yes, False Negatives: yes
-Hawaiian       	laːlaː       	   1	   1
-Mangareva      	rara         	   1	   1
-Sikaiana       	laː          	   1	   1
-Tuamotuan      	raːkau       	   1	   1
-North_Marquesan	ʔaʔa         	   1	   4
-Maori          	maŋa         	   3	   3
-Rapanui        	maga         	   3	   3
-Ra’ivavae      	ʔaːmamaɢaːʔau	   3	   4
-Rurutuan       	ʔaːmaʔa      	   3	   4
-Tahitian       	ʔaːmaʔa      	   3	   4
-#
 Concept: cloud, False Positives: yes, False Negatives: yes
 Hawaiian       	ao    	   1	   1
 Mangareva      	ao    	   1	   1
@@ -125,12 +113,12 @@ Maori          	tika     	   3	   3
 Rapanui        	titika   	   3	   3
 Tuamotuan      	tika     	   3	   3
 Mangareva      	tika     	   3	   3
-North_Marquesan	toitoi   	   4	   4
+North_Marquesan	meahei   	   4	   4
 Sikaiana       	tonu     	   8	   8
 Tahitian       	tano     	   8	   8
 Tahitian       	ʔaːfaro  	   9	   9
 Rurutuan       	ʔaːfaro  	   9	   9
-North_Marquesan	meahei   	  12	  12
+North_Marquesan	toitoi   	  12	  12
 Rurutuan       	tano     	  15	   8
 #
 Concept: dirty, False Positives: no, False Negatives: yes
@@ -168,13 +156,13 @@ North_Marquesan	ʔepo     	   1	   4
 Rurutuan       	ʔuʔaʔuʔa 	   1	   6
 Tahitian       	huʔahuaː 	   1	   6
 Mangareva      	eʔu      	   2	   1
-Maori          	puehu    	   2	   1
-Rapanui        	pugaehu  	   2	   1
 Sikaiana       	lehu     	   2	   1
-Tahitian       	repopuehu	   2	   1
-Tuamotuan      	puːehu   	   2	   1
 Hawaiian       	ʔehu     	   2	   1
-Mangareva      	puʔeu    	   2	   1
+Maori          	puehu    	   2	   3
+Rapanui        	pugaehu  	   2	   3
+Tahitian       	repopuehu	   2	   3
+Tuamotuan      	puːehu   	   2	   3
+Mangareva      	puʔeu    	   2	   3
 Rapanui        	garahu   	   2	  12
 Rapanui        	huga     	  14	  14
 #
@@ -196,14 +184,14 @@ Concept: father, False Positives: no, False Negatives: yes
 Hawaiian       	makuakaːne	   1	   1
 Maori          	matua     	   1	   1
 North_Marquesan	motua     	   1	   1
+Rapanui        	matuʔa    	   1	   1
 Ra’ivavae      	metuataːne	   1	   1
 Rurutuan       	metuataːne	   1	   1
 Tahitian       	metuataːne	   1	   1
 Tuamotuan      	metuataːne	   1	   1
-Rapanui        	matuʔa    	   1	   1
 Mangareva      	tinana    	   1	   2
 Sikaiana       	tamana    	   1	   2
-Rapanui        	koro      	   5	   5
+Rapanui        	koro      	  11	  11
 Rurutuan       	paːpaː    	  12	  12
 Tahitian       	paːpaː    	  12	  12
 #
@@ -240,9 +228,9 @@ Rapanui        	mata      	   5	   2
 Ra’ivavae      	matie     	   5	   2
 Rurutuan       	matie     	   5	   2
 Sikaiana       	moto      	   5	   2
-Tuamotuan      	matie     	   5	   2
 Tahitian       	matie     	   5	   2
-Tahitian       	niːnamu   	   9	   9
+Tuamotuan      	matie     	   5	   2
+Tahitian       	niːnamu   	  11	  11
 #
 Concept: hair, False Positives: yes, False Negatives: yes
 Hawaiian       	lauoho      	   1	   1
@@ -259,21 +247,35 @@ North_Marquesan	huʔu        	   6	   6
 Rapanui        	huruhuru    	   6	   6
 Tuamotuan      	huru        	   6	   6
 #
+Concept: he/she, False Positives: no, False Negatives: yes
+Hawaiian       	ia   	   1	   1
+Maori          	ia   	   1	   1
+North_Marquesan	ia   	   1	   1
+Rapanui        	ia   	   1	   1
+Sikaiana       	ia   	   1	   1
+Tuamotuan      	ia   	   1	   1
+Mangareva      	koia 	   1	   2
+Rurutuan       	ʔoia 	   1	   2
+Ra’ivavae      	ʔoia 	   1	   2
+Ra’ivavae      	ʔoːna	   6	   6
+Tahitian       	ʔoːna	   6	   6
+Rurutuan       	ʔoːna	   6	   6
+#
 Concept: head, False Positives: yes, False Negatives: no
 Hawaiian       	poʔo 	   1	   1
 Maori          	upoko	   1	   1
 North_Marquesan	upoko	   1	   1
 Rapanui        	puoko	   1	   1
 Ra’ivavae      	upoʔo	   1	   1
+Rurutuan       	upoʔo	   1	   1
 Sikaiana       	poho 	   1	   1
 Tahitian       	upoʔo	   1	   1
 Tuamotuan      	upoko	   1	   1
 Mangareva      	upoko	   1	   1
-Rurutuan       	upoʔo	   1	   1
 Mangareva      	oʔo  	   2	   1
-Rurutuan       	pao  	   7	   1
 North_Marquesan	uʔu  	  12	  12
 Tuamotuan      	uru  	  12	  12
+Rurutuan       	pao  	  13	  13
 #
 Concept: heavy, False Positives: yes, False Negatives: no
 Hawaiian       	kaumaha 	   1	   1
@@ -284,10 +286,10 @@ Sikaiana       	mmaha   	   1	   1
 Tahitian       	toiaha  	   1	   1
 Mangareva      	teimaha 	   1	   1
 Mangareva      	kikikiki	   2	   2
-North_Marquesan	toko    	   4	   4
+North_Marquesan	tono    	   4	   4
 Rapanui        	pagahaʔa	   5	   5
 Tuamotuan      	tuʔatuʔa	  10	  10
-North_Marquesan	tono    	  12	   4
+North_Marquesan	toko    	  12	   4
 #
 Concept: how?, False Positives: no, False Negatives: yes
 Hawaiian       	pehea 	   1	   1
@@ -319,10 +321,10 @@ Rapanui        	au 	   1	   1
 Ra’ivavae      	vau	   1	   1
 Rurutuan       	au 	   1	   1
 Sikaiana       	au 	   1	   1
-Tahitian       	vau	   1	   1
+Tahitian       	au 	   1	   1
 North_Marquesan	au 	   1	   1
 Rurutuan       	vau	   1	   1
-Tahitian       	au 	   1	   1
+Tahitian       	vau	   1	   1
 Tuamotuan      	au 	   1	   1
 North_Marquesan	ʔu 	   4	   4
 Tuamotuan      	ku 	   4	  10
@@ -430,17 +432,31 @@ Rurutuan       	ramu       	   4	   7
 Sikaiana       	namu       	   4	   7
 Tuamotuan      	namu       	   4	   7
 #
+Concept: mother, False Positives: no, False Negatives: yes
+Hawaiian       	makuahine  	   1	   1
+Ra’ivavae      	metuavahine	   1	   1
+Tahitian       	metuavahine	   1	   1
+Tuamotuan      	metuavahine	   1	   1
+Rurutuan       	metuavaʔine	   1	   1
+Rapanui        	matuʔa     	   1	   5
+Mangareva      	tinana     	   2	   2
+Sikaiana       	tinna      	   2	   2
+Maori          	faea       	   3	   3
+North_Marquesan	kui        	   4	   4
+Rurutuan       	maːmaː     	   7	   7
+Tahitian       	maːmaː     	   7	   7
+#
 Concept: narrow, False Positives: yes, False Negatives: yes
 Hawaiian       	laːʔiki 	   1	   1
-Mangareva      	aːiti   	   1	   1
-Maori          	faːiti  	   1	   1
-North_Marquesan	faiti   	   1	   1
+Mangareva      	aːiti   	   1	   2
+Maori          	faːiti  	   1	   2
+North_Marquesan	faiti   	   1	   2
 Rapanui        	rikiriki	   1	  11
 Rapanui        	vakavaka	   5	   5
 Ra’ivavae      	oaoa    	   6	   6
 Rurutuan       	oaoa    	   6	   6
 Tahitian       	oaoa    	   6	   6
-Sikaiana       	kopiti  	   8	   1
+Sikaiana       	kopiti  	   8	   2
 Tuamotuan      	koma    	  10	  10
 Rurutuan       	piri    	  12	  12
 #
@@ -464,12 +480,12 @@ Maori          	kaːhore	   1	   1
 Rurutuan       	eʔore  	   1	   1
 North_Marquesan	teː    	   4	   4
 Sikaiana       	heai   	   4	   8
-Rapanui        	inakai 	   5	   5
+Rapanui        	taʔe   	   5	   5
 Ra’ivavae      	eʔere  	   6	   1
 Tahitian       	ʔaita  	   9	   9
 Tuamotuan      	kauraka	  10	  10
 North_Marquesan	ieai   	  11	  11
-Rapanui        	taʔe   	  12	  12
+Rapanui        	inakai 	  12	  12
 #
 Concept: nose, False Positives: no, False Negatives: yes
 Hawaiian       	ihu    	   1	   1
@@ -499,10 +515,11 @@ Rapanui        	korohua	  10	  10
 North_Marquesan	koua   	  10	  14
 Sikaiana       	mua    	  13	   5
 #
-Concept: person/human being, False Positives: yes, False Negatives: yes
+Concept: person/human being, False Positives: yes, False Negatives: no
 Hawaiian       	kanaka	   1	   1
 Mangareva      	taŋata	   1	   1
 Maori          	taŋata	   1	   1
+North_Marquesan	kenana	   1	   1
 Rapanui        	tagata	   1	   1
 Ra’ivavae      	taʔata	   1	   1
 Rurutuan       	taʔata	   1	   1
@@ -510,7 +527,6 @@ Tahitian       	taʔata	   1	   1
 Tuamotuan      	taŋata	   1	   1
 North_Marquesan	ʔenata	   1	   1
 Sikaiana       	tanata	   1	   1
-North_Marquesan	kenana	   1	   4
 Sikaiana       	tama  	   8	   1
 #
 Concept: rain, False Positives: yes, False Negatives: no
@@ -530,15 +546,15 @@ Hawaiian       	ʔula    	   1	   1
 Mangareva      	kura    	   1	   1
 Rurutuan       	ʔuraʔura	   1	   1
 Tuamotuan      	kura    	   1	   1
-North_Marquesan	kuwa    	   1	  11
+North_Marquesan	kuwa    	   1	   4
 Maori          	fero    	   3	   3
-Rapanui        	herohero	   3	   5
-North_Marquesan	pukiki  	   4	   4
+Rapanui        	herohero	   3	  12
+Rapanui        	mea     	   5	   5
+Sikaiana       	mea     	   5	   5
+Tuamotuan      	mea     	   5	   5
 Ra’ivavae      	ʔuteʔute	   6	   6
 Tahitian       	ʔuteʔute	   6	   6
-Sikaiana       	mea     	   8	   8
-Tuamotuan      	mea     	   8	   8
-Rapanui        	mea     	   8	   8
+North_Marquesan	pukiki  	  11	  11
 #
 Concept: road/path, False Positives: no, False Negatives: yes
 Hawaiian       	ala      	   1	   1
@@ -567,7 +583,7 @@ Tuamotuan      	aka    	   1	   1
 Maori          	pakiaka	   1	   3
 Sikaiana       	patiaka	   1	   3
 #
-Concept: rotten, False Positives: yes, False Negatives: yes
+Concept: rotten, False Positives: yes, False Negatives: no
 Hawaiian       	pilau   	   1	   1
 Maori          	pirau   	   1	   1
 Mangareva      	para    	   2	   1
@@ -577,7 +593,7 @@ North_Marquesan	paʔa    	   2	   1
 Sikaiana       	pala    	   2	   1
 Tuamotuan      	para    	   2	   1
 North_Marquesan	peː     	   4	   4
-Tahitian       	ʔoːpeː  	   4	   9
+Tahitian       	ʔoːpeː  	   4	   4
 Ra’ivavae      	henoheno	   6	   6
 Sikaiana       	popo    	   8	   8
 Tuamotuan      	popo    	   8	   8
@@ -634,32 +650,32 @@ Concept: stone, False Positives: yes, False Negatives: no
 Hawaiian       	poːhaku  	   1	   1
 Mangareva      	poʔatu   	   1	   1
 Maori          	koːfatu  	   1	   1
+North_Marquesan	hatukeʔaa	   1	   1
 Rurutuan       	poʔatu   	   1	   1
 Sikaiana       	hatu     	   1	   1
 Tuamotuan      	poːfatu  	   1	   1
-North_Marquesan	hatukeʔaa	   1	   1
 Tuamotuan      	hatu     	   1	   1
-North_Marquesan	keʔa     	   4	   1
 Rapanui        	maʔea    	   5	   5
 Ra’ivavae      	ʔohai    	   6	   6
 Tahitian       	ʔoːfaʔi  	   6	   6
 Rurutuan       	ʔoːʔaʔi  	   6	   6
+North_Marquesan	keʔa     	  11	   1
 #
 Concept: tail, False Positives: yes, False Negatives: yes
 Hawaiian       	huelo  	   1	   1
-North_Marquesan	veʔo   	   1	   1
 Rurutuan       	vero   	   1	   1
 Tuamotuan      	vaero  	   1	   1
 Mangareva      	vero   	   1	   1
+North_Marquesan	veʔo   	   1	   1
 Tahitian       	ʔaero  	   1	   1
 Mangareva      	ave    	   2	   1
 Maori          	fiore  	   3	   3
-Rapanui        	hiku   	   5	   5
-North_Marquesan	hiku   	   5	   5
-Tahitian       	hiʔu   	   5	   5
-Tuamotuan      	hiku   	   5	   5
-Mangareva      	ʔiku   	   5	   5
-Rurutuan       	ʔuʔu   	   7	   5
+North_Marquesan	hiku   	   4	   4
+Rapanui        	hiku   	   4	   4
+Tahitian       	hiʔu   	   4	   4
+Tuamotuan      	hiku   	   4	   4
+Mangareva      	ʔiku   	   4	   4
+Rurutuan       	ʔuʔu   	   7	   4
 Sikaiana       	muisuki	   7	   7
 Tahitian       	ʔitere 	   8	   8
 #
@@ -692,21 +708,21 @@ Hawaiian       	la    	   8	   8
 #
 Concept: they, False Positives: yes, False Negatives: yes
 Hawaiian       	laːkou	   1	   1
-Maori          	raːtou	   1	   1
 North_Marquesan	ʔatou 	   1	   1
 Ra’ivavae      	ɢaːtou	   1	   1
 Rurutuan       	raːtou	   1	   1
 Tahitian       	raːtou	   1	   1
+Maori          	raːtou	   1	   1
 Sikaiana       	laːtou	   1	   1
-Mangareva      	raːua 	   1	   5
+Mangareva      	raːua 	   1	   3
 Mangareva      	raːtou	   2	   1
-Rapanui        	raʔua 	   5	   5
-Sikaiana       	laːua 	   5	   5
-Hawaiian       	laːua 	   5	   5
-Maori          	raːua 	   5	   5
-Ra’ivavae      	ɢaːua 	   5	   5
-Rurutuan       	raːua 	   5	   5
-Tahitian       	raːua 	   5	   5
+Maori          	raːua 	   3	   3
+Rapanui        	raʔua 	   3	   3
+Sikaiana       	laːua 	   3	   3
+Hawaiian       	laːua 	   3	   3
+Ra’ivavae      	ɢaːua 	   3	   3
+Rurutuan       	raːua 	   3	   3
+Tahitian       	raːua 	   3	   3
 #
 Concept: thick, False Positives: no, False Negatives: yes
 Hawaiian       	maːkolukolu	   1	   1
@@ -720,15 +736,15 @@ Tahitian       	meʔumeʔu   	   6	   6
 Rurutuan       	tuetue     	   7	   7
 Tuamotuan      	tuʔatuʔa   	   7	  10
 #
-Concept: thin, False Positives: yes, False Negatives: no
+Concept: thin, False Positives: yes, False Negatives: yes
 Hawaiian       	lahi      	   1	   1
 Maori          	rahirahi  	   1	   1
 North_Marquesan	piʔahiʔahi	   1	   1
 Rapanui        	raʔi      	   1	   1
-Ra’ivavae      	ɢaiɢai    	   1	   1
-Rurutuan       	rairai    	   1	   1
-Tahitian       	rairai    	   1	   1
 Tuamotuan      	rahi      	   1	   1
+Ra’ivavae      	ɢaiɢai    	   1	   6
+Rurutuan       	rairai    	   1	   6
+Tahitian       	rairai    	   1	   6
 Mangareva      	rikiriki  	   2	   2
 Sikaiana       	tualiki   	   8	   8
 North_Marquesan	ʔakiaki   	  11	  11
@@ -771,36 +787,36 @@ Tahitian       	hohoni     	   6	   6
 Sikaiana       	nunu       	   7	   7
 #
 Concept: to breathe, False Positives: yes, False Negatives: yes
-Hawaiian       	hanu      	   1	   1
-North_Marquesan	ha        	   1	   1
-Rapanui        	haː       	   1	   1
-Maori          	fakahaː   	   1	   3
-Mangareva      	ʔau       	   2	   1
-Ra’ivavae      	hutiteaho 	   6	   6
-Rurutuan       	ʔutiiteaʔo	   6	   6
-Tahitian       	hutiiteaho	   6	   6
-Hawaiian       	aho       	   6	  11
+Hawaiian       	aho       	   1	   1
+Ra’ivavae      	hutiteaho 	   1	   6
+Rurutuan       	ʔutiiteaʔo	   1	   6
+Tahitian       	hutiiteaho	   1	   6
+Mangareva      	ʔau       	   2	   2
+North_Marquesan	ha        	   3	   2
+Rapanui        	haː       	   3	   2
+Hawaiian       	hanu      	   3	   2
+Maori          	fakahaː   	   3	   3
 Sikaiana       	maːnava   	   8	   8
 Tuamotuan      	manava    	   8	   8
 North_Marquesan	menava    	   8	   8
 Tuamotuan      	ŋaː       	  13	  13
 #
 Concept: to burn, False Positives: yes, False Negatives: yes
-Hawaiian       	kuni    	   1	   1
-Tuamotuan      	tuŋi    	   1	   1
-Sikaiana       	tuːnia  	   1	   1
-Ra’ivavae      	tutuʔi  	   1	   5
-Tahitian       	tutuʔi  	   1	   5
-Mangareva      	kaʔa    	   2	   2
-Hawaiian       	ʔaː     	   2	   2
+Hawaiian       	ʔaː     	   1	   1
+Mangareva      	kaʔa    	   1	   1
 Maori          	tahu    	   3	   3
 Tuamotuan      	tahu    	   3	   3
 Mangareva      	taʔu    	   3	   3
-North_Marquesan	hakauʔa 	   4	   2
+North_Marquesan	hakauʔa 	   4	   1
 Rapanui        	tutu    	   5	   5
 Sikaiana       	tutu    	   5	   5
 Mangareva      	tutu    	   5	   5
 North_Marquesan	tutu    	   5	   5
+Ra’ivavae      	tutuʔi  	   6	   5
+Tahitian       	tutuʔi  	   6	   5
+Tuamotuan      	tuŋi    	   6	  10
+Hawaiian       	kuni    	   6	  10
+Sikaiana       	tuːnia  	   6	  10
 Rurutuan       	ʔaʔaʔama	   7	   7
 #
 Concept: to chew, False Positives: yes, False Negatives: yes
@@ -832,10 +848,10 @@ Tuamotuan      	mai     	   1	   1
 Maori          	haeremai	   1	   3
 North_Marquesan	heʔemai 	   1	   3
 Ra’ivavae      	haeɢemai	   1	   3
-Rurutuan       	ʔaeremai	   1	   3
+Rurutuan       	ʔanomai 	   1	   3
 Sikaiana       	halemai 	   1	   3
 Tahitian       	haeremai	   1	   3
-Rurutuan       	ʔanomai 	   1	   3
+Rurutuan       	ʔaeremai	   1	   3
 Mangareva      	aʔu     	   2	   2
 Rapanui        	tuʔu    	   5	   2
 North_Marquesan	tihe    	  11	   2
@@ -867,8 +883,9 @@ Rurutuan       	taiʔo  	   6	   6
 Tahitian       	taiʔo  	   6	   6
 #
 Concept: to cut, hack, False Positives: yes, False Negatives: yes
-Hawaiian       	moku       	   1	   1
-Rapanui        	motu       	   1	   1
+Hawaiian       	ʔoki       	   1	   1
+Tuamotuan      	kokoti     	   1	  10
+North_Marquesan	kokoti     	   1	  10
 Mangareva      	ʔakakiu+kiu	   2	   2
 Maori          	taː        	   3	   3
 North_Marquesan	taʔai      	   3	   3
@@ -879,9 +896,8 @@ Ra’ivavae      	taputeɢaʔau	   6	   3
 Rurutuan       	taːpuː     	   6	   3
 Tahitian       	taːpuː     	   6	   3
 Sikaiana       	sele       	   8	   5
-Tuamotuan      	kokoti     	  10	  10
-North_Marquesan	kokoti     	  10	  10
-Hawaiian       	ʔoki       	  10	  11
+Hawaiian       	moku       	  11	  11
+Rapanui        	motu       	  11	  11
 Rapanui        	avahi      	  14	  14
 Tuamotuan      	ihi        	  15	  15
 North_Marquesan	ʔihi       	  15	  15
@@ -1028,10 +1044,10 @@ Tahitian       	taʔoto    	   3	   3
 Tuamotuan      	takoto    	   3	   3
 Ra’ivavae      	tiːɢaha   	   6	   6
 Rurutuan       	tiːraʔa   	   6	   6
-Rurutuan       	taːrava   	   7	   6
-Rurutuan       	tiːpapa   	  11	  11
+Rurutuan       	tiːpapa   	   7	   7
+Rurutuan       	taːrava   	  12	   6
 #
-Concept: to open, uncover, False Positives: no, False Negatives: yes
+Concept: to open, uncover, False Positives: yes, False Negatives: yes
 Hawaiian       	weke   	   1	   1
 Mangareva      	ʔuʔure 	   2	   2
 Maori          	huaki  	   3	   3
@@ -1039,12 +1055,12 @@ Rurutuan       	ʔuaʔi  	   3	   3
 Tahitian       	huaʔi  	   3	   3
 North_Marquesan	peʔua  	   4	   4
 Rapanui        	hahata 	   5	   5
-Sikaiana       	aːha   	   5	  13
+Sikaiana       	aːha   	   5	   5
 Ra’ivavae      	ʔiɢiti 	   6	   6
 Rurutuan       	ʔiriti 	   6	   6
 Sikaiana       	taːlaki	   8	   8
+North_Marquesan	pepeu  	  10	   4
 Tuamotuan      	heheu  	  10	  10
-North_Marquesan	pepeu  	  10	  11
 #
 Concept: to pound, beat, False Positives: yes, False Negatives: no
 Hawaiian       	kuʔi     	   1	   1
@@ -1119,30 +1135,30 @@ Mangareva      	kukumu  	   2	   2
 Rurutuan       	ʔuʔumu  	   2	   2
 Tahitian       	ʔuʔumu  	   2	   2
 Maori          	koteː   	   3	   3
-North_Marquesan	ʔomi    	   4	   2
-Ra’ivavae      	ɢoɢomi  	   4	   2
+North_Marquesan	koko    	   4	   2
 Rapanui        	gatu    	   5	   5
+Ra’ivavae      	ɢoɢomi  	   6	   2
+North_Marquesan	ʔomi    	   6	   2
 Sikaiana       	kumi    	   8	   2
 Tuamotuan      	ŋiŋiti  	  10	  10
-North_Marquesan	koko    	  11	   2
+North_Marquesan	hota    	  11	  11
 Rurutuan       	neʔineʔi	  12	  12
-North_Marquesan	hota    	  13	  13
 #
 Concept: to stab, pierce, False Positives: yes, False Negatives: no
 Hawaiian       	hou   	   1	   1
-Mangareva      	ko    	   2	   2
-Maori          	oka   	   3	   3
-Rapanui        	oka   	   3	   3
-Sikaiana       	soːkai	   3	   3
-Tuamotuan      	hoka  	   3	   3
-North_Marquesan	huki  	   4	   3
-Sikaiana       	suki  	   4	   3
-Tuamotuan      	huki  	   4	   3
-Mangareva      	ʔuki  	   4	   3
-Rapanui        	huki  	   4	   3
+Mangareva      	ʔuki  	   2	   2
+North_Marquesan	huki  	   2	   2
+Sikaiana       	suki  	   2	   2
+Tuamotuan      	huki  	   2	   2
+Rapanui        	huki  	   2	   2
+Maori          	oka   	   3	   2
+Rapanui        	oka   	   3	   2
+Sikaiana       	soːkai	   3	   2
+Tuamotuan      	hoka  	   3	   2
 Ra’ivavae      	pipiha	   6	   6
 Rurutuan       	paːtia	   7	   7
 Tahitian       	paːtia	   7	   7
+Mangareva      	ko    	  11	  11
 #
 Concept: to stand, False Positives: yes, False Negatives: yes
 Hawaiian       	ku      	   1	   1
@@ -1175,16 +1191,16 @@ Tuamotuan      	momi  	  13	   1
 #
 Concept: to swell, False Positives: yes, False Negatives: yes
 Hawaiian       	huː       	   1	   1
-North_Marquesan	huhuʔa    	   1	   4
+North_Marquesan	huhuʔa    	   1	  11
 Mangareva      	ʔakatekire	   2	   2
 Maori          	puku      	   3	   3
+North_Marquesan	hete      	   4	   4
 Rapanui        	ahu       	   5	   1
 Sikaiana       	hula      	   5	   1
 Ra’ivavae      	oːpupu    	   6	   6
-Rurutuan       	ʔoru      	   7	   1
-Tahitian       	ʔoru      	   7	   1
 Tuamotuan      	koropuːpuː	   7	   6
-North_Marquesan	hete      	  11	  11
+Rurutuan       	ʔoru      	   7	   7
+Tahitian       	ʔoru      	   7	   7
 #
 Concept: to swim, False Positives: no, False Negatives: yes
 Hawaiian       	ʔau   	   1	   1
@@ -1262,37 +1278,37 @@ Tahitian       	pitiʔahuru	   5	   5
 #
 Concept: we, False Positives: yes, False Negatives: yes
 Hawaiian       	maːkou	   1	   1
-Maori          	maːtou	   1	   1
+Rapanui        	matou 	   1	   1
 Ra’ivavae      	maːtou	   1	   1
 Rurutuan       	maːtou	   1	   1
-Tahitian       	maːtou	   1	   1
-Rapanui        	matou 	   1	   1
 Sikaiana       	maːtou	   1	   1
+Tahitian       	maːtou	   1	   1
 North_Marquesan	matou 	   1	   1
+Maori          	maːtou	   1	   1
 Hawaiian       	maːua 	   1	   2
-Maori          	maːua 	   1	   2
 North_Marquesan	maua  	   1	   2
 Ra’ivavae      	maːua 	   1	   2
 Rurutuan       	maːua 	   1	   2
+Maori          	maːua 	   1	   2
 Tahitian       	maːua 	   1	   2
 Sikaiana       	maːua 	   1	   2
-Rapanui        	tatou 	   2	   1
 Tuamotuan      	tatou 	   2	   1
-Hawaiian       	kaːkou	   2	   1
 Maori          	taːtou	   2	   1
+Rapanui        	tatou 	   2	   1
 Ra’ivavae      	taːtou	   2	   1
 Rurutuan       	taːtou	   2	   1
 Sikaiana       	taːtou	   2	   1
-Tahitian       	taːtou	   2	   1
+Hawaiian       	kaːkou	   2	   1
 North_Marquesan	tatou 	   2	   1
+Tahitian       	taːtou	   2	   1
 Mangareva      	taːua 	   2	   2
+Maori          	taːua 	   2	   2
 North_Marquesan	taua  	   2	   2
 Sikaiana       	taːua 	   2	   2
+Tahitian       	taːua 	   2	   2
 Hawaiian       	kaːua 	   2	   2
-Maori          	taːua 	   2	   2
 Ra’ivavae      	taːua 	   2	   2
 Rurutuan       	taːua 	   2	   2
-Tahitian       	taːua 	   2	   2
 #
 Concept: what?, False Positives: no, False Negatives: yes
 Hawaiian       	aha 	   1	   1
@@ -1318,19 +1334,19 @@ Tahitian       	inaːfea    	   1	   1
 Sikaiana       	itemokoahea	   1	   8
 #
 Concept: white, False Positives: yes, False Negatives: yes
-Hawaiian       	keʔokeʔo	   1	   1
-North_Marquesan	teko    	   1	  12
-Mangareva      	tea     	   2	   2
-Rapanui        	teatea  	   2	   2
-Rurutuan       	teatea  	   2	   2
-Sikaiana       	tea     	   2	   2
-Tuamotuan      	tea     	   2	   2
-Hawaiian       	kea     	   2	   2
-North_Marquesan	tea     	   2	   2
+Hawaiian       	kea     	   1	   1
+Mangareva      	tea     	   1	   1
+Rapanui        	teatea  	   1	   1
+Rurutuan       	teatea  	   1	   1
+Sikaiana       	tea     	   1	   1
+Tuamotuan      	tea     	   1	   1
+North_Marquesan	tea     	   1	   1
 Maori          	maː     	   3	   3
 North_Marquesan	tavaiʔe 	   4	   4
 Ra’ivavae      	ʔuoʔuo  	   6	   6
 Tahitian       	ʔuoʔuo  	   9	   6
+Hawaiian       	keʔokeʔo	  11	  11
+North_Marquesan	teko    	  11	  12
 #
 Concept: wife, False Positives: yes, False Negatives: no
 Hawaiian       	wahine 	   1	   1
@@ -1383,22 +1399,22 @@ Sikaiana       	felo    	   8	   8
 #
 Concept: you, False Positives: yes, False Negatives: yes
 Hawaiian       	ʔoukou	   1	   1
-Maori          	koutou	   1	   1
 North_Marquesan	kotou 	   1	   1
 Ra’ivavae      	ʔoutou	   1	   1
 Rurutuan       	ʔoutou	   1	   1
 Sikaiana       	koutou	   1	   1
 Tahitian       	ʔoutou	   1	   1
 Tuamotuan      	koutou	   1	   1
-Mangareva      	koːrua	   1	   5
-Mangareva      	koːtou	   2	   1
-Rapanui        	korua 	   5	   5
-Hawaiian       	ʔolua 	   5	   5
-Maori          	koːrua	   5	   5
-Ra’ivavae      	ʔoːɢua	   5	   5
-Rurutuan       	ʔuːrua	   5	   5
-Sikaiana       	koulua	   5	   5
-Tahitian       	ʔoːrua	   5	   5
-Tuamotuan      	koːrua	   5	   5
-Mangareva      	korua 	   5	   5
+Maori          	koutou	   1	   1
+Mangareva      	koːrua	   1	   2
+Maori          	koːrua	   3	   2
+Rapanui        	korua 	   3	   2
+Hawaiian       	ʔolua 	   3	   2
+Mangareva      	korua 	   3	   2
+Ra’ivavae      	ʔoːɢua	   3	   2
+Rurutuan       	ʔuːrua	   3	   2
+Sikaiana       	koulua	   3	   2
+Tahitian       	ʔoːrua	   3	   2
+Tuamotuan      	koːrua	   3	   2
+Mangareva      	koːtou	  19	   1
 #
