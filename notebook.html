@@ -13634,6 +13634,13 @@ k	o	r	i	-
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="4.2-Overview-on-Algorithms">4.2 Overview on Algorithms<a class="anchor-link" href="#4.2-Overview-on-Algorithms">&#182;</a></h3><p>LingPy comes along with four pre-defined cognate detection algorithms. These algorithms are all contained in the <code>LexStat</code> class which often confuses users, as one of the algorithms provided by <code>LexStat</code> is also called <code>lexstat</code>. Internally, however, it makes sense, as all algorithms were created at the same time, when the LexStat algorithm was published (<a href="http://bibliography.lingpy.org?key=List2012a">List 2012b</a>), so it was written into one class which was called "LexStat".</p>
+<p>When carrying out cognate detection algorithms, it is important to keep in mind what these algorithms are based on. We can distinguish the following three major types:</p>
+<ol>
+<li>consonant-class-matching (CCM), following Dolgopolky's (1964) early idea to assume that words with two matching consonant classes would likely be cognate,</li>
+<li>phenotypic sequence similarity partitioning (PSSP), follows the general idea also applied in homology detection in biology, by which sequences are clustered into sets of homologs based on a partitioning algorithm which is applied to a distance or a similarity matrix representing the overall sequence similarity,</li>
+<li>language-specific sequence similarity partitioning (LSSP), follows the core idea of the LexStat algorithm by which sequence similarity is calculated on a language-specific basis for each language pair in the data, based on permutation statistics which give hints regarding the most likely candidates for regular sound correspondences.</li>
+</ol>
 <p>In LingPy, the methods which you can use to carry out these analyses have specific names, as well as the default output, a cluster decision represented as an integer identifier that assigns words to clusters. They are given in the table below:</p>
 <table>
 <thead><tr>
@@ -13705,13 +13712,7 @@ k	o	r	i	-
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="4.2-Overview-on-Algorithms">4.2 Overview on Algorithms<a class="anchor-link" href="#4.2-Overview-on-Algorithms">&#182;</a></h3><p>LingPy comes along with four pre-defined cognate detection algorithms. These algorithms are all contained in the <code>LexStat</code> class which often confuses users, as one of the algorithms provided by <code>LexStat</code> is also called <code>lexstat</code>. Internally, however, it makes sense, as all algorithms were created at the same time, when the LexStat algorithm was published (<a href="http://bibliography.lingpy.org?key=List2012a">List 2012b</a>), so it was written into one class which was called "LexStat".</p>
-<p>When carrying out cognate detection algorithms, it is important to keep in mind what these algorithms are based on. We can distinguish the following three major types:</p>
-<ol>
-<li>consonant-class-matching (CCM), following Dolgopolky's (1964) early idea to assume that words with two matching consonant classes would likely be cognate,</li>
-<li>phenotypic sequence similarity partitioning (PSSP), follows the general idea also applied in homology detection in biology, by which sequences are clustered into sets of homologs based on a partitioning algorithm which is applied to a distance or a similarity matrix representing the overall sequence similarity,</li>
-<li>language-specific sequence similarity partitioning (LSSP), follows the core idea of the LexStat algorithm by which sequence similarity is calculated on a language-specific basis for each language pair in the data, based on permutation statistics which give hints regarding the most likely candidates for regular sound correspondences.</li>
-</ol>
+<h2 id="4.3-Running-the-Analyses">4.3 Running the Analyses<a class="anchor-link" href="#4.3-Running-the-Analyses">&#182;</a></h2><p>In the following, we will run the users quickly to a test of all cognate detection algorithms and learn how to compare them. We start with the method called "turchin" in LingPy, and referred to as <em>consonant-class matching method</em> (CCM) above.</p>
 
 </div>
 </div>
