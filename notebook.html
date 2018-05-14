@@ -11726,9 +11726,7 @@ body {
 div#notebook {
   overflow: visible;
   border-top: none;
-}
-
-@media print {
+}@media print {
   div.cell {
     display: block;
     page-break-inside: avoid;
@@ -11749,7 +11747,7 @@ div#notebook {
 
 <!-- Loading mathjax macro -->
 <!-- Load mathjax -->
-    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML"></script>
     <!-- MathJax configuration -->
     <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
@@ -11773,14 +11771,13 @@ div#notebook {
   <div tabindex="-1" id="notebook" class="border-box-sizing">
     <div class="container" id="notebook-container">
 
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Sequence-Comparison-with-LingPy">Sequence Comparison with LingPy<a class="anchor-link" href="#Sequence-Comparison-with-LingPy">&#182;</a></h1><p>This tutorial will run you through the major steps needed in order to infer cognates automatically with <a href="http://lingpy.org">LingPy</a> (<a href="http://bibliography.lingpy.org?key=List2017i">List and Forkel 2017</a>) from linguistic word list data and to export the data into various formats so that you can either inspect them using tools like the <a href="http://edictor.digling.org">EDICTOR</a> (<a href="http://bibliography.lingpy.org?key=List2017d">List 2017</a>), or further analyse them, using software like <a href="http://splitstree.org">SplitsTree</a> (<a href="http://bibliography.lingpy.org?key=Huson1998">Huson 1998</a>) or <a href="http://www.beast2.org">BEAST</a> (<a href="http://bibliography.lingpy.org?key=Bouckaert2014">Bouckaert et al. 2014</a>).</p>
 <p>Basically, this tutorial assumes that you have at least an undergraduate level understanding of historical linguistics (particularly the basic methods used in historical language comparison, often summarized under the label "comparative method"), requiring only working knowledge of Python and command line operation.</p>
-<p>It is required that you have installed both LingPy in the version <a href="https://github.com/lingpy/lingpy/releases/tag/v2.6">2.6</a> for Python3 (as this tutorial will assume that you use Python3) available on <a href="https://github.com/lingpy/lingpy">GitHub</a>, and (as a plus) the <a href="http://igraph.org">python-igraph</a> package (<a href="http://bibliography.lingpy.org?key=Csardi2006">Csárdi and Nepusz 2006</a>). Furthermore, in order to follow all examples given in this tutorial, it is useful to work with the <a href="http://ipython.org">Ipython</a> suite, which is very convenient for testing code pieces directly against the Python interpreter.</p>
+<p>It is required that you have installed both LingPy in the version <a href="https://github.com/lingpy/lingpy/releases/tag/v2.6">2.6</a> for Python3 (as this tutorial will assume that you use Python3) available on <a href="https://github.com/lingpy/lingpy">GitHub</a>, and (as a plus) the <a href="http://igraph.org">python-igraph</a> package (<a href="http://bibliography.lingpy.org?key=Csardi2006">Csárdi and Nepusz 2006</a>). Furthermore, in order to follow all examples given in this tutorial, it is useful to work with the <a href="http://ipython.org">IPython</a> suite, which is very convenient for testing code pieces directly against the Python interpreter.</p>
 <p>The tutorial is divided into different blocks, during which different aspects of sequence comparison will be illustrated from the concrete perspective of LingPy. In order to understand fully all that is going on, however, this tutorial won't be sufficient, and it is recommended that those who are interested in the algorithmic and conceptual details of LingPy's major algorithms for sequence comparison have a closer look at the book <a href="https://sequencecomparison.github.io">Sequence Comparison in Historical Linguistics</a> (<a href="http://bibliography.lingpy.org?key=List2014d">List 2014</a>) in which the most comprehensive state of the art is reflected. More recent papers might occasionally be mentioned in order to account for those aspects of sequence comparison which have been changed since then, but the book on sequence comparison (which is also freely available for download) is still the best starting point.</p>
 <p>The tutorial is divided into the following parts:</p>
 <ol>
@@ -11794,8 +11791,7 @@ div#notebook {
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -11803,8 +11799,7 @@ div#notebook {
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -11821,8 +11816,7 @@ div#notebook {
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -11839,8 +11833,7 @@ pacman -Syu <span class="c1"># for Arch systems</span>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -11849,8 +11842,7 @@ pacman -Syu <span class="c1"># for Arch systems</span>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -11861,8 +11853,7 @@ pacman -Syu <span class="c1"># for Arch systems</span>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -11878,8 +11869,7 @@ pip install --user -e lingpy
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -11890,8 +11880,7 @@ pip install --user -e lingpy
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -11910,18 +11899,16 @@ pip install --user -e lingpy
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="1.6-Additional-software,-not-required,-but-recommended">1.6 Additional software, not required, but recommended<a class="anchor-link" href="#1.6-Additional-software,-not-required,-but-recommended">&#182;</a></h3><p>While not required, installing <a href="http://ipython.org">Ipython</a> should improve your experience when following this tutorial and with LingPy in general. Furthermore, when installing the whole <a href="http://jupyter.org/">jupyter</a> suite, you will be able to launch this tutorial and follow all steps interactively.</p>
+<h3 id="1.6-Additional-software,-not-required,-but-recommended">1.6 Additional software, not required, but recommended<a class="anchor-link" href="#1.6-Additional-software,-not-required,-but-recommended">&#182;</a></h3><p>While not required, installing <a href="http://ipython.org">IPython</a> should improve your experience when following this tutorial and with LingPy in general. Furthermore, when installing the whole <a href="http://jupyter.org/">jupyter</a> suite, you will be able to launch this tutorial and follow all steps interactively.</p>
 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -11929,8 +11916,7 @@ pip install --user -e lingpy
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -11940,8 +11926,7 @@ pip install --user -e lingpy
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12356,8 +12341,7 @@ More information on the data formats employed in LingPy can be found at the offi
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12399,7 +12383,9 @@ More information on the data formats employed in LingPy can be found at the offi
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Wordlist has 30 languages and 210 concepts across 7316 rows.
@@ -12411,8 +12397,7 @@ More information on the data formats employed in LingPy can be found at the offi
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12495,7 +12480,9 @@ More information on the data formats employed in LingPy can be found at the offi
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Emae                   	 βaru
@@ -12512,8 +12499,7 @@ Kapingamarangi         	 walu
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12522,14 +12508,13 @@ Kapingamarangi         	 walu
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="2.4-Segmentation-of-Phonetic-Entries">2.4 Segmentation of Phonetic Entries<a class="anchor-link" href="#2.4-Segmentation-of-Phonetic-Entries">&#182;</a></h3><p>Converting transcription conventions into IPA is critical for ensuring that the dataset can be properly analysed. In the original Polynesian dataset, for example, multiple inconsistent conventions were discovered. These included outdated, pre-IPA, conventions; regional orthographic conventions; and individual linguist inventions. These resulted in highly ambiguous representations that could easily lead to incorrect interpretations of the data: characters associated with a given sound used to represent an entirely different sound (<em>h</em> used for glottal stop; <em>y</em> used for <em>θʸ</em>); one character used to represent various sound segments (<em>g</em> used for velar nasal, voiced velar stop, and voiced uvular stop); one set of characters used to represent multiple series of sound segments (two adjacent vowels used for adjacent like vowels, vowel-glottal stop-vowel, and long vowels); double characters used to indicate one segment (<em>ng</em> used for velar nasal; <em>nC</em> used for prenasalised consonants; <em>hC</em> or <em>Ch</em> used for aspirated consonants); diacritical marking on vowels used to indicate length (<em>v̄</em> used for long vowels); and diacritical marking on or between vowels to indicate glottal stops (<em>v̀</em> used for glottal stop-vowel; <em>v'v</em> used for vowel-glottal stop-vowel). Linguists applying methods for automatic cognate detection should always keep in mind that our data is usually rather sparse and therefore not robust enough to cope with these problems alone. As a result from our experience in working with the Polynesian data sample, we therefore advise all users of LingPy to make sure that their data is properly segmented. In the following we will provide some basic information, how this can be done.</p>
 <p>In addition to the "normal" requirement of the data to be written in IPA, LingPy can use the explicit segmentation of the data into sound segments as it was provided by the user. Segmentation is represented as a space-separated string in the input data, as you can see when looking at the table above, right in the cells of the <code>TOKENS</code> column. While segmentation looks unspectacular in these cases where each sound is represented by only one symbol, it may become problematic when dealing with affricates, pre-aspirated sounds, and complex vowels. The problem is usually that IPA transcriptions are inherently ambiguous, and this ambiguity is then passed on to the algorithms which cannot handle it. For example, a word like German <code>[</code>apfəl<code>]</code> "apple" could be either segmented as <code>[</code> a p f ə l <code>]</code>, or, and historically more consistently, as <code>[</code> a pf ə l <code>]</code>. But if the latter reading is intended (and this is usually language-family-specific), the only way to handle this consistently in IPA would be to put the bar over it: <code>[</code>ap͡fəl<code>]</code>. This practice, however, would still render the detection of pre-aspiration and other cases impossible. Although LingPy deals rather well with explicit IPA, we recommend all users to segment the data themselves and indicate this by placing one column in their input word list, in which the phonetic entries are explicitly segmented by a space (with the underscore being used to mark original spaces, i.e., word breaks).</p>
-<p>LingPy's <a href="lingpy.org/reference/lingpy.sequence.html"><code>sequence</code>-package</a> offers many functions to handle phonetic sequences and to segment them automatically. As an example, consider the following code-pieces and try to find out what they are actually doing:</p>
+<p>LingPy's <a href="http://lingpy.org/reference/lingpy.sequence.html"><code>sequence</code>-package</a> offers many functions to handle phonetic sequences and to segment them automatically. As an example, consider the following code-pieces and try to find out what they are actually doing:</p>
 
 </div>
 </div>
@@ -12562,7 +12547,9 @@ Kapingamarangi         	 walu
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>th o x t a 	-&gt;	 th	o	x	t	a
@@ -12580,8 +12567,7 @@ dɔːtər   	-&gt;	 d	ɔː	t	ə	r
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12648,7 +12634,9 @@ dɔːtər   	-&gt;	 d	ɔː	t	ə	r
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>v a &#39; u
@@ -12661,8 +12649,7 @@ v a ʔ u
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12684,9 +12671,26 @@ v a ʔ u
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>2018-05-14 16:44:34,516 [INFO] Data has been written to file &lt;polynesian-new-segments.tsv&gt;.
+</pre>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12717,7 +12721,9 @@ v a ʔ u
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Error in position 2: «&#39;»
@@ -12729,8 +12735,7 @@ v a ʔ u
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12761,7 +12766,9 @@ v a ʔ u
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>0
@@ -12773,8 +12780,7 @@ v a ʔ u
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12783,8 +12789,7 @@ v a ʔ u
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12817,7 +12822,9 @@ v a ʔ u
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Minimal mutual coverage is at 162 concept pairs.
@@ -12829,8 +12836,7 @@ v a ʔ u
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12858,7 +12864,9 @@ v a ʔ u
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>0.91
@@ -12870,8 +12878,7 @@ v a ʔ u
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12914,11 +12921,34 @@ v a ʔ u
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Found 13 languages with an average mutual coverage of 207.
-Wordlist has 13 languages and 210 concepts in 3412 words.
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>2018-05-14 16:44:35,434 [INFO] Data has been written to file &lt;polynesian-small.tsv&gt;.
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Wordlist has 13 languages and 210 concepts in 3404 words.
 </pre>
 </div>
 </div>
@@ -12927,8 +12957,7 @@ Wordlist has 13 languages and 210 concepts in 3412 words.
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12964,7 +12993,20 @@ Wordlist has 13 languages and 210 concepts in 3412 words.
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>2018-05-14 16:44:35,887 [INFO] Data has been written to file &lt;east-polynesian.tsv&gt;.
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>East Polynesian data has 210 concepts and 10 languages.
@@ -12976,8 +13018,7 @@ Wordlist has 13 languages and 210 concepts in 3412 words.
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13007,7 +13048,9 @@ Wordlist has 13 languages and 210 concepts in 3412 words.
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Minimal mutual coverage is at 179 concept pairs (AMC: 0.94).
@@ -13019,8 +13062,7 @@ Wordlist has 13 languages and 210 concepts in 3412 words.
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13029,8 +13071,7 @@ Wordlist has 13 languages and 210 concepts in 3412 words.
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13061,26 +13102,28 @@ Wordlist has 13 languages and 210 concepts in 3412 words.
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>North_Marquesan  to fall       6
-Ra’ivavae        we            4
-Tuamotuan        to blow       4
-Maori            we            4
-Tuamotuan        to fall       4
-Rapanui          to cut, hack  4
-Tahitian         we            4
-North_Marquesan  man/male      4
 Tuamotuan        belly         4
-Hawaiian         we            4
-Rurutuan         we            4
-North_Marquesan  small         4
-Rapanui          and           4
+Tuamotuan        to blow       4
+Rapanui          to cut, hack  4
 North_Marquesan  we            4
-Tuamotuan        to hit        4
+Rapanui          and           4
+Hawaiian         we            4
 Sikaiana         we            4
+Tuamotuan        to fall       4
+North_Marquesan  man/male      4
+Ra’ivavae        we            4
+Tahitian         we            4
+Tuamotuan        to hit        4
 North_Marquesan  to hit        4
+North_Marquesan  small         4
+Maori            we            4
+Rurutuan         we            4
 </pre>
 </div>
 </div>
@@ -13089,8 +13132,7 @@ North_Marquesan  to hit        4
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13099,8 +13141,7 @@ North_Marquesan  to hit        4
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13109,8 +13150,7 @@ North_Marquesan  to hit        4
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13118,8 +13158,7 @@ North_Marquesan  to hit        4
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13141,8 +13180,7 @@ North_Marquesan  to hit        4
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13170,7 +13208,9 @@ North_Marquesan  to hit        4
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>P T 0.0
@@ -13193,8 +13233,7 @@ E I 4.0
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13203,8 +13242,7 @@ E I 4.0
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13237,7 +13275,9 @@ E I 4.0
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>θiɣatɛra  -&gt;  TVKVTVRV (dolgo)
@@ -13252,8 +13292,7 @@ E I 4.0
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13281,7 +13320,9 @@ E I 4.0
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>ʔ	oː	ɢ	u	a
@@ -13295,8 +13336,7 @@ k	oː	r	u	a
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13324,12 +13364,14 @@ k	oː	r	u	a
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>ʔ	oː	ɢ	-	-	u	a
 -	-	k	oː	r	u	a
-23.0
+20.025
 </pre>
 </div>
 </div>
@@ -13338,8 +13380,7 @@ k	oː	r	u	a
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13369,7 +13410,9 @@ k	oː	r	u	a
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>ʔ	oː	ɢ	u	a
@@ -13378,11 +13421,11 @@ k	oː	r	u	a
 ---
 ɢ	-	-	u	a
 k	oː	r	u	a
-20.850000381469727
+20.85
 ---
 ʔ	oː	ɢ	-	-	u	a
 -	-	k	oː	r	u	a
-20.850000381469727
+20.85
 ---
 </pre>
 </div>
@@ -13392,8 +13435,7 @@ k	oː	r	u	a
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13421,7 +13463,9 @@ k	oː	r	u	a
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>ʔ	u	l	i	-
@@ -13436,8 +13480,7 @@ k	o	r	i	-
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13463,7 +13506,9 @@ k	o	r	i	-
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>ʔ	u	l	i	-
@@ -13478,8 +13523,7 @@ k	o	r	i	-
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13506,16 +13550,18 @@ k	o	r	i	-
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
 
+
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>                              /-KYHI
+<pre>                              /-HYLI
                     /edge.0--|
-          /edge.1--|          \-KURI
+          /edge.1--|          \-HILIU
          |         |
--root----|          \-HYLI
+-root----|          \-KURI
          |
-          \-HILIU
+          \-KYHI
 </pre>
 </div>
 </div>
@@ -13524,8 +13570,7 @@ k	o	r	i	-
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13534,8 +13579,7 @@ k	o	r	i	-
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13563,9 +13607,26 @@ k	o	r	i	-
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>2018-05-14 16:44:36,191 [INFO] No obvious errors found in the data.
+</pre>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13596,10 +13657,35 @@ k	o	r	i	-
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>2018-05-14 16:44:36,558 [INFO] Data has been written to file &lt;errors.log&gt;.
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>There were errors in the input data - exclude them? [y/N] y
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>2018-05-14 16:45:05,469 [INFO] Data has been written to file &lt;lingpy-2018-05-14_cleaned.tsv&gt;.
+2018-05-14 16:45:05,537 [INFO] No obvious errors found in the data.
 </pre>
 </div>
 </div>
@@ -13608,29 +13694,27 @@ k	o	r	i	-
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>If you now check the file <code>errors.log</code>, you will find a long file with the following first ten lines:</p>
-<div class="highlight"><pre><span></span>ID    Tokens    Error-Type
+<div class="highlight"><pre><span></span>ID  Tokens  Error-Type
 1572    &lt;bad character in tokens at «A»&gt;    g a t o a A l i m a
 3320    &lt;bad character in tokens at «A»&gt;    p a A _ ʔ a ʔ u r u
 5145    &lt;bad character in tokens at «A»&gt;    l i m a s A f u l u
 5696    &lt;bad character in tokens at «A»&gt;    r i m a _ t A k a u
-12    &lt;bad character in tokens at «A»&gt;    p a A
+12  &lt;bad character in tokens at «A»&gt;    p a A
 3327    &lt;bad character in tokens at «A»&gt;    p a A
 5153    &lt;bad character in tokens at «A»&gt;    A _ f aː
 </pre></div>
-<p>Each row starts with the ID of the word which is contaminated (and this links to the row-ID of your input file), it is followed by a description of the error-type, and then by a segmented form of the word form. LingPy then also creates a file called <code>lingpy-DATE-cleaned.tsv</code> (<code>DATE</code> meaning the date of the day you run LingPy), in which all contaminated words have been excluded, and this file is read in again, if you pressed "y", and will be the one to run the analysis.</p>
+<p>Each row starts with the ID of the word which is contaminated (and this links to the row-ID of your input file), it is followed by a description of the error-type, and then by a segmented form of the word form. LingPy then also creates a file called <code>lingpy-DATE_cleaned.tsv</code> (<code>DATE</code> meaning the date of the day you run LingPy), in which all contaminated words have been excluded, and this file is read in again, if you pressed "y", and will be the one to run the analysis.</p>
 <p>LingPy thus tries to make the enterprise of cognate detection quite convenient for you as a user, but you should be warned not to use files containing errors for publications, but only for personal test purposes, in order to improve your data. If LingPy does not recognize characters, you should not globally exclude them as a reaction, but should instead try to improve your data until it is publication-ready. Otherwise, the results will much likely be disappointing anyway.</p>
 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13707,8 +13791,7 @@ k	o	r	i	-
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13746,33 +13829,460 @@ k	o	r	i	-
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
 
+
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>                                                                       </pre>
+<pre>2018-05-14 16:45:05,872 [INFO] No obvious errors found in the data.
+SEQUENCE CLUSTERING:   0%|          | 0/210 [00:00&lt;?, ?it/s]2018-05-14 16:45:06,101 [INFO] Analyzing words for concept &lt;Eight&gt;.
+2018-05-14 16:45:06,103 [INFO] Analyzing words for concept &lt;Fifty&gt;.
+2018-05-14 16:45:06,104 [INFO] Analyzing words for concept &lt;Five&gt;.
+2018-05-14 16:45:06,108 [INFO] Analyzing words for concept &lt;Four&gt;.
+2018-05-14 16:45:06,110 [INFO] Analyzing words for concept &lt;I&gt;.
+2018-05-14 16:45:06,115 [INFO] Analyzing words for concept &lt;Nine&gt;.
+2018-05-14 16:45:06,118 [INFO] Analyzing words for concept &lt;One&gt;.
+2018-05-14 16:45:06,122 [INFO] Analyzing words for concept &lt;One Hundred&gt;.
+2018-05-14 16:45:06,126 [INFO] Analyzing words for concept &lt;One Thousand&gt;.
+2018-05-14 16:45:06,131 [INFO] Analyzing words for concept &lt;Seven&gt;.
+2018-05-14 16:45:06,135 [INFO] Analyzing words for concept &lt;Six&gt;.
+2018-05-14 16:45:06,138 [INFO] Analyzing words for concept &lt;Ten&gt;.
+2018-05-14 16:45:06,144 [INFO] Analyzing words for concept &lt;Three&gt;.
+2018-05-14 16:45:06,146 [INFO] Analyzing words for concept &lt;Twenty&gt;.
+2018-05-14 16:45:06,150 [INFO] Analyzing words for concept &lt;Two&gt;.
+2018-05-14 16:45:06,154 [INFO] Analyzing words for concept &lt;above&gt;.
+2018-05-14 16:45:06,156 [INFO] Analyzing words for concept &lt;all&gt;.
+2018-05-14 16:45:06,159 [INFO] Analyzing words for concept &lt;and&gt;.
+2018-05-14 16:45:06,161 [INFO] Analyzing words for concept &lt;ash&gt;.
+2018-05-14 16:45:06,164 [INFO] Analyzing words for concept &lt;at&gt;.
+2018-05-14 16:45:06,167 [INFO] Analyzing words for concept &lt;back&gt;.
+2018-05-14 16:45:06,170 [INFO] Analyzing words for concept &lt;bad, evil&gt;.
+2018-05-14 16:45:06,174 [INFO] Analyzing words for concept &lt;belly&gt;.
+2018-05-14 16:45:06,179 [INFO] Analyzing words for concept &lt;below&gt;.
+2018-05-14 16:45:06,181 [INFO] Analyzing words for concept &lt;big&gt;.
+2018-05-14 16:45:06,185 [INFO] Analyzing words for concept &lt;bird&gt;.
+2018-05-14 16:45:06,187 [INFO] Analyzing words for concept &lt;black&gt;.
+2018-05-14 16:45:06,191 [INFO] Analyzing words for concept &lt;blood&gt;.
+2018-05-14 16:45:06,193 [INFO] Analyzing words for concept &lt;bone&gt;.
+2018-05-14 16:45:06,195 [INFO] Analyzing words for concept &lt;branch&gt;.
+2018-05-14 16:45:06,198 [INFO] Analyzing words for concept &lt;breast&gt;.
+SEQUENCE CLUSTERING:  15%|█▍        | 31/210 [00:00&lt;00:00, 309.13it/s]2018-05-14 16:45:06,203 [INFO] Analyzing words for concept &lt;child&gt;.
+2018-05-14 16:45:06,207 [INFO] Analyzing words for concept &lt;cloud&gt;.
+2018-05-14 16:45:06,210 [INFO] Analyzing words for concept &lt;cold&gt;.
+2018-05-14 16:45:06,216 [INFO] Analyzing words for concept &lt;correct, true&gt;.
+2018-05-14 16:45:06,222 [INFO] Analyzing words for concept &lt;day&gt;.
+2018-05-14 16:45:06,226 [INFO] Analyzing words for concept &lt;dirty&gt;.
+2018-05-14 16:45:06,230 [INFO] Analyzing words for concept &lt;dog&gt;.
+2018-05-14 16:45:06,234 [INFO] Analyzing words for concept &lt;dry&gt;.
+2018-05-14 16:45:06,238 [INFO] Analyzing words for concept &lt;dull, blunt&gt;.
+2018-05-14 16:45:06,241 [INFO] Analyzing words for concept &lt;dust&gt;.
+2018-05-14 16:45:06,245 [INFO] Analyzing words for concept &lt;ear&gt;.
+2018-05-14 16:45:06,248 [INFO] Analyzing words for concept &lt;earth/soil&gt;.
+2018-05-14 16:45:06,253 [INFO] Analyzing words for concept &lt;egg&gt;.
+2018-05-14 16:45:06,256 [INFO] Analyzing words for concept &lt;eye&gt;.
+2018-05-14 16:45:06,259 [INFO] Analyzing words for concept &lt;far&gt;.
+2018-05-14 16:45:06,262 [INFO] Analyzing words for concept &lt;fat/grease&gt;.
+2018-05-14 16:45:06,265 [INFO] Analyzing words for concept &lt;father&gt;.
+2018-05-14 16:45:06,270 [INFO] Analyzing words for concept &lt;feather&gt;.
+2018-05-14 16:45:06,273 [INFO] Analyzing words for concept &lt;fire&gt;.
+2018-05-14 16:45:06,276 [INFO] Analyzing words for concept &lt;fish&gt;.
+2018-05-14 16:45:06,279 [INFO] Analyzing words for concept &lt;flower&gt;.
+2018-05-14 16:45:06,282 [INFO] Analyzing words for concept &lt;fog&gt;.
+2018-05-14 16:45:06,286 [INFO] Analyzing words for concept &lt;fruit&gt;.
+2018-05-14 16:45:06,288 [INFO] Analyzing words for concept &lt;good&gt;.
+2018-05-14 16:45:06,293 [INFO] Analyzing words for concept &lt;grass&gt;.
+2018-05-14 16:45:06,296 [INFO] Analyzing words for concept &lt;green&gt;.
+2018-05-14 16:45:06,299 [INFO] Analyzing words for concept &lt;hair&gt;.
+SEQUENCE CLUSTERING:  28%|██▊       | 58/210 [00:00&lt;00:00, 292.68it/s]2018-05-14 16:45:06,306 [INFO] Analyzing words for concept &lt;hand&gt;.
+2018-05-14 16:45:06,309 [INFO] Analyzing words for concept &lt;he/she&gt;.
+2018-05-14 16:45:06,313 [INFO] Analyzing words for concept &lt;head&gt;.
+2018-05-14 16:45:06,317 [INFO] Analyzing words for concept &lt;heavy&gt;.
+2018-05-14 16:45:06,322 [INFO] Analyzing words for concept &lt;house&gt;.
+2018-05-14 16:45:06,325 [INFO] Analyzing words for concept &lt;how?&gt;.
+2018-05-14 16:45:06,327 [INFO] Analyzing words for concept &lt;husband&gt;.
+2018-05-14 16:45:06,329 [INFO] Analyzing words for concept &lt;if&gt;.
+2018-05-14 16:45:06,331 [INFO] Analyzing words for concept &lt;in, inside&gt;.
+2018-05-14 16:45:06,334 [INFO] Analyzing words for concept &lt;intestines&gt;.
+2018-05-14 16:45:06,336 [INFO] Analyzing words for concept &lt;lake&gt;.
+2018-05-14 16:45:06,338 [INFO] Analyzing words for concept &lt;leaf&gt;.
+2018-05-14 16:45:06,341 [INFO] Analyzing words for concept &lt;left&gt;.
+2018-05-14 16:45:06,343 [INFO] Analyzing words for concept &lt;leg/foot&gt;.
+2018-05-14 16:45:06,345 [INFO] Analyzing words for concept &lt;lightning&gt;.
+2018-05-14 16:45:06,348 [INFO] Analyzing words for concept &lt;liver&gt;.
+2018-05-14 16:45:06,352 [INFO] Analyzing words for concept &lt;long&gt;.
+2018-05-14 16:45:06,354 [INFO] Analyzing words for concept &lt;louse&gt;.
+2018-05-14 16:45:06,357 [INFO] Analyzing words for concept &lt;man/male&gt;.
+2018-05-14 16:45:06,363 [INFO] Analyzing words for concept &lt;meat/flesh&gt;.
+2018-05-14 16:45:06,365 [INFO] Analyzing words for concept &lt;moon&gt;.
+2018-05-14 16:45:06,369 [INFO] Analyzing words for concept &lt;mosquito&gt;.
+2018-05-14 16:45:06,372 [INFO] Analyzing words for concept &lt;mother&gt;.
+2018-05-14 16:45:06,376 [INFO] Analyzing words for concept &lt;mouth&gt;.
+2018-05-14 16:45:06,380 [INFO] Analyzing words for concept &lt;name&gt;.
+2018-05-14 16:45:06,382 [INFO] Analyzing words for concept &lt;narrow&gt;.
+2018-05-14 16:45:06,386 [INFO] Analyzing words for concept &lt;near&gt;.
+2018-05-14 16:45:06,388 [INFO] Analyzing words for concept &lt;neck&gt;.
+2018-05-14 16:45:06,391 [INFO] Analyzing words for concept &lt;needle&gt;.
+2018-05-14 16:45:06,393 [INFO] Analyzing words for concept &lt;new&gt;.
+2018-05-14 16:45:06,395 [INFO] Analyzing words for concept &lt;night&gt;.
+2018-05-14 16:45:06,397 [INFO] Analyzing words for concept &lt;no, not&gt;.
+2018-05-14 16:45:06,400 [INFO] Analyzing words for concept &lt;nose&gt;.
+2018-05-14 16:45:06,403 [INFO] Analyzing words for concept &lt;old&gt;.
+SEQUENCE CLUSTERING:  44%|████▍     | 92/210 [00:00&lt;00:00, 303.83it/s]2018-05-14 16:45:06,408 [INFO] Analyzing words for concept &lt;other&gt;.
+2018-05-14 16:45:06,409 [INFO] Analyzing words for concept &lt;painful, sick&gt;.
+2018-05-14 16:45:06,413 [INFO] Analyzing words for concept &lt;person/human being&gt;.
+2018-05-14 16:45:06,417 [INFO] Analyzing words for concept &lt;rain&gt;.
+2018-05-14 16:45:06,419 [INFO] Analyzing words for concept &lt;rat&gt;.
+2018-05-14 16:45:06,422 [INFO] Analyzing words for concept &lt;red&gt;.
+2018-05-14 16:45:06,426 [INFO] Analyzing words for concept &lt;right&gt;.
+2018-05-14 16:45:06,429 [INFO] Analyzing words for concept &lt;road/path&gt;.
+2018-05-14 16:45:06,433 [INFO] Analyzing words for concept &lt;root&gt;.
+2018-05-14 16:45:06,437 [INFO] Analyzing words for concept &lt;rope&gt;.
+2018-05-14 16:45:06,441 [INFO] Analyzing words for concept &lt;rotten&gt;.
+2018-05-14 16:45:06,445 [INFO] Analyzing words for concept &lt;salt&gt;.
+2018-05-14 16:45:06,449 [INFO] Analyzing words for concept &lt;sand&gt;.
+2018-05-14 16:45:06,453 [INFO] Analyzing words for concept &lt;sea&gt;.
+2018-05-14 16:45:06,460 [INFO] Analyzing words for concept &lt;sharp&gt;.
+2018-05-14 16:45:06,462 [INFO] Analyzing words for concept &lt;short&gt;.
+2018-05-14 16:45:06,466 [INFO] Analyzing words for concept &lt;shoulder&gt;.
+2018-05-14 16:45:06,470 [INFO] Analyzing words for concept &lt;shy, ashamed&gt;.
+2018-05-14 16:45:06,472 [INFO] Analyzing words for concept &lt;skin&gt;.
+2018-05-14 16:45:06,474 [INFO] Analyzing words for concept &lt;sky&gt;.
+2018-05-14 16:45:06,477 [INFO] Analyzing words for concept &lt;small&gt;.
+2018-05-14 16:45:06,482 [INFO] Analyzing words for concept &lt;smoke&gt;.
+2018-05-14 16:45:06,484 [INFO] Analyzing words for concept &lt;snake&gt;.
+2018-05-14 16:45:06,486 [INFO] Analyzing words for concept &lt;spider&gt;.
+2018-05-14 16:45:06,489 [INFO] Analyzing words for concept &lt;star&gt;.
+2018-05-14 16:45:06,492 [INFO] Analyzing words for concept &lt;stick/wood&gt;.
+2018-05-14 16:45:06,494 [INFO] Analyzing words for concept &lt;stone&gt;.
+2018-05-14 16:45:06,499 [INFO] Analyzing words for concept &lt;tail&gt;.
+2018-05-14 16:45:06,505 [INFO] Analyzing words for concept &lt;that&gt;.
+2018-05-14 16:45:06,506 [INFO] Analyzing words for concept &lt;thatch/roof&gt;.
+SEQUENCE CLUSTERING:  58%|█████▊    | 122/210 [00:00&lt;00:00, 300.25it/s]2018-05-14 16:45:06,510 [INFO] Analyzing words for concept &lt;they&gt;.
+2018-05-14 16:45:06,515 [INFO] Analyzing words for concept &lt;thick&gt;.
+2018-05-14 16:45:06,520 [INFO] Analyzing words for concept &lt;thin&gt;.
+2018-05-14 16:45:06,525 [INFO] Analyzing words for concept &lt;this&gt;.
+2018-05-14 16:45:06,527 [INFO] Analyzing words for concept &lt;thou&gt;.
+2018-05-14 16:45:06,529 [INFO] Analyzing words for concept &lt;thunder&gt;.
+2018-05-14 16:45:06,533 [INFO] Analyzing words for concept &lt;to bite&gt;.
+2018-05-14 16:45:06,536 [INFO] Analyzing words for concept &lt;to blow&gt;.
+2018-05-14 16:45:06,542 [INFO] Analyzing words for concept &lt;to breathe&gt;.
+2018-05-14 16:45:06,546 [INFO] Analyzing words for concept &lt;to burn&gt;.
+2018-05-14 16:45:06,553 [INFO] Analyzing words for concept &lt;to buy&gt;.
+2018-05-14 16:45:06,555 [INFO] Analyzing words for concept &lt;to chew&gt;.
+2018-05-14 16:45:06,558 [INFO] Analyzing words for concept &lt;to choose&gt;.
+2018-05-14 16:45:06,561 [INFO] Analyzing words for concept &lt;to climb&gt;.
+2018-05-14 16:45:06,565 [INFO] Analyzing words for concept &lt;to come&gt;.
+2018-05-14 16:45:06,571 [INFO] Analyzing words for concept &lt;to cook&gt;.
+2018-05-14 16:45:06,575 [INFO] Analyzing words for concept &lt;to count&gt;.
+2018-05-14 16:45:06,577 [INFO] Analyzing words for concept &lt;to cry&gt;.
+2018-05-14 16:45:06,581 [INFO] Analyzing words for concept &lt;to cut, hack&gt;.
+2018-05-14 16:45:06,588 [INFO] Analyzing words for concept &lt;to die, be dead&gt;.
+2018-05-14 16:45:06,592 [INFO] Analyzing words for concept &lt;to dig&gt;.
+2018-05-14 16:45:06,596 [INFO] Analyzing words for concept &lt;to dream&gt;.
+2018-05-14 16:45:06,601 [INFO] Analyzing words for concept &lt;to drink&gt;.
+2018-05-14 16:45:06,604 [INFO] Analyzing words for concept &lt;to eat&gt;.
+2018-05-14 16:45:06,607 [INFO] Analyzing words for concept &lt;to fall&gt;.
+SEQUENCE CLUSTERING:  70%|███████   | 147/210 [00:00&lt;00:00, 277.32it/s]2018-05-14 16:45:06,619 [INFO] Analyzing words for concept &lt;to fear&gt;.
+2018-05-14 16:45:06,624 [INFO] Analyzing words for concept &lt;to flow&gt;.
+2018-05-14 16:45:06,627 [INFO] Analyzing words for concept &lt;to fly&gt;.
+2018-05-14 16:45:06,631 [INFO] Analyzing words for concept &lt;to grow&gt;.
+2018-05-14 16:45:06,634 [INFO] Analyzing words for concept &lt;to hear&gt;.
+2018-05-14 16:45:06,637 [INFO] Analyzing words for concept &lt;to hide&gt;.
+2018-05-14 16:45:06,639 [INFO] Analyzing words for concept &lt;to hit&gt;.
+2018-05-14 16:45:06,646 [INFO] Analyzing words for concept &lt;to hold&gt;.
+2018-05-14 16:45:06,649 [INFO] Analyzing words for concept &lt;to hunt&gt;.
+2018-05-14 16:45:06,652 [INFO] Analyzing words for concept &lt;to kill&gt;.
+2018-05-14 16:45:06,656 [INFO] Analyzing words for concept &lt;to know, be knowledgeable&gt;.
+2018-05-14 16:45:06,660 [INFO] Analyzing words for concept &lt;to laugh&gt;.
+2018-05-14 16:45:06,662 [INFO] Analyzing words for concept &lt;to lie down&gt;.
+2018-05-14 16:45:06,666 [INFO] Analyzing words for concept &lt;to live, be alive&gt;.
+2018-05-14 16:45:06,669 [INFO] Analyzing words for concept &lt;to open, uncover&gt;.
+2018-05-14 16:45:06,673 [INFO] Analyzing words for concept &lt;to plant&gt;.
+2018-05-14 16:45:06,676 [INFO] Analyzing words for concept &lt;to pound, beat&gt;.
+2018-05-14 16:45:06,679 [INFO] Analyzing words for concept &lt;to say&gt;.
+2018-05-14 16:45:06,683 [INFO] Analyzing words for concept &lt;to scratch&gt;.
+2018-05-14 16:45:06,686 [INFO] Analyzing words for concept &lt;to see&gt;.
+2018-05-14 16:45:06,689 [INFO] Analyzing words for concept &lt;to sew&gt;.
+2018-05-14 16:45:06,692 [INFO] Analyzing words for concept &lt;to shoot&gt;.
+2018-05-14 16:45:06,693 [INFO] Analyzing words for concept &lt;to sit&gt;.
+2018-05-14 16:45:06,695 [INFO] Analyzing words for concept &lt;to sleep&gt;.
+2018-05-14 16:45:06,697 [INFO] Analyzing words for concept &lt;to sniff, smell&gt;.
+2018-05-14 16:45:06,700 [INFO] Analyzing words for concept &lt;to spit&gt;.
+2018-05-14 16:45:06,704 [INFO] Analyzing words for concept &lt;to split&gt;.
+2018-05-14 16:45:06,708 [INFO] Analyzing words for concept &lt;to squeeze&gt;.
+2018-05-14 16:45:06,712 [INFO] Analyzing words for concept &lt;to stab, pierce&gt;.
+2018-05-14 16:45:06,716 [INFO] Analyzing words for concept &lt;to stand&gt;.
+SEQUENCE CLUSTERING:  84%|████████▍ | 177/210 [00:00&lt;00:00, 281.77it/s]2018-05-14 16:45:06,719 [INFO] Analyzing words for concept &lt;to steal&gt;.
+2018-05-14 16:45:06,721 [INFO] Analyzing words for concept &lt;to suck&gt;.
+2018-05-14 16:45:06,725 [INFO] Analyzing words for concept &lt;to swell&gt;.
+2018-05-14 16:45:06,727 [INFO] Analyzing words for concept &lt;to swim&gt;.
+2018-05-14 16:45:06,729 [INFO] Analyzing words for concept &lt;to think&gt;.
+2018-05-14 16:45:06,732 [INFO] Analyzing words for concept &lt;to throw&gt;.
+2018-05-14 16:45:06,736 [INFO] Analyzing words for concept &lt;to tie up, fasten&gt;.
+2018-05-14 16:45:06,740 [INFO] Analyzing words for concept &lt;to turn&gt;.
+2018-05-14 16:45:06,743 [INFO] Analyzing words for concept &lt;to vomit&gt;.
+2018-05-14 16:45:06,745 [INFO] Analyzing words for concept &lt;to walk&gt;.
+2018-05-14 16:45:06,749 [INFO] Analyzing words for concept &lt;to work&gt;.
+2018-05-14 16:45:06,751 [INFO] Analyzing words for concept &lt;to yawn&gt;.
+2018-05-14 16:45:06,753 [INFO] Analyzing words for concept &lt;tongue&gt;.
+2018-05-14 16:45:06,756 [INFO] Analyzing words for concept &lt;tooth&gt;.
+2018-05-14 16:45:06,758 [INFO] Analyzing words for concept &lt;warm&gt;.
+2018-05-14 16:45:06,762 [INFO] Analyzing words for concept &lt;water&gt;.
+2018-05-14 16:45:06,764 [INFO] Analyzing words for concept &lt;we&gt;.
+2018-05-14 16:45:06,788 [INFO] Analyzing words for concept &lt;wet&gt;.
+2018-05-14 16:45:06,791 [INFO] Analyzing words for concept &lt;what?&gt;.
+2018-05-14 16:45:06,793 [INFO] Analyzing words for concept &lt;when?&gt;.
+2018-05-14 16:45:06,795 [INFO] Analyzing words for concept &lt;where?&gt;.
+2018-05-14 16:45:06,797 [INFO] Analyzing words for concept &lt;white&gt;.
+2018-05-14 16:45:06,800 [INFO] Analyzing words for concept &lt;who?&gt;.
+2018-05-14 16:45:06,802 [INFO] Analyzing words for concept &lt;wide&gt;.
+2018-05-14 16:45:06,804 [INFO] Analyzing words for concept &lt;wife&gt;.
+2018-05-14 16:45:06,806 [INFO] Analyzing words for concept &lt;wind&gt;.
+2018-05-14 16:45:06,810 [INFO] Analyzing words for concept &lt;wing&gt;.
+2018-05-14 16:45:06,812 [INFO] Analyzing words for concept &lt;woman/female&gt;.
+2018-05-14 16:45:06,817 [INFO] Analyzing words for concept &lt;woods/forest&gt;.
+SEQUENCE CLUSTERING:  98%|█████████▊| 206/210 [00:00&lt;00:00, 283.05it/s]2018-05-14 16:45:06,820 [INFO] Analyzing words for concept &lt;worm (earthworm)&gt;.
+2018-05-14 16:45:06,822 [INFO] Analyzing words for concept &lt;year&gt;.
+2018-05-14 16:45:06,825 [INFO] Analyzing words for concept &lt;yellow&gt;.
+2018-05-14 16:45:06,828 [INFO] Analyzing words for concept &lt;you&gt;.
+SEQUENCE CLUSTERING:   0%|          | 0/210 [00:00&lt;?, ?it/s]           2018-05-14 16:45:06,840 [INFO] Analyzing words for concept &lt;Eight&gt;.
+2018-05-14 16:45:06,841 [INFO] Analyzing words for concept &lt;Fifty&gt;.
+2018-05-14 16:45:06,842 [INFO] Analyzing words for concept &lt;Five&gt;.
+2018-05-14 16:45:06,844 [INFO] Analyzing words for concept &lt;Four&gt;.
+2018-05-14 16:45:06,845 [INFO] Analyzing words for concept &lt;I&gt;.
+2018-05-14 16:45:06,847 [INFO] Analyzing words for concept &lt;Nine&gt;.
+2018-05-14 16:45:06,849 [INFO] Analyzing words for concept &lt;One&gt;.
+2018-05-14 16:45:06,851 [INFO] Analyzing words for concept &lt;One Hundred&gt;.
+2018-05-14 16:45:06,853 [INFO] Analyzing words for concept &lt;One Thousand&gt;.
+2018-05-14 16:45:06,855 [INFO] Analyzing words for concept &lt;Seven&gt;.
+2018-05-14 16:45:06,858 [INFO] Analyzing words for concept &lt;Six&gt;.
+2018-05-14 16:45:06,861 [INFO] Analyzing words for concept &lt;Ten&gt;.
+2018-05-14 16:45:06,867 [INFO] Analyzing words for concept &lt;Three&gt;.
+2018-05-14 16:45:06,869 [INFO] Analyzing words for concept &lt;Twenty&gt;.
+2018-05-14 16:45:06,871 [INFO] Analyzing words for concept &lt;Two&gt;.
+2018-05-14 16:45:06,873 [INFO] Analyzing words for concept &lt;above&gt;.
+2018-05-14 16:45:06,874 [INFO] Analyzing words for concept &lt;all&gt;.
+2018-05-14 16:45:06,876 [INFO] Analyzing words for concept &lt;and&gt;.
+2018-05-14 16:45:06,877 [INFO] Analyzing words for concept &lt;ash&gt;.
+2018-05-14 16:45:06,879 [INFO] Analyzing words for concept &lt;at&gt;.
+2018-05-14 16:45:06,882 [INFO] Analyzing words for concept &lt;back&gt;.
+2018-05-14 16:45:06,884 [INFO] Analyzing words for concept &lt;bad, evil&gt;.
+2018-05-14 16:45:06,886 [INFO] Analyzing words for concept &lt;belly&gt;.
+2018-05-14 16:45:06,890 [INFO] Analyzing words for concept &lt;below&gt;.
+2018-05-14 16:45:06,892 [INFO] Analyzing words for concept &lt;big&gt;.
+2018-05-14 16:45:06,894 [INFO] Analyzing words for concept &lt;bird&gt;.
+2018-05-14 16:45:06,896 [INFO] Analyzing words for concept &lt;black&gt;.
+2018-05-14 16:45:06,899 [INFO] Analyzing words for concept &lt;blood&gt;.
+2018-05-14 16:45:06,901 [INFO] Analyzing words for concept &lt;bone&gt;.
+2018-05-14 16:45:06,902 [INFO] Analyzing words for concept &lt;branch&gt;.
+2018-05-14 16:45:06,904 [INFO] Analyzing words for concept &lt;breast&gt;.
+2018-05-14 16:45:06,906 [INFO] Analyzing words for concept &lt;child&gt;.
+2018-05-14 16:45:06,909 [INFO] Analyzing words for concept &lt;cloud&gt;.
+2018-05-14 16:45:06,911 [INFO] Analyzing words for concept &lt;cold&gt;.
+2018-05-14 16:45:06,915 [INFO] Analyzing words for concept &lt;correct, true&gt;.
+2018-05-14 16:45:06,920 [INFO] Analyzing words for concept &lt;day&gt;.
+2018-05-14 16:45:06,922 [INFO] Analyzing words for concept &lt;dirty&gt;.
+2018-05-14 16:45:06,924 [INFO] Analyzing words for concept &lt;dog&gt;.
+2018-05-14 16:45:06,926 [INFO] Analyzing words for concept &lt;dry&gt;.
+2018-05-14 16:45:06,928 [INFO] Analyzing words for concept &lt;dull, blunt&gt;.
+2018-05-14 16:45:06,931 [INFO] Analyzing words for concept &lt;dust&gt;.
+2018-05-14 16:45:06,934 [INFO] Analyzing words for concept &lt;ear&gt;.
+2018-05-14 16:45:06,936 [INFO] Analyzing words for concept &lt;earth/soil&gt;.
+2018-05-14 16:45:06,939 [INFO] Analyzing words for concept &lt;egg&gt;.
+SEQUENCE CLUSTERING:  21%|██        | 44/210 [00:00&lt;00:00, 433.22it/s]2018-05-14 16:45:06,942 [INFO] Analyzing words for concept &lt;eye&gt;.
+2018-05-14 16:45:06,944 [INFO] Analyzing words for concept &lt;far&gt;.
+2018-05-14 16:45:06,946 [INFO] Analyzing words for concept &lt;fat/grease&gt;.
+2018-05-14 16:45:06,948 [INFO] Analyzing words for concept &lt;father&gt;.
+2018-05-14 16:45:06,951 [INFO] Analyzing words for concept &lt;feather&gt;.
+2018-05-14 16:45:06,953 [INFO] Analyzing words for concept &lt;fire&gt;.
+2018-05-14 16:45:06,955 [INFO] Analyzing words for concept &lt;fish&gt;.
+2018-05-14 16:45:06,957 [INFO] Analyzing words for concept &lt;flower&gt;.
+2018-05-14 16:45:06,959 [INFO] Analyzing words for concept &lt;fog&gt;.
+2018-05-14 16:45:06,960 [INFO] Analyzing words for concept &lt;fruit&gt;.
+2018-05-14 16:45:06,962 [INFO] Analyzing words for concept &lt;good&gt;.
+2018-05-14 16:45:06,966 [INFO] Analyzing words for concept &lt;grass&gt;.
+2018-05-14 16:45:06,968 [INFO] Analyzing words for concept &lt;green&gt;.
+2018-05-14 16:45:06,970 [INFO] Analyzing words for concept &lt;hair&gt;.
+2018-05-14 16:45:06,973 [INFO] Analyzing words for concept &lt;hand&gt;.
+2018-05-14 16:45:06,986 [INFO] Analyzing words for concept &lt;he/she&gt;.
+2018-05-14 16:45:06,988 [INFO] Analyzing words for concept &lt;head&gt;.
+2018-05-14 16:45:06,991 [INFO] Analyzing words for concept &lt;heavy&gt;.
+2018-05-14 16:45:06,994 [INFO] Analyzing words for concept &lt;house&gt;.
+2018-05-14 16:45:06,996 [INFO] Analyzing words for concept &lt;how?&gt;.
+2018-05-14 16:45:06,997 [INFO] Analyzing words for concept &lt;husband&gt;.
+2018-05-14 16:45:06,998 [INFO] Analyzing words for concept &lt;if&gt;.
+2018-05-14 16:45:07,001 [INFO] Analyzing words for concept &lt;in, inside&gt;.
+2018-05-14 16:45:07,003 [INFO] Analyzing words for concept &lt;intestines&gt;.
+2018-05-14 16:45:07,005 [INFO] Analyzing words for concept &lt;lake&gt;.
+2018-05-14 16:45:07,007 [INFO] Analyzing words for concept &lt;leaf&gt;.
+2018-05-14 16:45:07,009 [INFO] Analyzing words for concept &lt;left&gt;.
+2018-05-14 16:45:07,012 [INFO] Analyzing words for concept &lt;leg/foot&gt;.
+2018-05-14 16:45:07,014 [INFO] Analyzing words for concept &lt;lightning&gt;.
+2018-05-14 16:45:07,016 [INFO] Analyzing words for concept &lt;liver&gt;.
+2018-05-14 16:45:07,019 [INFO] Analyzing words for concept &lt;long&gt;.
+2018-05-14 16:45:07,021 [INFO] Analyzing words for concept &lt;louse&gt;.
+2018-05-14 16:45:07,023 [INFO] Analyzing words for concept &lt;man/male&gt;.
+2018-05-14 16:45:07,028 [INFO] Analyzing words for concept &lt;meat/flesh&gt;.
+2018-05-14 16:45:07,030 [INFO] Analyzing words for concept &lt;moon&gt;.
+2018-05-14 16:45:07,033 [INFO] Analyzing words for concept &lt;mosquito&gt;.
+2018-05-14 16:45:07,035 [INFO] Analyzing words for concept &lt;mother&gt;.
+2018-05-14 16:45:07,039 [INFO] Analyzing words for concept &lt;mouth&gt;.
+2018-05-14 16:45:07,042 [INFO] Analyzing words for concept &lt;name&gt;.
+SEQUENCE CLUSTERING:  40%|███▉      | 83/210 [00:00&lt;00:00, 415.95it/s]2018-05-14 16:45:07,045 [INFO] Analyzing words for concept &lt;narrow&gt;.
+2018-05-14 16:45:07,048 [INFO] Analyzing words for concept &lt;near&gt;.
+2018-05-14 16:45:07,050 [INFO] Analyzing words for concept &lt;neck&gt;.
+2018-05-14 16:45:07,052 [INFO] Analyzing words for concept &lt;needle&gt;.
+2018-05-14 16:45:07,055 [INFO] Analyzing words for concept &lt;new&gt;.
+2018-05-14 16:45:07,057 [INFO] Analyzing words for concept &lt;night&gt;.
+2018-05-14 16:45:07,059 [INFO] Analyzing words for concept &lt;no, not&gt;.
+2018-05-14 16:45:07,061 [INFO] Analyzing words for concept &lt;nose&gt;.
+2018-05-14 16:45:07,063 [INFO] Analyzing words for concept &lt;old&gt;.
+2018-05-14 16:45:07,068 [INFO] Analyzing words for concept &lt;other&gt;.
+2018-05-14 16:45:07,069 [INFO] Analyzing words for concept &lt;painful, sick&gt;.
+2018-05-14 16:45:07,073 [INFO] Analyzing words for concept &lt;person/human being&gt;.
+2018-05-14 16:45:07,076 [INFO] Analyzing words for concept &lt;rain&gt;.
+2018-05-14 16:45:07,078 [INFO] Analyzing words for concept &lt;rat&gt;.
+2018-05-14 16:45:07,081 [INFO] Analyzing words for concept &lt;red&gt;.
+2018-05-14 16:45:07,084 [INFO] Analyzing words for concept &lt;right&gt;.
+2018-05-14 16:45:07,087 [INFO] Analyzing words for concept &lt;road/path&gt;.
+2018-05-14 16:45:07,091 [INFO] Analyzing words for concept &lt;root&gt;.
+2018-05-14 16:45:07,093 [INFO] Analyzing words for concept &lt;rope&gt;.
+2018-05-14 16:45:07,096 [INFO] Analyzing words for concept &lt;rotten&gt;.
+2018-05-14 16:45:07,100 [INFO] Analyzing words for concept &lt;salt&gt;.
+2018-05-14 16:45:07,102 [INFO] Analyzing words for concept &lt;sand&gt;.
+2018-05-14 16:45:07,104 [INFO] Analyzing words for concept &lt;sea&gt;.
+2018-05-14 16:45:07,109 [INFO] Analyzing words for concept &lt;sharp&gt;.
+2018-05-14 16:45:07,111 [INFO] Analyzing words for concept &lt;short&gt;.
+2018-05-14 16:45:07,114 [INFO] Analyzing words for concept &lt;shoulder&gt;.
+2018-05-14 16:45:07,117 [INFO] Analyzing words for concept &lt;shy, ashamed&gt;.
+2018-05-14 16:45:07,119 [INFO] Analyzing words for concept &lt;skin&gt;.
+2018-05-14 16:45:07,121 [INFO] Analyzing words for concept &lt;sky&gt;.
+2018-05-14 16:45:07,123 [INFO] Analyzing words for concept &lt;small&gt;.
+2018-05-14 16:45:07,126 [INFO] Analyzing words for concept &lt;smoke&gt;.
+2018-05-14 16:45:07,129 [INFO] Analyzing words for concept &lt;snake&gt;.
+2018-05-14 16:45:07,130 [INFO] Analyzing words for concept &lt;spider&gt;.
+2018-05-14 16:45:07,133 [INFO] Analyzing words for concept &lt;star&gt;.
+2018-05-14 16:45:07,135 [INFO] Analyzing words for concept &lt;stick/wood&gt;.
+2018-05-14 16:45:07,137 [INFO] Analyzing words for concept &lt;stone&gt;.
+2018-05-14 16:45:07,141 [INFO] Analyzing words for concept &lt;tail&gt;.
+2018-05-14 16:45:07,144 [INFO] Analyzing words for concept &lt;that&gt;.
+SEQUENCE CLUSTERING:  58%|█████▊    | 121/210 [00:00&lt;00:00, 402.59it/s]2018-05-14 16:45:07,146 [INFO] Analyzing words for concept &lt;thatch/roof&gt;.
+2018-05-14 16:45:07,148 [INFO] Analyzing words for concept &lt;they&gt;.
+2018-05-14 16:45:07,153 [INFO] Analyzing words for concept &lt;thick&gt;.
+2018-05-14 16:45:07,155 [INFO] Analyzing words for concept &lt;thin&gt;.
+2018-05-14 16:45:07,158 [INFO] Analyzing words for concept &lt;this&gt;.
+2018-05-14 16:45:07,160 [INFO] Analyzing words for concept &lt;thou&gt;.
+2018-05-14 16:45:07,161 [INFO] Analyzing words for concept &lt;thunder&gt;.
+2018-05-14 16:45:07,163 [INFO] Analyzing words for concept &lt;to bite&gt;.
+2018-05-14 16:45:07,164 [INFO] Analyzing words for concept &lt;to blow&gt;.
+2018-05-14 16:45:07,169 [INFO] Analyzing words for concept &lt;to breathe&gt;.
+2018-05-14 16:45:07,172 [INFO] Analyzing words for concept &lt;to burn&gt;.
+2018-05-14 16:45:07,176 [INFO] Analyzing words for concept &lt;to buy&gt;.
+2018-05-14 16:45:07,178 [INFO] Analyzing words for concept &lt;to chew&gt;.
+2018-05-14 16:45:07,179 [INFO] Analyzing words for concept &lt;to choose&gt;.
+2018-05-14 16:45:07,181 [INFO] Analyzing words for concept &lt;to climb&gt;.
+2018-05-14 16:45:07,182 [INFO] Analyzing words for concept &lt;to come&gt;.
+2018-05-14 16:45:07,185 [INFO] Analyzing words for concept &lt;to cook&gt;.
+2018-05-14 16:45:07,187 [INFO] Analyzing words for concept &lt;to count&gt;.
+2018-05-14 16:45:07,189 [INFO] Analyzing words for concept &lt;to cry&gt;.
+2018-05-14 16:45:07,191 [INFO] Analyzing words for concept &lt;to cut, hack&gt;.
+2018-05-14 16:45:07,196 [INFO] Analyzing words for concept &lt;to die, be dead&gt;.
+2018-05-14 16:45:07,198 [INFO] Analyzing words for concept &lt;to dig&gt;.
+2018-05-14 16:45:07,201 [INFO] Analyzing words for concept &lt;to dream&gt;.
+2018-05-14 16:45:07,204 [INFO] Analyzing words for concept &lt;to drink&gt;.
+2018-05-14 16:45:07,206 [INFO] Analyzing words for concept &lt;to eat&gt;.
+2018-05-14 16:45:07,207 [INFO] Analyzing words for concept &lt;to fall&gt;.
+2018-05-14 16:45:07,215 [INFO] Analyzing words for concept &lt;to fear&gt;.
+2018-05-14 16:45:07,219 [INFO] Analyzing words for concept &lt;to flow&gt;.
+2018-05-14 16:45:07,221 [INFO] Analyzing words for concept &lt;to fly&gt;.
+2018-05-14 16:45:07,223 [INFO] Analyzing words for concept &lt;to grow&gt;.
+2018-05-14 16:45:07,226 [INFO] Analyzing words for concept &lt;to hear&gt;.
+2018-05-14 16:45:07,228 [INFO] Analyzing words for concept &lt;to hide&gt;.
+2018-05-14 16:45:07,230 [INFO] Analyzing words for concept &lt;to hit&gt;.
+2018-05-14 16:45:07,235 [INFO] Analyzing words for concept &lt;to hold&gt;.
+2018-05-14 16:45:07,238 [INFO] Analyzing words for concept &lt;to hunt&gt;.
+2018-05-14 16:45:07,239 [INFO] Analyzing words for concept &lt;to kill&gt;.
+2018-05-14 16:45:07,242 [INFO] Analyzing words for concept &lt;to know, be knowledgeable&gt;.
+2018-05-14 16:45:07,244 [INFO] Analyzing words for concept &lt;to laugh&gt;.
+SEQUENCE CLUSTERING:  76%|███████▌  | 159/210 [00:00&lt;00:00, 395.27it/s]2018-05-14 16:45:07,246 [INFO] Analyzing words for concept &lt;to lie down&gt;.
+2018-05-14 16:45:07,250 [INFO] Analyzing words for concept &lt;to live, be alive&gt;.
+2018-05-14 16:45:07,251 [INFO] Analyzing words for concept &lt;to open, uncover&gt;.
+2018-05-14 16:45:07,254 [INFO] Analyzing words for concept &lt;to plant&gt;.
+2018-05-14 16:45:07,256 [INFO] Analyzing words for concept &lt;to pound, beat&gt;.
+2018-05-14 16:45:07,257 [INFO] Analyzing words for concept &lt;to say&gt;.
+2018-05-14 16:45:07,259 [INFO] Analyzing words for concept &lt;to scratch&gt;.
+2018-05-14 16:45:07,261 [INFO] Analyzing words for concept &lt;to see&gt;.
+2018-05-14 16:45:07,263 [INFO] Analyzing words for concept &lt;to sew&gt;.
+2018-05-14 16:45:07,266 [INFO] Analyzing words for concept &lt;to shoot&gt;.
+2018-05-14 16:45:07,268 [INFO] Analyzing words for concept &lt;to sit&gt;.
+2018-05-14 16:45:07,271 [INFO] Analyzing words for concept &lt;to sleep&gt;.
+2018-05-14 16:45:07,273 [INFO] Analyzing words for concept &lt;to sniff, smell&gt;.
+2018-05-14 16:45:07,275 [INFO] Analyzing words for concept &lt;to spit&gt;.
+2018-05-14 16:45:07,278 [INFO] Analyzing words for concept &lt;to split&gt;.
+2018-05-14 16:45:07,283 [INFO] Analyzing words for concept &lt;to squeeze&gt;.
+2018-05-14 16:45:07,286 [INFO] Analyzing words for concept &lt;to stab, pierce&gt;.
+2018-05-14 16:45:07,289 [INFO] Analyzing words for concept &lt;to stand&gt;.
+2018-05-14 16:45:07,290 [INFO] Analyzing words for concept &lt;to steal&gt;.
+2018-05-14 16:45:07,292 [INFO] Analyzing words for concept &lt;to suck&gt;.
+2018-05-14 16:45:07,295 [INFO] Analyzing words for concept &lt;to swell&gt;.
+2018-05-14 16:45:07,297 [INFO] Analyzing words for concept &lt;to swim&gt;.
+2018-05-14 16:45:07,298 [INFO] Analyzing words for concept &lt;to think&gt;.
+2018-05-14 16:45:07,301 [INFO] Analyzing words for concept &lt;to throw&gt;.
+2018-05-14 16:45:07,304 [INFO] Analyzing words for concept &lt;to tie up, fasten&gt;.
+2018-05-14 16:45:07,307 [INFO] Analyzing words for concept &lt;to turn&gt;.
+2018-05-14 16:45:07,312 [INFO] Analyzing words for concept &lt;to vomit&gt;.
+2018-05-14 16:45:07,315 [INFO] Analyzing words for concept &lt;to walk&gt;.
+2018-05-14 16:45:07,321 [INFO] Analyzing words for concept &lt;to work&gt;.
+2018-05-14 16:45:07,323 [INFO] Analyzing words for concept &lt;to yawn&gt;.
+2018-05-14 16:45:07,325 [INFO] Analyzing words for concept &lt;tongue&gt;.
+2018-05-14 16:45:07,327 [INFO] Analyzing words for concept &lt;tooth&gt;.
+2018-05-14 16:45:07,328 [INFO] Analyzing words for concept &lt;warm&gt;.
+2018-05-14 16:45:07,334 [INFO] Analyzing words for concept &lt;water&gt;.
+2018-05-14 16:45:07,336 [INFO] Analyzing words for concept &lt;we&gt;.
+SEQUENCE CLUSTERING:  92%|█████████▏| 194/210 [00:00&lt;00:00, 379.81it/s]2018-05-14 16:45:07,358 [INFO] Analyzing words for concept &lt;wet&gt;.
+2018-05-14 16:45:07,361 [INFO] Analyzing words for concept &lt;what?&gt;.
+2018-05-14 16:45:07,362 [INFO] Analyzing words for concept &lt;when?&gt;.
+2018-05-14 16:45:07,364 [INFO] Analyzing words for concept &lt;where?&gt;.
+2018-05-14 16:45:07,365 [INFO] Analyzing words for concept &lt;white&gt;.
+2018-05-14 16:45:07,368 [INFO] Analyzing words for concept &lt;who?&gt;.
+2018-05-14 16:45:07,369 [INFO] Analyzing words for concept &lt;wide&gt;.
+2018-05-14 16:45:07,371 [INFO] Analyzing words for concept &lt;wife&gt;.
+2018-05-14 16:45:07,373 [INFO] Analyzing words for concept &lt;wind&gt;.
+2018-05-14 16:45:07,376 [INFO] Analyzing words for concept &lt;wing&gt;.
+2018-05-14 16:45:07,378 [INFO] Analyzing words for concept &lt;woman/female&gt;.
+2018-05-14 16:45:07,382 [INFO] Analyzing words for concept &lt;woods/forest&gt;.
+2018-05-14 16:45:07,384 [INFO] Analyzing words for concept &lt;worm (earthworm)&gt;.
+2018-05-14 16:45:07,388 [INFO] Analyzing words for concept &lt;year&gt;.
+2018-05-14 16:45:07,390 [INFO] Analyzing words for concept &lt;yellow&gt;.
+2018-05-14 16:45:07,392 [INFO] Analyzing words for concept &lt;you&gt;.
+                                                                       </pre>
 </div>
 </div>
 
 <div class="output_area">
+
 <div class="prompt"></div>
 
+
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Rapanui              	 va&#39;u 	4	 1
-Maori                	 waru 	1	 1
-Sikaiana             	 valu 	1	 1
+<pre>Tahitian             	 va&#39;u 	4	 1
 Ra’ivavae            	 vaGu 	6	 1
-North_Marquesan      	 va&#39;u 	4	 1
+Sikaiana             	 valu 	1	 1
 Rurutuan             	 vaʔu 	4	 1
+Rapanui              	 va&#39;u 	4	 1
+North_Marquesan      	 va&#39;u 	4	 1
+Maori                	 waru 	1	 1
 Mangareva            	 varu 	1	 1
-Hawaiian             	 walu 	1	 1
-Tahitian             	 va&#39;u 	4	 1
 Tuamotuan            	 varu 	1	 1
+Hawaiian             	 walu 	1	 1
 </pre>
 </div>
 </div>
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
 
 <div class="output_subarea output_stream output_stderr output_text">
 <pre></pre>
@@ -13783,8 +14293,7 @@ Tuamotuan            	 varu 	1	 1
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13818,33 +14327,249 @@ Tuamotuan            	 varu 	1	 1
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
 
+
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>                                                                       </pre>
+<pre>SEQUENCE CLUSTERING:   0%|          | 0/210 [00:00&lt;?, ?it/s]2018-05-14 16:45:07,408 [INFO] Analyzing words for concept &lt;Eight&gt;.
+2018-05-14 16:45:07,414 [INFO] Analyzing words for concept &lt;Fifty&gt;.
+2018-05-14 16:45:07,416 [INFO] Analyzing words for concept &lt;Five&gt;.
+2018-05-14 16:45:07,421 [INFO] Analyzing words for concept &lt;Four&gt;.
+2018-05-14 16:45:07,424 [INFO] Analyzing words for concept &lt;I&gt;.
+2018-05-14 16:45:07,429 [INFO] Analyzing words for concept &lt;Nine&gt;.
+2018-05-14 16:45:07,434 [INFO] Analyzing words for concept &lt;One&gt;.
+2018-05-14 16:45:07,439 [INFO] Analyzing words for concept &lt;One Hundred&gt;.
+2018-05-14 16:45:07,443 [INFO] Analyzing words for concept &lt;One Thousand&gt;.
+2018-05-14 16:45:07,451 [INFO] Analyzing words for concept &lt;Seven&gt;.
+2018-05-14 16:45:07,455 [INFO] Analyzing words for concept &lt;Six&gt;.
+2018-05-14 16:45:07,458 [INFO] Analyzing words for concept &lt;Ten&gt;.
+2018-05-14 16:45:07,470 [INFO] Analyzing words for concept &lt;Three&gt;.
+2018-05-14 16:45:07,475 [INFO] Analyzing words for concept &lt;Twenty&gt;.
+2018-05-14 16:45:07,480 [INFO] Analyzing words for concept &lt;Two&gt;.
+2018-05-14 16:45:07,484 [INFO] Analyzing words for concept &lt;above&gt;.
+2018-05-14 16:45:07,489 [INFO] Analyzing words for concept &lt;all&gt;.
+2018-05-14 16:45:07,495 [INFO] Analyzing words for concept &lt;and&gt;.
+2018-05-14 16:45:07,498 [INFO] Analyzing words for concept &lt;ash&gt;.
+2018-05-14 16:45:07,505 [INFO] Analyzing words for concept &lt;at&gt;.
+SEQUENCE CLUSTERING:  10%|▉         | 20/210 [00:00&lt;00:00, 199.85it/s]2018-05-14 16:45:07,510 [INFO] Analyzing words for concept &lt;back&gt;.
+2018-05-14 16:45:07,514 [INFO] Analyzing words for concept &lt;bad, evil&gt;.
+2018-05-14 16:45:07,520 [INFO] Analyzing words for concept &lt;belly&gt;.
+2018-05-14 16:45:07,532 [INFO] Analyzing words for concept &lt;below&gt;.
+2018-05-14 16:45:07,536 [INFO] Analyzing words for concept &lt;big&gt;.
+2018-05-14 16:45:07,541 [INFO] Analyzing words for concept &lt;bird&gt;.
+2018-05-14 16:45:07,545 [INFO] Analyzing words for concept &lt;black&gt;.
+2018-05-14 16:45:07,554 [INFO] Analyzing words for concept &lt;blood&gt;.
+2018-05-14 16:45:07,558 [INFO] Analyzing words for concept &lt;bone&gt;.
+2018-05-14 16:45:07,561 [INFO] Analyzing words for concept &lt;branch&gt;.
+2018-05-14 16:45:07,565 [INFO] Analyzing words for concept &lt;breast&gt;.
+2018-05-14 16:45:07,570 [INFO] Analyzing words for concept &lt;child&gt;.
+2018-05-14 16:45:07,578 [INFO] Analyzing words for concept &lt;cloud&gt;.
+2018-05-14 16:45:07,583 [INFO] Analyzing words for concept &lt;cold&gt;.
+2018-05-14 16:45:07,598 [INFO] Analyzing words for concept &lt;correct, true&gt;.
+2018-05-14 16:45:07,608 [INFO] Analyzing words for concept &lt;day&gt;.
+SEQUENCE CLUSTERING:  17%|█▋        | 36/210 [00:00&lt;00:01, 169.19it/s]2018-05-14 16:45:07,638 [INFO] Analyzing words for concept &lt;dirty&gt;.
+2018-05-14 16:45:07,644 [INFO] Analyzing words for concept &lt;dog&gt;.
+2018-05-14 16:45:07,651 [INFO] Analyzing words for concept &lt;dry&gt;.
+2018-05-14 16:45:07,659 [INFO] Analyzing words for concept &lt;dull, blunt&gt;.
+2018-05-14 16:45:07,668 [INFO] Analyzing words for concept &lt;dust&gt;.
+2018-05-14 16:45:07,683 [INFO] Analyzing words for concept &lt;ear&gt;.
+2018-05-14 16:45:07,692 [INFO] Analyzing words for concept &lt;earth/soil&gt;.
+2018-05-14 16:45:07,702 [INFO] Analyzing words for concept &lt;egg&gt;.
+2018-05-14 16:45:07,713 [INFO] Analyzing words for concept &lt;eye&gt;.
+2018-05-14 16:45:07,722 [INFO] Analyzing words for concept &lt;far&gt;.
+2018-05-14 16:45:07,728 [INFO] Analyzing words for concept &lt;fat/grease&gt;.
+SEQUENCE CLUSTERING:  22%|██▏       | 47/210 [00:00&lt;00:01, 144.81it/s]2018-05-14 16:45:07,741 [INFO] Analyzing words for concept &lt;father&gt;.
+2018-05-14 16:45:07,755 [INFO] Analyzing words for concept &lt;feather&gt;.
+2018-05-14 16:45:07,764 [INFO] Analyzing words for concept &lt;fire&gt;.
+2018-05-14 16:45:07,770 [INFO] Analyzing words for concept &lt;fish&gt;.
+2018-05-14 16:45:07,778 [INFO] Analyzing words for concept &lt;flower&gt;.
+2018-05-14 16:45:07,784 [INFO] Analyzing words for concept &lt;fog&gt;.
+2018-05-14 16:45:07,791 [INFO] Analyzing words for concept &lt;fruit&gt;.
+2018-05-14 16:45:07,795 [INFO] Analyzing words for concept &lt;good&gt;.
+2018-05-14 16:45:07,808 [INFO] Analyzing words for concept &lt;grass&gt;.
+2018-05-14 16:45:07,813 [INFO] Analyzing words for concept &lt;green&gt;.
+2018-05-14 16:45:07,821 [INFO] Analyzing words for concept &lt;hair&gt;.
+2018-05-14 16:45:07,832 [INFO] Analyzing words for concept &lt;hand&gt;.
+SEQUENCE CLUSTERING:  28%|██▊       | 59/210 [00:00&lt;00:01, 136.24it/s]2018-05-14 16:45:07,840 [INFO] Analyzing words for concept &lt;he/she&gt;.
+2018-05-14 16:45:07,846 [INFO] Analyzing words for concept &lt;head&gt;.
+2018-05-14 16:45:07,854 [INFO] Analyzing words for concept &lt;heavy&gt;.
+2018-05-14 16:45:07,864 [INFO] Analyzing words for concept &lt;house&gt;.
+2018-05-14 16:45:07,869 [INFO] Analyzing words for concept &lt;how?&gt;.
+2018-05-14 16:45:07,874 [INFO] Analyzing words for concept &lt;husband&gt;.
+2018-05-14 16:45:07,877 [INFO] Analyzing words for concept &lt;if&gt;.
+2018-05-14 16:45:07,881 [INFO] Analyzing words for concept &lt;in, inside&gt;.
+2018-05-14 16:45:07,885 [INFO] Analyzing words for concept &lt;intestines&gt;.
+2018-05-14 16:45:07,890 [INFO] Analyzing words for concept &lt;lake&gt;.
+2018-05-14 16:45:07,893 [INFO] Analyzing words for concept &lt;leaf&gt;.
+2018-05-14 16:45:07,896 [INFO] Analyzing words for concept &lt;left&gt;.
+2018-05-14 16:45:07,900 [INFO] Analyzing words for concept &lt;leg/foot&gt;.
+2018-05-14 16:45:07,904 [INFO] Analyzing words for concept &lt;lightning&gt;.
+2018-05-14 16:45:07,909 [INFO] Analyzing words for concept &lt;liver&gt;.
+2018-05-14 16:45:07,914 [INFO] Analyzing words for concept &lt;long&gt;.
+2018-05-14 16:45:07,917 [INFO] Analyzing words for concept &lt;louse&gt;.
+2018-05-14 16:45:07,922 [INFO] Analyzing words for concept &lt;man/male&gt;.
+2018-05-14 16:45:07,932 [INFO] Analyzing words for concept &lt;meat/flesh&gt;.
+2018-05-14 16:45:07,937 [INFO] Analyzing words for concept &lt;moon&gt;.
+SEQUENCE CLUSTERING:  38%|███▊      | 79/210 [00:00&lt;00:00, 149.15it/s]2018-05-14 16:45:07,944 [INFO] Analyzing words for concept &lt;mosquito&gt;.
+2018-05-14 16:45:07,949 [INFO] Analyzing words for concept &lt;mother&gt;.
+2018-05-14 16:45:07,958 [INFO] Analyzing words for concept &lt;mouth&gt;.
+2018-05-14 16:45:07,965 [INFO] Analyzing words for concept &lt;name&gt;.
+2018-05-14 16:45:07,971 [INFO] Analyzing words for concept &lt;narrow&gt;.
+2018-05-14 16:45:07,978 [INFO] Analyzing words for concept &lt;near&gt;.
+2018-05-14 16:45:07,983 [INFO] Analyzing words for concept &lt;neck&gt;.
+2018-05-14 16:45:07,989 [INFO] Analyzing words for concept &lt;needle&gt;.
+2018-05-14 16:45:07,995 [INFO] Analyzing words for concept &lt;new&gt;.
+2018-05-14 16:45:08,000 [INFO] Analyzing words for concept &lt;night&gt;.
+2018-05-14 16:45:08,004 [INFO] Analyzing words for concept &lt;no, not&gt;.
+2018-05-14 16:45:08,011 [INFO] Analyzing words for concept &lt;nose&gt;.
+2018-05-14 16:45:08,015 [INFO] Analyzing words for concept &lt;old&gt;.
+2018-05-14 16:45:08,026 [INFO] Analyzing words for concept &lt;other&gt;.
+2018-05-14 16:45:08,028 [INFO] Analyzing words for concept &lt;painful, sick&gt;.
+2018-05-14 16:45:08,036 [INFO] Analyzing words for concept &lt;person/human being&gt;.
+SEQUENCE CLUSTERING:  45%|████▌     | 95/210 [00:00&lt;00:00, 151.88it/s]2018-05-14 16:45:08,045 [INFO] Analyzing words for concept &lt;rain&gt;.
+2018-05-14 16:45:08,048 [INFO] Analyzing words for concept &lt;rat&gt;.
+2018-05-14 16:45:08,054 [INFO] Analyzing words for concept &lt;red&gt;.
+2018-05-14 16:45:08,061 [INFO] Analyzing words for concept &lt;right&gt;.
+2018-05-14 16:45:08,068 [INFO] Analyzing words for concept &lt;road/path&gt;.
+2018-05-14 16:45:08,074 [INFO] Analyzing words for concept &lt;root&gt;.
+2018-05-14 16:45:08,078 [INFO] Analyzing words for concept &lt;rope&gt;.
+2018-05-14 16:45:08,085 [INFO] Analyzing words for concept &lt;rotten&gt;.
+2018-05-14 16:45:08,092 [INFO] Analyzing words for concept &lt;salt&gt;.
+2018-05-14 16:45:08,099 [INFO] Analyzing words for concept &lt;sand&gt;.
+2018-05-14 16:45:08,102 [INFO] Analyzing words for concept &lt;sea&gt;.
+2018-05-14 16:45:08,116 [INFO] Analyzing words for concept &lt;sharp&gt;.
+2018-05-14 16:45:08,120 [INFO] Analyzing words for concept &lt;short&gt;.
+2018-05-14 16:45:08,127 [INFO] Analyzing words for concept &lt;shoulder&gt;.
+2018-05-14 16:45:08,132 [INFO] Analyzing words for concept &lt;shy, ashamed&gt;.
+2018-05-14 16:45:08,136 [INFO] Analyzing words for concept &lt;skin&gt;.
+2018-05-14 16:45:08,140 [INFO] Analyzing words for concept &lt;sky&gt;.
+SEQUENCE CLUSTERING:  53%|█████▎    | 112/210 [00:00&lt;00:00, 156.77it/s]2018-05-14 16:45:08,145 [INFO] Analyzing words for concept &lt;small&gt;.
+2018-05-14 16:45:08,154 [INFO] Analyzing words for concept &lt;smoke&gt;.
+2018-05-14 16:45:08,159 [INFO] Analyzing words for concept &lt;snake&gt;.
+2018-05-14 16:45:08,161 [INFO] Analyzing words for concept &lt;spider&gt;.
+2018-05-14 16:45:08,170 [INFO] Analyzing words for concept &lt;star&gt;.
+2018-05-14 16:45:08,175 [INFO] Analyzing words for concept &lt;stick/wood&gt;.
+2018-05-14 16:45:08,178 [INFO] Analyzing words for concept &lt;stone&gt;.
+2018-05-14 16:45:08,186 [INFO] Analyzing words for concept &lt;tail&gt;.
+2018-05-14 16:45:08,196 [INFO] Analyzing words for concept &lt;that&gt;.
+2018-05-14 16:45:08,200 [INFO] Analyzing words for concept &lt;thatch/roof&gt;.
+2018-05-14 16:45:08,207 [INFO] Analyzing words for concept &lt;they&gt;.
+2018-05-14 16:45:08,217 [INFO] Analyzing words for concept &lt;thick&gt;.
+2018-05-14 16:45:08,224 [INFO] Analyzing words for concept &lt;thin&gt;.
+2018-05-14 16:45:08,233 [INFO] Analyzing words for concept &lt;this&gt;.
+2018-05-14 16:45:08,237 [INFO] Analyzing words for concept &lt;thou&gt;.
+2018-05-14 16:45:08,241 [INFO] Analyzing words for concept &lt;thunder&gt;.
+SEQUENCE CLUSTERING:  61%|██████    | 128/210 [00:00&lt;00:00, 156.65it/s]2018-05-14 16:45:08,247 [INFO] Analyzing words for concept &lt;to bite&gt;.
+2018-05-14 16:45:08,252 [INFO] Analyzing words for concept &lt;to blow&gt;.
+2018-05-14 16:45:08,264 [INFO] Analyzing words for concept &lt;to breathe&gt;.
+2018-05-14 16:45:08,272 [INFO] Analyzing words for concept &lt;to burn&gt;.
+2018-05-14 16:45:08,282 [INFO] Analyzing words for concept &lt;to buy&gt;.
+2018-05-14 16:45:08,286 [INFO] Analyzing words for concept &lt;to chew&gt;.
+2018-05-14 16:45:08,290 [INFO] Analyzing words for concept &lt;to choose&gt;.
+2018-05-14 16:45:08,293 [INFO] Analyzing words for concept &lt;to climb&gt;.
+2018-05-14 16:45:08,297 [INFO] Analyzing words for concept &lt;to come&gt;.
+2018-05-14 16:45:08,303 [INFO] Analyzing words for concept &lt;to cook&gt;.
+2018-05-14 16:45:08,308 [INFO] Analyzing words for concept &lt;to count&gt;.
+2018-05-14 16:45:08,311 [INFO] Analyzing words for concept &lt;to cry&gt;.
+2018-05-14 16:45:08,316 [INFO] Analyzing words for concept &lt;to cut, hack&gt;.
+2018-05-14 16:45:08,330 [INFO] Analyzing words for concept &lt;to die, be dead&gt;.
+2018-05-14 16:45:08,335 [INFO] Analyzing words for concept &lt;to dig&gt;.
+2018-05-14 16:45:08,341 [INFO] Analyzing words for concept &lt;to dream&gt;.
+SEQUENCE CLUSTERING:  69%|██████▊   | 144/210 [00:00&lt;00:00, 156.12it/s]2018-05-14 16:45:08,351 [INFO] Analyzing words for concept &lt;to drink&gt;.
+2018-05-14 16:45:08,354 [INFO] Analyzing words for concept &lt;to eat&gt;.
+2018-05-14 16:45:08,357 [INFO] Analyzing words for concept &lt;to fall&gt;.
+2018-05-14 16:45:08,374 [INFO] Analyzing words for concept &lt;to fear&gt;.
+2018-05-14 16:45:08,383 [INFO] Analyzing words for concept &lt;to flow&gt;.
+2018-05-14 16:45:08,387 [INFO] Analyzing words for concept &lt;to fly&gt;.
+2018-05-14 16:45:08,391 [INFO] Analyzing words for concept &lt;to grow&gt;.
+2018-05-14 16:45:08,397 [INFO] Analyzing words for concept &lt;to hear&gt;.
+2018-05-14 16:45:08,403 [INFO] Analyzing words for concept &lt;to hide&gt;.
+2018-05-14 16:45:08,407 [INFO] Analyzing words for concept &lt;to hit&gt;.
+2018-05-14 16:45:08,421 [INFO] Analyzing words for concept &lt;to hold&gt;.
+2018-05-14 16:45:08,427 [INFO] Analyzing words for concept &lt;to hunt&gt;.
+2018-05-14 16:45:08,431 [INFO] Analyzing words for concept &lt;to kill&gt;.
+2018-05-14 16:45:08,440 [INFO] Analyzing words for concept &lt;to know, be knowledgeable&gt;.
+2018-05-14 16:45:08,445 [INFO] Analyzing words for concept &lt;to laugh&gt;.
+2018-05-14 16:45:08,449 [INFO] Analyzing words for concept &lt;to lie down&gt;.
+SEQUENCE CLUSTERING:  76%|███████▌  | 160/210 [00:01&lt;00:00, 154.15it/s]2018-05-14 16:45:08,457 [INFO] Analyzing words for concept &lt;to live, be alive&gt;.
+2018-05-14 16:45:08,460 [INFO] Analyzing words for concept &lt;to open, uncover&gt;.
+2018-05-14 16:45:08,468 [INFO] Analyzing words for concept &lt;to plant&gt;.
+2018-05-14 16:45:08,471 [INFO] Analyzing words for concept &lt;to pound, beat&gt;.
+2018-05-14 16:45:08,475 [INFO] Analyzing words for concept &lt;to say&gt;.
+2018-05-14 16:45:08,480 [INFO] Analyzing words for concept &lt;to scratch&gt;.
+2018-05-14 16:45:08,486 [INFO] Analyzing words for concept &lt;to see&gt;.
+2018-05-14 16:45:08,490 [INFO] Analyzing words for concept &lt;to sew&gt;.
+2018-05-14 16:45:08,495 [INFO] Analyzing words for concept &lt;to shoot&gt;.
+2018-05-14 16:45:08,497 [INFO] Analyzing words for concept &lt;to sit&gt;.
+2018-05-14 16:45:08,502 [INFO] Analyzing words for concept &lt;to sleep&gt;.
+2018-05-14 16:45:08,505 [INFO] Analyzing words for concept &lt;to sniff, smell&gt;.
+2018-05-14 16:45:08,510 [INFO] Analyzing words for concept &lt;to spit&gt;.
+2018-05-14 16:45:08,517 [INFO] Analyzing words for concept &lt;to split&gt;.
+2018-05-14 16:45:08,526 [INFO] Analyzing words for concept &lt;to squeeze&gt;.
+2018-05-14 16:45:08,533 [INFO] Analyzing words for concept &lt;to stab, pierce&gt;.
+2018-05-14 16:45:08,540 [INFO] Analyzing words for concept &lt;to stand&gt;.
+2018-05-14 16:45:08,543 [INFO] Analyzing words for concept &lt;to steal&gt;.
+2018-05-14 16:45:08,548 [INFO] Analyzing words for concept &lt;to suck&gt;.
+2018-05-14 16:45:08,556 [INFO] Analyzing words for concept &lt;to swell&gt;.
+SEQUENCE CLUSTERING:  86%|████████▌ | 180/210 [00:01&lt;00:00, 163.94it/s]2018-05-14 16:45:08,561 [INFO] Analyzing words for concept &lt;to swim&gt;.
+2018-05-14 16:45:08,564 [INFO] Analyzing words for concept &lt;to think&gt;.
+2018-05-14 16:45:08,570 [INFO] Analyzing words for concept &lt;to throw&gt;.
+2018-05-14 16:45:08,578 [INFO] Analyzing words for concept &lt;to tie up, fasten&gt;.
+2018-05-14 16:45:08,587 [INFO] Analyzing words for concept &lt;to turn&gt;.
+2018-05-14 16:45:08,594 [INFO] Analyzing words for concept &lt;to vomit&gt;.
+2018-05-14 16:45:08,598 [INFO] Analyzing words for concept &lt;to walk&gt;.
+2018-05-14 16:45:08,606 [INFO] Analyzing words for concept &lt;to work&gt;.
+2018-05-14 16:45:08,610 [INFO] Analyzing words for concept &lt;to yawn&gt;.
+2018-05-14 16:45:08,615 [INFO] Analyzing words for concept &lt;tongue&gt;.
+2018-05-14 16:45:08,620 [INFO] Analyzing words for concept &lt;tooth&gt;.
+2018-05-14 16:45:08,623 [INFO] Analyzing words for concept &lt;warm&gt;.
+2018-05-14 16:45:08,634 [INFO] Analyzing words for concept &lt;water&gt;.
+2018-05-14 16:45:08,638 [INFO] Analyzing words for concept &lt;we&gt;.
+2018-05-14 16:45:08,684 [INFO] Analyzing words for concept &lt;wet&gt;.
+2018-05-14 16:45:08,691 [INFO] Analyzing words for concept &lt;what?&gt;.
+2018-05-14 16:45:08,694 [INFO] Analyzing words for concept &lt;when?&gt;.
+SEQUENCE CLUSTERING:  94%|█████████▍| 197/210 [00:01&lt;00:00, 149.35it/s]2018-05-14 16:45:08,698 [INFO] Analyzing words for concept &lt;where?&gt;.
+2018-05-14 16:45:08,702 [INFO] Analyzing words for concept &lt;white&gt;.
+2018-05-14 16:45:08,708 [INFO] Analyzing words for concept &lt;who?&gt;.
+2018-05-14 16:45:08,711 [INFO] Analyzing words for concept &lt;wide&gt;.
+2018-05-14 16:45:08,716 [INFO] Analyzing words for concept &lt;wife&gt;.
+2018-05-14 16:45:08,721 [INFO] Analyzing words for concept &lt;wind&gt;.
+2018-05-14 16:45:08,729 [INFO] Analyzing words for concept &lt;wing&gt;.
+2018-05-14 16:45:08,735 [INFO] Analyzing words for concept &lt;woman/female&gt;.
+2018-05-14 16:45:08,745 [INFO] Analyzing words for concept &lt;woods/forest&gt;.
+2018-05-14 16:45:08,750 [INFO] Analyzing words for concept &lt;worm (earthworm)&gt;.
+2018-05-14 16:45:08,754 [INFO] Analyzing words for concept &lt;year&gt;.
+2018-05-14 16:45:08,761 [INFO] Analyzing words for concept &lt;yellow&gt;.
+2018-05-14 16:45:08,766 [INFO] Analyzing words for concept &lt;you&gt;.
+                                                                       </pre>
 </div>
 </div>
 
 <div class="output_area">
+
 <div class="prompt"></div>
 
+
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Rapanui              	 va&#39;u 	4 	 1 
-Maori                	 waru 	1 	 1 
-Sikaiana             	 valu 	1 	 1 
+<pre>Tahitian             	 va&#39;u 	4 	 1 
 Ra’ivavae            	 vaGu 	6 	 1 
-North_Marquesan      	 va&#39;u 	4 	 1 
+Sikaiana             	 valu 	1 	 1 
 Rurutuan             	 vaʔu 	4 	 1 
+Rapanui              	 va&#39;u 	4 	 1 
+North_Marquesan      	 va&#39;u 	4 	 1 
+Maori                	 waru 	1 	 1 
 Mangareva            	 varu 	1 	 1 
-Hawaiian             	 walu 	1 	 1 
-Tahitian             	 va&#39;u 	4 	 1 
 Tuamotuan            	 varu 	1 	 1 
+Hawaiian             	 walu 	1 	 1 
 </pre>
 </div>
 </div>
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
 
 <div class="output_subarea output_stream output_stderr output_text">
 <pre></pre>
@@ -13855,8 +14580,7 @@ Tuamotuan            	 varu 	1 	 1
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13894,34 +14618,361 @@ Tuamotuan            	 varu 	1 	 1
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
 
+
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>2018-03-07 18:06:48,283 [WARNING] A different scoring function has already been calculated, overwriting previous settings.
-                                                                                    </pre>
+<pre>2018-05-14 16:45:08,791 [WARNING] A different scoring function has already been calculated, overwriting previous settings.
+CORRESPONDENCE CALCULATION:   0%|          | 0/50.0 [00:00&lt;?, ?it/s]2018-05-14 16:45:08,792 [INFO] Calculating alignments for pair Hawaiian / Hawaiian.
+2018-05-14 16:45:08,821 [INFO] Calculating alignments for pair Hawaiian / Mangareva.
+2018-05-14 16:45:08,860 [INFO] Calculating alignments for pair Hawaiian / Maori.
+CORRESPONDENCE CALCULATION:   8%|▊         | 4/50.0 [00:00&lt;00:01, 38.30it/s]2018-05-14 16:45:08,897 [INFO] Calculating alignments for pair Hawaiian / North_Marquesan.
+2018-05-14 16:45:08,947 [INFO] Calculating alignments for pair Hawaiian / Rapanui.
+2018-05-14 16:45:08,995 [INFO] Calculating alignments for pair Hawaiian / Ra’ivavae.
+CORRESPONDENCE CALCULATION:  14%|█▍        | 7/50.0 [00:00&lt;00:01, 30.83it/s]2018-05-14 16:45:09,076 [INFO] Calculating alignments for pair Hawaiian / Rurutuan.
+2018-05-14 16:45:09,128 [INFO] Calculating alignments for pair Hawaiian / Sikaiana.
+CORRESPONDENCE CALCULATION:  18%|█▊        | 9/50.0 [00:00&lt;00:01, 24.03it/s]2018-05-14 16:45:09,165 [INFO] Calculating alignments for pair Hawaiian / Tahitian.
+2018-05-14 16:45:09,207 [INFO] Calculating alignments for pair Hawaiian / Tuamotuan.
+2018-05-14 16:45:09,247 [INFO] Calculating alignments for pair Mangareva / Mangareva.
+CORRESPONDENCE CALCULATION:  24%|██▍       | 12/50.0 [00:00&lt;00:01, 24.35it/s]2018-05-14 16:45:09,285 [INFO] Calculating alignments for pair Mangareva / Maori.
+2018-05-14 16:45:09,328 [INFO] Calculating alignments for pair Mangareva / North_Marquesan.
+2018-05-14 16:45:09,377 [INFO] Calculating alignments for pair Mangareva / Rapanui.
+CORRESPONDENCE CALCULATION:  30%|███       | 15/50.0 [00:00&lt;00:01, 23.53it/s]2018-05-14 16:45:09,422 [INFO] Calculating alignments for pair Mangareva / Ra’ivavae.
+2018-05-14 16:45:09,461 [INFO] Calculating alignments for pair Mangareva / Rurutuan.
+2018-05-14 16:45:09,506 [INFO] Calculating alignments for pair Mangareva / Sikaiana.
+CORRESPONDENCE CALCULATION:  36%|███▌      | 18/50.0 [00:00&lt;00:01, 24.10it/s]2018-05-14 16:45:09,539 [INFO] Calculating alignments for pair Mangareva / Tahitian.
+2018-05-14 16:45:09,581 [INFO] Calculating alignments for pair Mangareva / Tuamotuan.
+2018-05-14 16:45:09,624 [INFO] Calculating alignments for pair Maori / Maori.
+CORRESPONDENCE CALCULATION:  42%|████▏     | 21/50.0 [00:00&lt;00:01, 24.61it/s]2018-05-14 16:45:09,655 [INFO] Calculating alignments for pair Maori / North_Marquesan.
+2018-05-14 16:45:09,698 [INFO] Calculating alignments for pair Maori / Rapanui.
+2018-05-14 16:45:09,733 [INFO] Calculating alignments for pair Maori / Ra’ivavae.
+CORRESPONDENCE CALCULATION:  48%|████▊     | 24/50.0 [00:00&lt;00:01, 25.28it/s]2018-05-14 16:45:09,767 [INFO] Calculating alignments for pair Maori / Rurutuan.
+2018-05-14 16:45:09,810 [INFO] Calculating alignments for pair Maori / Sikaiana.
+2018-05-14 16:45:09,841 [INFO] Calculating alignments for pair Maori / Tahitian.
+CORRESPONDENCE CALCULATION:  54%|█████▍    | 27/50.0 [00:01&lt;00:00, 25.61it/s]2018-05-14 16:45:09,880 [INFO] Calculating alignments for pair Maori / Tuamotuan.
+2018-05-14 16:45:09,915 [INFO] Calculating alignments for pair North_Marquesan / North_Marquesan.
+2018-05-14 16:45:09,961 [INFO] Calculating alignments for pair North_Marquesan / Rapanui.
+CORRESPONDENCE CALCULATION:  60%|██████    | 30/50.0 [00:01&lt;00:00, 24.55it/s]2018-05-14 16:45:10,014 [INFO] Calculating alignments for pair North_Marquesan / Ra’ivavae.
+2018-05-14 16:45:10,065 [INFO] Calculating alignments for pair North_Marquesan / Rurutuan.
+2018-05-14 16:45:10,119 [INFO] Calculating alignments for pair North_Marquesan / Sikaiana.
+CORRESPONDENCE CALCULATION:  66%|██████▌   | 33/50.0 [00:01&lt;00:00, 23.25it/s]2018-05-14 16:45:10,159 [INFO] Calculating alignments for pair North_Marquesan / Tahitian.
+2018-05-14 16:45:10,208 [INFO] Calculating alignments for pair North_Marquesan / Tuamotuan.
+2018-05-14 16:45:10,267 [INFO] Calculating alignments for pair Rapanui / Rapanui.
+CORRESPONDENCE CALCULATION:  72%|███████▏  | 36/50.0 [00:01&lt;00:00, 22.54it/s]2018-05-14 16:45:10,302 [INFO] Calculating alignments for pair Rapanui / Ra’ivavae.
+2018-05-14 16:45:10,343 [INFO] Calculating alignments for pair Rapanui / Rurutuan.
+2018-05-14 16:45:10,398 [INFO] Calculating alignments for pair Rapanui / Sikaiana.
+CORRESPONDENCE CALCULATION:  78%|███████▊  | 39/50.0 [00:01&lt;00:00, 22.46it/s]2018-05-14 16:45:10,436 [INFO] Calculating alignments for pair Rapanui / Tahitian.
+2018-05-14 16:45:10,479 [INFO] Calculating alignments for pair Rapanui / Tuamotuan.
+2018-05-14 16:45:10,516 [INFO] Calculating alignments for pair Ra’ivavae / Ra’ivavae.
+CORRESPONDENCE CALCULATION:  84%|████████▍ | 42/50.0 [00:01&lt;00:00, 23.67it/s]2018-05-14 16:45:10,547 [INFO] Calculating alignments for pair Ra’ivavae / Rurutuan.
+2018-05-14 16:45:10,586 [INFO] Calculating alignments for pair Ra’ivavae / Sikaiana.
+2018-05-14 16:45:10,614 [INFO] Calculating alignments for pair Ra’ivavae / Tahitian.
+CORRESPONDENCE CALCULATION:  90%|█████████ | 45/50.0 [00:01&lt;00:00, 25.06it/s]2018-05-14 16:45:10,651 [INFO] Calculating alignments for pair Ra’ivavae / Tuamotuan.
+2018-05-14 16:45:10,684 [INFO] Calculating alignments for pair Rurutuan / Rurutuan.
+2018-05-14 16:45:10,723 [INFO] Calculating alignments for pair Rurutuan / Sikaiana.
+CORRESPONDENCE CALCULATION:  96%|█████████▌| 48/50.0 [00:01&lt;00:00, 25.51it/s]2018-05-14 16:45:10,763 [INFO] Calculating alignments for pair Rurutuan / Tahitian.
+2018-05-14 16:45:10,811 [INFO] Calculating alignments for pair Rurutuan / Tuamotuan.
+2018-05-14 16:45:10,854 [INFO] Calculating alignments for pair Sikaiana / Sikaiana.
+CORRESPONDENCE CALCULATION: 51it [00:02, 25.58it/s]                          2018-05-14 16:45:10,879 [INFO] Calculating alignments for pair Sikaiana / Tahitian.
+2018-05-14 16:45:10,912 [INFO] Calculating alignments for pair Sikaiana / Tuamotuan.
+2018-05-14 16:45:10,944 [INFO] Calculating alignments for pair Tahitian / Tahitian.
+2018-05-14 16:45:10,978 [INFO] Calculating alignments for pair Tahitian / Tuamotuan.
+CORRESPONDENCE CALCULATION: 55it [00:02, 26.60it/s]2018-05-14 16:45:11,016 [INFO] Calculating alignments for pair Tuamotuan / Tuamotuan.
+RANDOM CORRESPONDENCE CALCULATION:   0%|          | 0/50.0 [00:00&lt;?, ?it/s]2018-05-14 16:45:11,048 [INFO] Calculating random alignmentsfor pair Hawaiian/Hawaiian.
+RANDOM CORRESPONDENCE CALCULATION:   4%|▍         | 2/50.0 [00:01&lt;00:33,  1.42it/s]2018-05-14 16:45:12,454 [INFO] Calculating random alignmentsfor pair Hawaiian/Mangareva.
+RANDOM CORRESPONDENCE CALCULATION:   6%|▌         | 3/50.0 [00:02&lt;00:40,  1.16it/s]2018-05-14 16:45:13,696 [INFO] Calculating random alignmentsfor pair Hawaiian/Maori.
+RANDOM CORRESPONDENCE CALCULATION:   8%|▊         | 4/50.0 [00:03&lt;00:42,  1.08it/s]2018-05-14 16:45:14,772 [INFO] Calculating random alignmentsfor pair Hawaiian/North_Marquesan.
+RANDOM CORRESPONDENCE CALCULATION:  10%|█         | 5/50.0 [00:04&lt;00:45,  1.00s/it]2018-05-14 16:45:15,941 [INFO] Calculating random alignmentsfor pair Hawaiian/Rapanui.
+RANDOM CORRESPONDENCE CALCULATION:  12%|█▏        | 6/50.0 [00:05&lt;00:45,  1.03s/it]2018-05-14 16:45:17,037 [INFO] Calculating random alignmentsfor pair Hawaiian/Ra’ivavae.
+RANDOM CORRESPONDENCE CALCULATION:  14%|█▍        | 7/50.0 [00:07&lt;00:47,  1.10s/it]2018-05-14 16:45:18,291 [INFO] Calculating random alignmentsfor pair Hawaiian/Rurutuan.
+RANDOM CORRESPONDENCE CALCULATION:  16%|█▌        | 8/50.0 [00:08&lt;00:48,  1.16s/it]2018-05-14 16:45:19,584 [INFO] Calculating random alignmentsfor pair Hawaiian/Sikaiana.
+RANDOM CORRESPONDENCE CALCULATION:  18%|█▊        | 9/50.0 [00:09&lt;00:46,  1.13s/it]2018-05-14 16:45:20,664 [INFO] Calculating random alignmentsfor pair Hawaiian/Tahitian.
+RANDOM CORRESPONDENCE CALCULATION:  20%|██        | 10/50.0 [00:10&lt;00:47,  1.18s/it]2018-05-14 16:45:21,967 [INFO] Calculating random alignmentsfor pair Hawaiian/Tuamotuan.
+RANDOM CORRESPONDENCE CALCULATION:  22%|██▏       | 11/50.0 [00:12&lt;00:45,  1.18s/it]2018-05-14 16:45:23,130 [INFO] Calculating random alignmentsfor pair Mangareva/Mangareva.
+RANDOM CORRESPONDENCE CALCULATION:  24%|██▍       | 12/50.0 [00:13&lt;00:45,  1.20s/it]2018-05-14 16:45:24,392 [INFO] Calculating random alignmentsfor pair Mangareva/Maori.
+RANDOM CORRESPONDENCE CALCULATION:  26%|██▌       | 13/50.0 [00:14&lt;00:45,  1.23s/it]2018-05-14 16:45:25,682 [INFO] Calculating random alignmentsfor pair Mangareva/North_Marquesan.
+RANDOM CORRESPONDENCE CALCULATION:  28%|██▊       | 14/50.0 [00:15&lt;00:45,  1.26s/it]2018-05-14 16:45:27,010 [INFO] Calculating random alignmentsfor pair Mangareva/Rapanui.
+RANDOM CORRESPONDENCE CALCULATION:  30%|███       | 15/50.0 [00:17&lt;00:43,  1.25s/it]2018-05-14 16:45:28,254 [INFO] Calculating random alignmentsfor pair Mangareva/Ra’ivavae.
+RANDOM CORRESPONDENCE CALCULATION:  32%|███▏      | 16/50.0 [00:18&lt;00:45,  1.33s/it]2018-05-14 16:45:29,748 [INFO] Calculating random alignmentsfor pair Mangareva/Rurutuan.
+RANDOM CORRESPONDENCE CALCULATION:  34%|███▍      | 17/50.0 [00:20&lt;00:44,  1.36s/it]2018-05-14 16:45:31,176 [INFO] Calculating random alignmentsfor pair Mangareva/Sikaiana.
+RANDOM CORRESPONDENCE CALCULATION:  36%|███▌      | 18/50.0 [00:21&lt;00:42,  1.32s/it]2018-05-14 16:45:32,399 [INFO] Calculating random alignmentsfor pair Mangareva/Tahitian.
+RANDOM CORRESPONDENCE CALCULATION:  38%|███▊      | 19/50.0 [00:22&lt;00:41,  1.34s/it]2018-05-14 16:45:33,781 [INFO] Calculating random alignmentsfor pair Mangareva/Tuamotuan.
+RANDOM CORRESPONDENCE CALCULATION:  40%|████      | 20/50.0 [00:23&lt;00:39,  1.31s/it]2018-05-14 16:45:35,017 [INFO] Calculating random alignmentsfor pair Maori/Maori.
+RANDOM CORRESPONDENCE CALCULATION:  42%|████▏     | 21/50.0 [00:25&lt;00:37,  1.30s/it]2018-05-14 16:45:36,303 [INFO] Calculating random alignmentsfor pair Maori/North_Marquesan.
+RANDOM CORRESPONDENCE CALCULATION:  44%|████▍     | 22/50.0 [00:26&lt;00:35,  1.28s/it]2018-05-14 16:45:37,538 [INFO] Calculating random alignmentsfor pair Maori/Rapanui.
+RANDOM CORRESPONDENCE CALCULATION:  46%|████▌     | 23/50.0 [00:27&lt;00:33,  1.24s/it]2018-05-14 16:45:38,674 [INFO] Calculating random alignmentsfor pair Maori/Ra’ivavae.
+RANDOM CORRESPONDENCE CALCULATION:  48%|████▊     | 24/50.0 [00:28&lt;00:32,  1.27s/it]2018-05-14 16:45:40,014 [INFO] Calculating random alignmentsfor pair Maori/Rurutuan.
+RANDOM CORRESPONDENCE CALCULATION:  50%|█████     | 25/50.0 [00:30&lt;00:32,  1.30s/it]2018-05-14 16:45:41,396 [INFO] Calculating random alignmentsfor pair Maori/Sikaiana.
+RANDOM CORRESPONDENCE CALCULATION:  52%|█████▏    | 26/50.0 [00:31&lt;00:30,  1.27s/it]2018-05-14 16:45:42,605 [INFO] Calculating random alignmentsfor pair Maori/Tahitian.
+RANDOM CORRESPONDENCE CALCULATION:  54%|█████▍    | 27/50.0 [00:32&lt;00:29,  1.30s/it]2018-05-14 16:45:43,953 [INFO] Calculating random alignmentsfor pair Maori/Tuamotuan.
+RANDOM CORRESPONDENCE CALCULATION:  56%|█████▌    | 28/50.0 [00:34&lt;00:27,  1.25s/it]2018-05-14 16:45:45,081 [INFO] Calculating random alignmentsfor pair North_Marquesan/North_Marquesan.
+RANDOM CORRESPONDENCE CALCULATION:  58%|█████▊    | 29/50.0 [00:35&lt;00:26,  1.24s/it]2018-05-14 16:45:46,314 [INFO] Calculating random alignmentsfor pair North_Marquesan/Rapanui.
+RANDOM CORRESPONDENCE CALCULATION:  60%|██████    | 30/50.0 [00:36&lt;00:24,  1.24s/it]2018-05-14 16:45:47,537 [INFO] Calculating random alignmentsfor pair North_Marquesan/Ra’ivavae.
+RANDOM CORRESPONDENCE CALCULATION:  62%|██████▏   | 31/50.0 [00:37&lt;00:24,  1.27s/it]2018-05-14 16:45:48,871 [INFO] Calculating random alignmentsfor pair North_Marquesan/Rurutuan.
+RANDOM CORRESPONDENCE CALCULATION:  64%|██████▍   | 32/50.0 [00:39&lt;00:22,  1.28s/it]2018-05-14 16:45:50,173 [INFO] Calculating random alignmentsfor pair North_Marquesan/Sikaiana.
+RANDOM CORRESPONDENCE CALCULATION:  66%|██████▌   | 33/50.0 [00:40&lt;00:21,  1.24s/it]2018-05-14 16:45:51,319 [INFO] Calculating random alignmentsfor pair North_Marquesan/Tahitian.
+RANDOM CORRESPONDENCE CALCULATION:  68%|██████▊   | 34/50.0 [00:41&lt;00:19,  1.25s/it]2018-05-14 16:45:52,588 [INFO] Calculating random alignmentsfor pair North_Marquesan/Tuamotuan.
+RANDOM CORRESPONDENCE CALCULATION:  70%|███████   | 35/50.0 [00:42&lt;00:18,  1.23s/it]2018-05-14 16:45:53,782 [INFO] Calculating random alignmentsfor pair Rapanui/Rapanui.
+RANDOM CORRESPONDENCE CALCULATION:  72%|███████▏  | 36/50.0 [00:43&lt;00:16,  1.19s/it]2018-05-14 16:45:54,893 [INFO] Calculating random alignmentsfor pair Rapanui/Ra’ivavae.
+RANDOM CORRESPONDENCE CALCULATION:  74%|███████▍  | 37/50.0 [00:45&lt;00:15,  1.22s/it]2018-05-14 16:45:56,177 [INFO] Calculating random alignmentsfor pair Rapanui/Rurutuan.
+RANDOM CORRESPONDENCE CALCULATION:  76%|███████▌  | 38/50.0 [00:46&lt;00:14,  1.23s/it]2018-05-14 16:45:57,433 [INFO] Calculating random alignmentsfor pair Rapanui/Sikaiana.
+RANDOM CORRESPONDENCE CALCULATION:  78%|███████▊  | 39/50.0 [00:47&lt;00:13,  1.20s/it]2018-05-14 16:45:58,544 [INFO] Calculating random alignmentsfor pair Rapanui/Tahitian.
+RANDOM CORRESPONDENCE CALCULATION:  80%|████████  | 40/50.0 [00:48&lt;00:12,  1.21s/it]2018-05-14 16:45:59,784 [INFO] Calculating random alignmentsfor pair Rapanui/Tuamotuan.
+RANDOM CORRESPONDENCE CALCULATION:  82%|████████▏ | 41/50.0 [00:49&lt;00:10,  1.21s/it]2018-05-14 16:46:00,993 [INFO] Calculating random alignmentsfor pair Ra’ivavae/Ra’ivavae.
+RANDOM CORRESPONDENCE CALCULATION:  84%|████████▍ | 42/50.0 [00:51&lt;00:10,  1.31s/it]2018-05-14 16:46:02,544 [INFO] Calculating random alignmentsfor pair Ra’ivavae/Rurutuan.
+RANDOM CORRESPONDENCE CALCULATION:  86%|████████▌ | 43/50.0 [00:52&lt;00:09,  1.31s/it]2018-05-14 16:46:03,857 [INFO] Calculating random alignmentsfor pair Ra’ivavae/Sikaiana.
+RANDOM CORRESPONDENCE CALCULATION:  88%|████████▊ | 44/50.0 [00:53&lt;00:07,  1.27s/it]2018-05-14 16:46:05,016 [INFO] Calculating random alignmentsfor pair Ra’ivavae/Tahitian.
+RANDOM CORRESPONDENCE CALCULATION:  90%|█████████ | 45/50.0 [00:55&lt;00:06,  1.29s/it]2018-05-14 16:46:06,348 [INFO] Calculating random alignmentsfor pair Ra’ivavae/Tuamotuan.
+RANDOM CORRESPONDENCE CALCULATION:  92%|█████████▏| 46/50.0 [00:56&lt;00:05,  1.27s/it]2018-05-14 16:46:07,566 [INFO] Calculating random alignmentsfor pair Rurutuan/Rurutuan.
+RANDOM CORRESPONDENCE CALCULATION:  94%|█████████▍| 47/50.0 [00:57&lt;00:03,  1.33s/it]2018-05-14 16:46:09,032 [INFO] Calculating random alignmentsfor pair Rurutuan/Sikaiana.
+RANDOM CORRESPONDENCE CALCULATION:  96%|█████████▌| 48/50.0 [00:59&lt;00:02,  1.33s/it]2018-05-14 16:46:10,358 [INFO] Calculating random alignmentsfor pair Rurutuan/Tahitian.
+RANDOM CORRESPONDENCE CALCULATION:  98%|█████████▊| 49/50.0 [01:00&lt;00:01,  1.39s/it]2018-05-14 16:46:11,909 [INFO] Calculating random alignmentsfor pair Rurutuan/Tuamotuan.
+RANDOM CORRESPONDENCE CALCULATION: 100%|██████████| 50/50.0 [01:02&lt;00:00,  1.42s/it]2018-05-14 16:46:13,393 [INFO] Calculating random alignmentsfor pair Sikaiana/Sikaiana.
+RANDOM CORRESPONDENCE CALCULATION: 51it [01:03,  1.38s/it]                          2018-05-14 16:46:14,676 [INFO] Calculating random alignmentsfor pair Sikaiana/Tahitian.
+RANDOM CORRESPONDENCE CALCULATION: 52it [01:05,  1.39s/it]2018-05-14 16:46:16,101 [INFO] Calculating random alignmentsfor pair Sikaiana/Tuamotuan.
+RANDOM CORRESPONDENCE CALCULATION: 53it [01:06,  1.35s/it]2018-05-14 16:46:17,342 [INFO] Calculating random alignmentsfor pair Tahitian/Tahitian.
+RANDOM CORRESPONDENCE CALCULATION: 54it [01:07,  1.40s/it]2018-05-14 16:46:18,881 [INFO] Calculating random alignmentsfor pair Tahitian/Tuamotuan.
+RANDOM CORRESPONDENCE CALCULATION: 55it [01:09,  1.41s/it]2018-05-14 16:46:20,306 [INFO] Calculating random alignmentsfor pair Tuamotuan/Tuamotuan.
+2018-05-14 16:46:21,699 [INFO] Data has been written to file &lt;east-polynesian.bin.tsv&gt;.
+SEQUENCE CLUSTERING:   0%|          | 0/210 [00:00&lt;?, ?it/s]2018-05-14 16:46:21,700 [INFO] Analyzing words for concept &lt;Eight&gt;.
+2018-05-14 16:46:21,707 [INFO] Analyzing words for concept &lt;Fifty&gt;.
+2018-05-14 16:46:21,710 [INFO] Analyzing words for concept &lt;Five&gt;.
+2018-05-14 16:46:21,717 [INFO] Analyzing words for concept &lt;Four&gt;.
+2018-05-14 16:46:21,721 [INFO] Analyzing words for concept &lt;I&gt;.
+2018-05-14 16:46:21,729 [INFO] Analyzing words for concept &lt;Nine&gt;.
+2018-05-14 16:46:21,733 [INFO] Analyzing words for concept &lt;One&gt;.
+2018-05-14 16:46:21,741 [INFO] Analyzing words for concept &lt;One Hundred&gt;.
+2018-05-14 16:46:21,748 [INFO] Analyzing words for concept &lt;One Thousand&gt;.
+2018-05-14 16:46:21,759 [INFO] Analyzing words for concept &lt;Seven&gt;.
+2018-05-14 16:46:21,767 [INFO] Analyzing words for concept &lt;Six&gt;.
+2018-05-14 16:46:21,775 [INFO] Analyzing words for concept &lt;Ten&gt;.
+2018-05-14 16:46:21,792 [INFO] Analyzing words for concept &lt;Three&gt;.
+2018-05-14 16:46:21,797 [INFO] Analyzing words for concept &lt;Twenty&gt;.
+SEQUENCE CLUSTERING:   7%|▋         | 14/210 [00:00&lt;00:01, 133.31it/s]2018-05-14 16:46:21,806 [INFO] Analyzing words for concept &lt;Two&gt;.
+2018-05-14 16:46:21,811 [INFO] Analyzing words for concept &lt;above&gt;.
+2018-05-14 16:46:21,815 [INFO] Analyzing words for concept &lt;all&gt;.
+2018-05-14 16:46:21,822 [INFO] Analyzing words for concept &lt;and&gt;.
+2018-05-14 16:46:21,828 [INFO] Analyzing words for concept &lt;ash&gt;.
+2018-05-14 16:46:21,835 [INFO] Analyzing words for concept &lt;at&gt;.
+2018-05-14 16:46:21,840 [INFO] Analyzing words for concept &lt;back&gt;.
+2018-05-14 16:46:21,845 [INFO] Analyzing words for concept &lt;bad, evil&gt;.
+2018-05-14 16:46:21,856 [INFO] Analyzing words for concept &lt;belly&gt;.
+2018-05-14 16:46:21,870 [INFO] Analyzing words for concept &lt;below&gt;.
+2018-05-14 16:46:21,875 [INFO] Analyzing words for concept &lt;big&gt;.
+2018-05-14 16:46:21,883 [INFO] Analyzing words for concept &lt;bird&gt;.
+2018-05-14 16:46:21,888 [INFO] Analyzing words for concept &lt;black&gt;.
+2018-05-14 16:46:21,899 [INFO] Analyzing words for concept &lt;blood&gt;.
+2018-05-14 16:46:21,905 [INFO] Analyzing words for concept &lt;bone&gt;.
+SEQUENCE CLUSTERING:  14%|█▍        | 29/210 [00:00&lt;00:01, 136.71it/s]2018-05-14 16:46:21,909 [INFO] Analyzing words for concept &lt;branch&gt;.
+2018-05-14 16:46:21,915 [INFO] Analyzing words for concept &lt;breast&gt;.
+2018-05-14 16:46:21,922 [INFO] Analyzing words for concept &lt;child&gt;.
+2018-05-14 16:46:21,933 [INFO] Analyzing words for concept &lt;cloud&gt;.
+2018-05-14 16:46:21,939 [INFO] Analyzing words for concept &lt;cold&gt;.
+2018-05-14 16:46:21,958 [INFO] Analyzing words for concept &lt;correct, true&gt;.
+2018-05-14 16:46:21,974 [INFO] Analyzing words for concept &lt;day&gt;.
+2018-05-14 16:46:21,982 [INFO] Analyzing words for concept &lt;dirty&gt;.
+2018-05-14 16:46:21,993 [INFO] Analyzing words for concept &lt;dog&gt;.
+2018-05-14 16:46:22,001 [INFO] Analyzing words for concept &lt;dry&gt;.
+SEQUENCE CLUSTERING:  19%|█▊        | 39/210 [00:00&lt;00:01, 122.98it/s]2018-05-14 16:46:22,010 [INFO] Analyzing words for concept &lt;dull, blunt&gt;.
+2018-05-14 16:46:22,019 [INFO] Analyzing words for concept &lt;dust&gt;.
+2018-05-14 16:46:22,034 [INFO] Analyzing words for concept &lt;ear&gt;.
+2018-05-14 16:46:22,042 [INFO] Analyzing words for concept &lt;earth/soil&gt;.
+2018-05-14 16:46:22,054 [INFO] Analyzing words for concept &lt;egg&gt;.
+2018-05-14 16:46:22,064 [INFO] Analyzing words for concept &lt;eye&gt;.
+2018-05-14 16:46:22,072 [INFO] Analyzing words for concept &lt;far&gt;.
+2018-05-14 16:46:22,078 [INFO] Analyzing words for concept &lt;fat/grease&gt;.
+2018-05-14 16:46:22,088 [INFO] Analyzing words for concept &lt;father&gt;.
+2018-05-14 16:46:22,108 [INFO] Analyzing words for concept &lt;feather&gt;.
+SEQUENCE CLUSTERING:  23%|██▎       | 49/210 [00:00&lt;00:01, 111.56it/s]2018-05-14 16:46:22,119 [INFO] Analyzing words for concept &lt;fire&gt;.
+2018-05-14 16:46:22,125 [INFO] Analyzing words for concept &lt;fish&gt;.
+2018-05-14 16:46:22,133 [INFO] Analyzing words for concept &lt;flower&gt;.
+2018-05-14 16:46:22,139 [INFO] Analyzing words for concept &lt;fog&gt;.
+2018-05-14 16:46:22,147 [INFO] Analyzing words for concept &lt;fruit&gt;.
+2018-05-14 16:46:22,150 [INFO] Analyzing words for concept &lt;good&gt;.
+2018-05-14 16:46:22,166 [INFO] Analyzing words for concept &lt;grass&gt;.
+2018-05-14 16:46:22,172 [INFO] Analyzing words for concept &lt;green&gt;.
+2018-05-14 16:46:22,180 [INFO] Analyzing words for concept &lt;hair&gt;.
+2018-05-14 16:46:22,192 [INFO] Analyzing words for concept &lt;hand&gt;.
+2018-05-14 16:46:22,198 [INFO] Analyzing words for concept &lt;he/she&gt;.
+2018-05-14 16:46:22,204 [INFO] Analyzing words for concept &lt;head&gt;.
+2018-05-14 16:46:22,214 [INFO] Analyzing words for concept &lt;heavy&gt;.
+SEQUENCE CLUSTERING:  30%|██▉       | 62/210 [00:00&lt;00:01, 114.24it/s]2018-05-14 16:46:22,226 [INFO] Analyzing words for concept &lt;house&gt;.
+2018-05-14 16:46:22,232 [INFO] Analyzing words for concept &lt;how?&gt;.
+2018-05-14 16:46:22,237 [INFO] Analyzing words for concept &lt;husband&gt;.
+2018-05-14 16:46:22,241 [INFO] Analyzing words for concept &lt;if&gt;.
+2018-05-14 16:46:22,246 [INFO] Analyzing words for concept &lt;in, inside&gt;.
+2018-05-14 16:46:22,251 [INFO] Analyzing words for concept &lt;intestines&gt;.
+2018-05-14 16:46:22,257 [INFO] Analyzing words for concept &lt;lake&gt;.
+2018-05-14 16:46:22,262 [INFO] Analyzing words for concept &lt;leaf&gt;.
+2018-05-14 16:46:22,267 [INFO] Analyzing words for concept &lt;left&gt;.
+2018-05-14 16:46:22,273 [INFO] Analyzing words for concept &lt;leg/foot&gt;.
+2018-05-14 16:46:22,279 [INFO] Analyzing words for concept &lt;lightning&gt;.
+2018-05-14 16:46:22,285 [INFO] Analyzing words for concept &lt;liver&gt;.
+2018-05-14 16:46:22,294 [INFO] Analyzing words for concept &lt;long&gt;.
+2018-05-14 16:46:22,298 [INFO] Analyzing words for concept &lt;louse&gt;.
+2018-05-14 16:46:22,304 [INFO] Analyzing words for concept &lt;man/male&gt;.
+2018-05-14 16:46:22,320 [INFO] Analyzing words for concept &lt;meat/flesh&gt;.
+SEQUENCE CLUSTERING:  37%|███▋      | 78/210 [00:00&lt;00:01, 124.77it/s]2018-05-14 16:46:22,327 [INFO] Analyzing words for concept &lt;moon&gt;.
+2018-05-14 16:46:22,339 [INFO] Analyzing words for concept &lt;mosquito&gt;.
+2018-05-14 16:46:22,349 [INFO] Analyzing words for concept &lt;mother&gt;.
+2018-05-14 16:46:22,365 [INFO] Analyzing words for concept &lt;mouth&gt;.
+2018-05-14 16:46:22,375 [INFO] Analyzing words for concept &lt;name&gt;.
+2018-05-14 16:46:22,382 [INFO] Analyzing words for concept &lt;narrow&gt;.
+2018-05-14 16:46:22,393 [INFO] Analyzing words for concept &lt;near&gt;.
+2018-05-14 16:46:22,400 [INFO] Analyzing words for concept &lt;neck&gt;.
+2018-05-14 16:46:22,407 [INFO] Analyzing words for concept &lt;needle&gt;.
+2018-05-14 16:46:22,416 [INFO] Analyzing words for concept &lt;new&gt;.
+2018-05-14 16:46:22,422 [INFO] Analyzing words for concept &lt;night&gt;.
+2018-05-14 16:46:22,427 [INFO] Analyzing words for concept &lt;no, not&gt;.
+SEQUENCE CLUSTERING:  43%|████▎     | 90/210 [00:00&lt;00:01, 119.61it/s]2018-05-14 16:46:22,438 [INFO] Analyzing words for concept &lt;nose&gt;.
+2018-05-14 16:46:22,445 [INFO] Analyzing words for concept &lt;old&gt;.
+2018-05-14 16:46:22,469 [INFO] Analyzing words for concept &lt;other&gt;.
+2018-05-14 16:46:22,474 [INFO] Analyzing words for concept &lt;painful, sick&gt;.
+2018-05-14 16:46:22,491 [INFO] Analyzing words for concept &lt;person/human being&gt;.
+2018-05-14 16:46:22,504 [INFO] Analyzing words for concept &lt;rain&gt;.
+2018-05-14 16:46:22,509 [INFO] Analyzing words for concept &lt;rat&gt;.
+2018-05-14 16:46:22,521 [INFO] Analyzing words for concept &lt;red&gt;.
+2018-05-14 16:46:22,536 [INFO] Analyzing words for concept &lt;right&gt;.
+2018-05-14 16:46:22,546 [INFO] Analyzing words for concept &lt;road/path&gt;.
+2018-05-14 16:46:22,557 [INFO] Analyzing words for concept &lt;root&gt;.
+2018-05-14 16:46:22,564 [INFO] Analyzing words for concept &lt;rope&gt;.
+SEQUENCE CLUSTERING:  49%|████▊     | 102/210 [00:00&lt;00:01, 107.68it/s]2018-05-14 16:46:22,576 [INFO] Analyzing words for concept &lt;rotten&gt;.
+2018-05-14 16:46:22,588 [INFO] Analyzing words for concept &lt;salt&gt;.
+2018-05-14 16:46:22,597 [INFO] Analyzing words for concept &lt;sand&gt;.
+2018-05-14 16:46:22,602 [INFO] Analyzing words for concept &lt;sea&gt;.
+2018-05-14 16:46:22,619 [INFO] Analyzing words for concept &lt;sharp&gt;.
+2018-05-14 16:46:22,625 [INFO] Analyzing words for concept &lt;short&gt;.
+2018-05-14 16:46:22,633 [INFO] Analyzing words for concept &lt;shoulder&gt;.
+2018-05-14 16:46:22,641 [INFO] Analyzing words for concept &lt;shy, ashamed&gt;.
+2018-05-14 16:46:22,646 [INFO] Analyzing words for concept &lt;skin&gt;.
+2018-05-14 16:46:22,651 [INFO] Analyzing words for concept &lt;sky&gt;.
+2018-05-14 16:46:22,657 [INFO] Analyzing words for concept &lt;small&gt;.
+2018-05-14 16:46:22,669 [INFO] Analyzing words for concept &lt;smoke&gt;.
+SEQUENCE CLUSTERING:  54%|█████▍    | 114/210 [00:00&lt;00:00, 110.63it/s]2018-05-14 16:46:22,676 [INFO] Analyzing words for concept &lt;snake&gt;.
+2018-05-14 16:46:22,679 [INFO] Analyzing words for concept &lt;spider&gt;.
+2018-05-14 16:46:22,691 [INFO] Analyzing words for concept &lt;star&gt;.
+2018-05-14 16:46:22,698 [INFO] Analyzing words for concept &lt;stick/wood&gt;.
+2018-05-14 16:46:22,705 [INFO] Analyzing words for concept &lt;stone&gt;.
+2018-05-14 16:46:22,719 [INFO] Analyzing words for concept &lt;tail&gt;.
+2018-05-14 16:46:22,737 [INFO] Analyzing words for concept &lt;that&gt;.
+2018-05-14 16:46:22,741 [INFO] Analyzing words for concept &lt;thatch/roof&gt;.
+2018-05-14 16:46:22,755 [INFO] Analyzing words for concept &lt;they&gt;.
+2018-05-14 16:46:22,774 [INFO] Analyzing words for concept &lt;thick&gt;.
+2018-05-14 16:46:22,783 [INFO] Analyzing words for concept &lt;thin&gt;.
+SEQUENCE CLUSTERING:  60%|█████▉    | 125/210 [00:01&lt;00:00, 103.96it/s]2018-05-14 16:46:22,797 [INFO] Analyzing words for concept &lt;this&gt;.
+2018-05-14 16:46:22,802 [INFO] Analyzing words for concept &lt;thou&gt;.
+2018-05-14 16:46:22,809 [INFO] Analyzing words for concept &lt;thunder&gt;.
+2018-05-14 16:46:22,820 [INFO] Analyzing words for concept &lt;to bite&gt;.
+2018-05-14 16:46:22,828 [INFO] Analyzing words for concept &lt;to blow&gt;.
+2018-05-14 16:46:22,849 [INFO] Analyzing words for concept &lt;to breathe&gt;.
+2018-05-14 16:46:22,864 [INFO] Analyzing words for concept &lt;to burn&gt;.
+2018-05-14 16:46:22,882 [INFO] Analyzing words for concept &lt;to buy&gt;.
+2018-05-14 16:46:22,891 [INFO] Analyzing words for concept &lt;to chew&gt;.
+2018-05-14 16:46:22,898 [INFO] Analyzing words for concept &lt;to choose&gt;.
+2018-05-14 16:46:22,905 [INFO] Analyzing words for concept &lt;to climb&gt;.
+SEQUENCE CLUSTERING:  65%|██████▍   | 136/210 [00:01&lt;00:00, 100.81it/s]2018-05-14 16:46:22,914 [INFO] Analyzing words for concept &lt;to come&gt;.
+2018-05-14 16:46:22,926 [INFO] Analyzing words for concept &lt;to cook&gt;.
+2018-05-14 16:46:22,935 [INFO] Analyzing words for concept &lt;to count&gt;.
+2018-05-14 16:46:22,941 [INFO] Analyzing words for concept &lt;to cry&gt;.
+2018-05-14 16:46:22,950 [INFO] Analyzing words for concept &lt;to cut, hack&gt;.
+2018-05-14 16:46:22,974 [INFO] Analyzing words for concept &lt;to die, be dead&gt;.
+2018-05-14 16:46:22,983 [INFO] Analyzing words for concept &lt;to dig&gt;.
+2018-05-14 16:46:22,994 [INFO] Analyzing words for concept &lt;to dream&gt;.
+2018-05-14 16:46:23,010 [INFO] Analyzing words for concept &lt;to drink&gt;.
+2018-05-14 16:46:23,015 [INFO] Analyzing words for concept &lt;to eat&gt;.
+2018-05-14 16:46:23,022 [INFO] Analyzing words for concept &lt;to fall&gt;.
+SEQUENCE CLUSTERING:  70%|███████   | 147/210 [00:01&lt;00:00, 93.29it/s] 2018-05-14 16:46:23,057 [INFO] Analyzing words for concept &lt;to fear&gt;.
+2018-05-14 16:46:23,074 [INFO] Analyzing words for concept &lt;to flow&gt;.
+2018-05-14 16:46:23,080 [INFO] Analyzing words for concept &lt;to fly&gt;.
+2018-05-14 16:46:23,087 [INFO] Analyzing words for concept &lt;to grow&gt;.
+2018-05-14 16:46:23,097 [INFO] Analyzing words for concept &lt;to hear&gt;.
+2018-05-14 16:46:23,106 [INFO] Analyzing words for concept &lt;to hide&gt;.
+2018-05-14 16:46:23,112 [INFO] Analyzing words for concept &lt;to hit&gt;.
+2018-05-14 16:46:23,134 [INFO] Analyzing words for concept &lt;to hold&gt;.
+2018-05-14 16:46:23,143 [INFO] Analyzing words for concept &lt;to hunt&gt;.
+2018-05-14 16:46:23,151 [INFO] Analyzing words for concept &lt;to kill&gt;.
+SEQUENCE CLUSTERING:  75%|███████▍  | 157/210 [00:01&lt;00:00, 91.87it/s]2018-05-14 16:46:23,165 [INFO] Analyzing words for concept &lt;to know, be knowledgeable&gt;.
+2018-05-14 16:46:23,172 [INFO] Analyzing words for concept &lt;to laugh&gt;.
+2018-05-14 16:46:23,177 [INFO] Analyzing words for concept &lt;to lie down&gt;.
+2018-05-14 16:46:23,187 [INFO] Analyzing words for concept &lt;to live, be alive&gt;.
+2018-05-14 16:46:23,191 [INFO] Analyzing words for concept &lt;to open, uncover&gt;.
+2018-05-14 16:46:23,202 [INFO] Analyzing words for concept &lt;to plant&gt;.
+2018-05-14 16:46:23,207 [INFO] Analyzing words for concept &lt;to pound, beat&gt;.
+2018-05-14 16:46:23,212 [INFO] Analyzing words for concept &lt;to say&gt;.
+2018-05-14 16:46:23,220 [INFO] Analyzing words for concept &lt;to scratch&gt;.
+2018-05-14 16:46:23,229 [INFO] Analyzing words for concept &lt;to see&gt;.
+2018-05-14 16:46:23,235 [INFO] Analyzing words for concept &lt;to sew&gt;.
+2018-05-14 16:46:23,243 [INFO] Analyzing words for concept &lt;to shoot&gt;.
+2018-05-14 16:46:23,246 [INFO] Analyzing words for concept &lt;to sit&gt;.
+2018-05-14 16:46:23,253 [INFO] Analyzing words for concept &lt;to sleep&gt;.
+2018-05-14 16:46:23,258 [INFO] Analyzing words for concept &lt;to sniff, smell&gt;.
+SEQUENCE CLUSTERING:  82%|████████▏ | 172/210 [00:01&lt;00:00, 103.63it/s]2018-05-14 16:46:23,266 [INFO] Analyzing words for concept &lt;to spit&gt;.
+2018-05-14 16:46:23,277 [INFO] Analyzing words for concept &lt;to split&gt;.
+2018-05-14 16:46:23,291 [INFO] Analyzing words for concept &lt;to squeeze&gt;.
+2018-05-14 16:46:23,302 [INFO] Analyzing words for concept &lt;to stab, pierce&gt;.
+2018-05-14 16:46:23,312 [INFO] Analyzing words for concept &lt;to stand&gt;.
+2018-05-14 16:46:23,317 [INFO] Analyzing words for concept &lt;to steal&gt;.
+2018-05-14 16:46:23,324 [INFO] Analyzing words for concept &lt;to suck&gt;.
+2018-05-14 16:46:23,334 [INFO] Analyzing words for concept &lt;to swell&gt;.
+2018-05-14 16:46:23,341 [INFO] Analyzing words for concept &lt;to swim&gt;.
+2018-05-14 16:46:23,346 [INFO] Analyzing words for concept &lt;to think&gt;.
+2018-05-14 16:46:23,354 [INFO] Analyzing words for concept &lt;to throw&gt;.
+2018-05-14 16:46:23,366 [INFO] Analyzing words for concept &lt;to tie up, fasten&gt;.
+SEQUENCE CLUSTERING:  88%|████████▊ | 184/210 [00:01&lt;00:00, 104.20it/s]2018-05-14 16:46:23,381 [INFO] Analyzing words for concept &lt;to turn&gt;.
+2018-05-14 16:46:23,390 [INFO] Analyzing words for concept &lt;to vomit&gt;.
+2018-05-14 16:46:23,396 [INFO] Analyzing words for concept &lt;to walk&gt;.
+2018-05-14 16:46:23,409 [INFO] Analyzing words for concept &lt;to work&gt;.
+2018-05-14 16:46:23,414 [INFO] Analyzing words for concept &lt;to yawn&gt;.
+2018-05-14 16:46:23,421 [INFO] Analyzing words for concept &lt;tongue&gt;.
+2018-05-14 16:46:23,427 [INFO] Analyzing words for concept &lt;tooth&gt;.
+2018-05-14 16:46:23,436 [INFO] Analyzing words for concept &lt;warm&gt;.
+2018-05-14 16:46:23,451 [INFO] Analyzing words for concept &lt;water&gt;.
+2018-05-14 16:46:23,455 [INFO] Analyzing words for concept &lt;we&gt;.
+2018-05-14 16:46:23,518 [INFO] Analyzing words for concept &lt;wet&gt;.
+SEQUENCE CLUSTERING:  93%|█████████▎| 195/210 [00:01&lt;00:00, 93.02it/s] 2018-05-14 16:46:23,528 [INFO] Analyzing words for concept &lt;what?&gt;.
+2018-05-14 16:46:23,532 [INFO] Analyzing words for concept &lt;when?&gt;.
+2018-05-14 16:46:23,538 [INFO] Analyzing words for concept &lt;where?&gt;.
+2018-05-14 16:46:23,542 [INFO] Analyzing words for concept &lt;white&gt;.
+2018-05-14 16:46:23,551 [INFO] Analyzing words for concept &lt;who?&gt;.
+2018-05-14 16:46:23,556 [INFO] Analyzing words for concept &lt;wide&gt;.
+2018-05-14 16:46:23,562 [INFO] Analyzing words for concept &lt;wife&gt;.
+2018-05-14 16:46:23,569 [INFO] Analyzing words for concept &lt;wind&gt;.
+2018-05-14 16:46:23,582 [INFO] Analyzing words for concept &lt;wing&gt;.
+2018-05-14 16:46:23,591 [INFO] Analyzing words for concept &lt;woman/female&gt;.
+2018-05-14 16:46:23,608 [INFO] Analyzing words for concept &lt;woods/forest&gt;.
+2018-05-14 16:46:23,614 [INFO] Analyzing words for concept &lt;worm (earthworm)&gt;.
+2018-05-14 16:46:23,620 [INFO] Analyzing words for concept &lt;year&gt;.
+SEQUENCE CLUSTERING:  99%|█████████▉| 208/210 [00:01&lt;00:00, 100.87it/s]2018-05-14 16:46:23,632 [INFO] Analyzing words for concept &lt;yellow&gt;.
+2018-05-14 16:46:23,640 [INFO] Analyzing words for concept &lt;you&gt;.
+                                                                       </pre>
 </div>
 </div>
 
 <div class="output_area">
+
 <div class="prompt"></div>
 
+
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Rapanui              	 va&#39;u 	4 	 1 	 1
-Maori                	 waru 	1 	 1 	 1
-Sikaiana             	 valu 	1 	 1 	 1
-Ra’ivavae            	 vaGu 	6 	 1 	 1
-North_Marquesan      	 va&#39;u 	4 	 1 	 1
-Rurutuan             	 vaʔu 	4 	 1 	 1
-Mangareva            	 varu 	1 	 1 	 1
-Hawaiian             	 walu 	1 	 1 	 1
-Tahitian             	 va&#39;u 	4 	 1 	 1
-Tuamotuan            	 varu 	1 	 1 	 1
+<pre>Tahitian             	 va&#39;u 	4 	 1 	 4
+Ra’ivavae            	 vaGu 	6 	 1 	 4
+Sikaiana             	 valu 	1 	 1 	 4
+Rurutuan             	 vaʔu 	4 	 1 	 4
+Rapanui              	 va&#39;u 	4 	 1 	 4
+North_Marquesan      	 va&#39;u 	4 	 1 	 4
+Maori                	 waru 	1 	 1 	 4
+Mangareva            	 varu 	1 	 1 	 4
+Tuamotuan            	 varu 	1 	 1 	 4
+Hawaiian             	 walu 	1 	 1 	 4
 </pre>
 </div>
 </div>
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
 
 <div class="output_subarea output_stream output_stderr output_text">
 <pre></pre>
@@ -13932,8 +14983,7 @@ Tuamotuan            	 varu 	1 	 1 	 1
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13970,33 +15020,249 @@ Tuamotuan            	 varu 	1 	 1 	 1
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
 
+
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>                                                                       </pre>
+<pre>SEQUENCE CLUSTERING:   0%|          | 0/210 [00:00&lt;?, ?it/s]2018-05-14 16:46:23,689 [INFO] Analyzing words for concept &lt;Eight&gt;.
+2018-05-14 16:46:23,694 [INFO] Analyzing words for concept &lt;Fifty&gt;.
+2018-05-14 16:46:23,698 [INFO] Analyzing words for concept &lt;Five&gt;.
+2018-05-14 16:46:23,705 [INFO] Analyzing words for concept &lt;Four&gt;.
+2018-05-14 16:46:23,709 [INFO] Analyzing words for concept &lt;I&gt;.
+2018-05-14 16:46:23,717 [INFO] Analyzing words for concept &lt;Nine&gt;.
+2018-05-14 16:46:23,726 [INFO] Analyzing words for concept &lt;One&gt;.
+2018-05-14 16:46:23,736 [INFO] Analyzing words for concept &lt;One Hundred&gt;.
+2018-05-14 16:46:23,744 [INFO] Analyzing words for concept &lt;One Thousand&gt;.
+2018-05-14 16:46:23,756 [INFO] Analyzing words for concept &lt;Seven&gt;.
+2018-05-14 16:46:23,765 [INFO] Analyzing words for concept &lt;Six&gt;.
+2018-05-14 16:46:23,772 [INFO] Analyzing words for concept &lt;Ten&gt;.
+SEQUENCE CLUSTERING:   6%|▌         | 12/210 [00:00&lt;00:01, 117.25it/s]2018-05-14 16:46:23,795 [INFO] Analyzing words for concept &lt;Three&gt;.
+2018-05-14 16:46:23,804 [INFO] Analyzing words for concept &lt;Twenty&gt;.
+2018-05-14 16:46:23,813 [INFO] Analyzing words for concept &lt;Two&gt;.
+2018-05-14 16:46:23,824 [INFO] Analyzing words for concept &lt;above&gt;.
+2018-05-14 16:46:23,832 [INFO] Analyzing words for concept &lt;all&gt;.
+2018-05-14 16:46:23,845 [INFO] Analyzing words for concept &lt;and&gt;.
+2018-05-14 16:46:23,855 [INFO] Analyzing words for concept &lt;ash&gt;.
+2018-05-14 16:46:23,867 [INFO] Analyzing words for concept &lt;at&gt;.
+2018-05-14 16:46:23,874 [INFO] Analyzing words for concept &lt;back&gt;.
+2018-05-14 16:46:23,883 [INFO] Analyzing words for concept &lt;bad, evil&gt;.
+SEQUENCE CLUSTERING:  10%|█         | 22/210 [00:00&lt;00:01, 109.95it/s]2018-05-14 16:46:23,897 [INFO] Analyzing words for concept &lt;belly&gt;.
+2018-05-14 16:46:23,914 [INFO] Analyzing words for concept &lt;below&gt;.
+2018-05-14 16:46:23,921 [INFO] Analyzing words for concept &lt;big&gt;.
+2018-05-14 16:46:23,932 [INFO] Analyzing words for concept &lt;bird&gt;.
+2018-05-14 16:46:23,938 [INFO] Analyzing words for concept &lt;black&gt;.
+2018-05-14 16:46:23,951 [INFO] Analyzing words for concept &lt;blood&gt;.
+2018-05-14 16:46:23,957 [INFO] Analyzing words for concept &lt;bone&gt;.
+2018-05-14 16:46:23,962 [INFO] Analyzing words for concept &lt;branch&gt;.
+2018-05-14 16:46:23,970 [INFO] Analyzing words for concept &lt;breast&gt;.
+2018-05-14 16:46:23,978 [INFO] Analyzing words for concept &lt;child&gt;.
+2018-05-14 16:46:23,991 [INFO] Analyzing words for concept &lt;cloud&gt;.
+SEQUENCE CLUSTERING:  16%|█▌        | 33/210 [00:00&lt;00:01, 109.23it/s]2018-05-14 16:46:23,998 [INFO] Analyzing words for concept &lt;cold&gt;.
+2018-05-14 16:46:24,015 [INFO] Analyzing words for concept &lt;correct, true&gt;.
+2018-05-14 16:46:24,028 [INFO] Analyzing words for concept &lt;day&gt;.
+2018-05-14 16:46:24,036 [INFO] Analyzing words for concept &lt;dirty&gt;.
+2018-05-14 16:46:24,045 [INFO] Analyzing words for concept &lt;dog&gt;.
+2018-05-14 16:46:24,053 [INFO] Analyzing words for concept &lt;dry&gt;.
+2018-05-14 16:46:24,061 [INFO] Analyzing words for concept &lt;dull, blunt&gt;.
+2018-05-14 16:46:24,071 [INFO] Analyzing words for concept &lt;dust&gt;.
+2018-05-14 16:46:24,085 [INFO] Analyzing words for concept &lt;ear&gt;.
+2018-05-14 16:46:24,092 [INFO] Analyzing words for concept &lt;earth/soil&gt;.
+SEQUENCE CLUSTERING:  20%|██        | 43/210 [00:00&lt;00:01, 105.05it/s]2018-05-14 16:46:24,102 [INFO] Analyzing words for concept &lt;egg&gt;.
+2018-05-14 16:46:24,111 [INFO] Analyzing words for concept &lt;eye&gt;.
+2018-05-14 16:46:24,117 [INFO] Analyzing words for concept &lt;far&gt;.
+2018-05-14 16:46:24,123 [INFO] Analyzing words for concept &lt;fat/grease&gt;.
+2018-05-14 16:46:24,132 [INFO] Analyzing words for concept &lt;father&gt;.
+2018-05-14 16:46:24,145 [INFO] Analyzing words for concept &lt;feather&gt;.
+2018-05-14 16:46:24,153 [INFO] Analyzing words for concept &lt;fire&gt;.
+2018-05-14 16:46:24,158 [INFO] Analyzing words for concept &lt;fish&gt;.
+2018-05-14 16:46:24,165 [INFO] Analyzing words for concept &lt;flower&gt;.
+2018-05-14 16:46:24,172 [INFO] Analyzing words for concept &lt;fog&gt;.
+2018-05-14 16:46:24,181 [INFO] Analyzing words for concept &lt;fruit&gt;.
+2018-05-14 16:46:24,184 [INFO] Analyzing words for concept &lt;good&gt;.
+2018-05-14 16:46:24,201 [INFO] Analyzing words for concept &lt;grass&gt;.
+SEQUENCE CLUSTERING:  27%|██▋       | 56/210 [00:00&lt;00:01, 109.87it/s]2018-05-14 16:46:24,208 [INFO] Analyzing words for concept &lt;green&gt;.
+2018-05-14 16:46:24,216 [INFO] Analyzing words for concept &lt;hair&gt;.
+2018-05-14 16:46:24,228 [INFO] Analyzing words for concept &lt;hand&gt;.
+2018-05-14 16:46:24,234 [INFO] Analyzing words for concept &lt;he/she&gt;.
+2018-05-14 16:46:24,240 [INFO] Analyzing words for concept &lt;head&gt;.
+2018-05-14 16:46:24,250 [INFO] Analyzing words for concept &lt;heavy&gt;.
+2018-05-14 16:46:24,261 [INFO] Analyzing words for concept &lt;house&gt;.
+2018-05-14 16:46:24,267 [INFO] Analyzing words for concept &lt;how?&gt;.
+2018-05-14 16:46:24,272 [INFO] Analyzing words for concept &lt;husband&gt;.
+2018-05-14 16:46:24,277 [INFO] Analyzing words for concept &lt;if&gt;.
+2018-05-14 16:46:24,281 [INFO] Analyzing words for concept &lt;in, inside&gt;.
+2018-05-14 16:46:24,287 [INFO] Analyzing words for concept &lt;intestines&gt;.
+2018-05-14 16:46:24,294 [INFO] Analyzing words for concept &lt;lake&gt;.
+2018-05-14 16:46:24,298 [INFO] Analyzing words for concept &lt;leaf&gt;.
+2018-05-14 16:46:24,304 [INFO] Analyzing words for concept &lt;left&gt;.
+SEQUENCE CLUSTERING:  34%|███▍      | 71/210 [00:00&lt;00:01, 118.90it/s]2018-05-14 16:46:24,310 [INFO] Analyzing words for concept &lt;leg/foot&gt;.
+2018-05-14 16:46:24,317 [INFO] Analyzing words for concept &lt;lightning&gt;.
+2018-05-14 16:46:24,325 [INFO] Analyzing words for concept &lt;liver&gt;.
+2018-05-14 16:46:24,333 [INFO] Analyzing words for concept &lt;long&gt;.
+2018-05-14 16:46:24,338 [INFO] Analyzing words for concept &lt;louse&gt;.
+2018-05-14 16:46:24,346 [INFO] Analyzing words for concept &lt;man/male&gt;.
+2018-05-14 16:46:24,361 [INFO] Analyzing words for concept &lt;meat/flesh&gt;.
+2018-05-14 16:46:24,367 [INFO] Analyzing words for concept &lt;moon&gt;.
+2018-05-14 16:46:24,376 [INFO] Analyzing words for concept &lt;mosquito&gt;.
+2018-05-14 16:46:24,383 [INFO] Analyzing words for concept &lt;mother&gt;.
+2018-05-14 16:46:24,396 [INFO] Analyzing words for concept &lt;mouth&gt;.
+2018-05-14 16:46:24,405 [INFO] Analyzing words for concept &lt;name&gt;.
+SEQUENCE CLUSTERING:  40%|███▉      | 83/210 [00:00&lt;00:01, 118.83it/s]2018-05-14 16:46:24,411 [INFO] Analyzing words for concept &lt;narrow&gt;.
+2018-05-14 16:46:24,421 [INFO] Analyzing words for concept &lt;near&gt;.
+2018-05-14 16:46:24,429 [INFO] Analyzing words for concept &lt;neck&gt;.
+2018-05-14 16:46:24,436 [INFO] Analyzing words for concept &lt;needle&gt;.
+2018-05-14 16:46:24,444 [INFO] Analyzing words for concept &lt;new&gt;.
+2018-05-14 16:46:24,449 [INFO] Analyzing words for concept &lt;night&gt;.
+2018-05-14 16:46:24,455 [INFO] Analyzing words for concept &lt;no, not&gt;.
+2018-05-14 16:46:24,465 [INFO] Analyzing words for concept &lt;nose&gt;.
+2018-05-14 16:46:24,472 [INFO] Analyzing words for concept &lt;old&gt;.
+2018-05-14 16:46:24,487 [INFO] Analyzing words for concept &lt;other&gt;.
+2018-05-14 16:46:24,491 [INFO] Analyzing words for concept &lt;painful, sick&gt;.
+2018-05-14 16:46:24,505 [INFO] Analyzing words for concept &lt;person/human being&gt;.
+SEQUENCE CLUSTERING:  45%|████▌     | 95/210 [00:00&lt;00:00, 116.90it/s]2018-05-14 16:46:24,519 [INFO] Analyzing words for concept &lt;rain&gt;.
+2018-05-14 16:46:24,525 [INFO] Analyzing words for concept &lt;rat&gt;.
+2018-05-14 16:46:24,534 [INFO] Analyzing words for concept &lt;red&gt;.
+2018-05-14 16:46:24,547 [INFO] Analyzing words for concept &lt;right&gt;.
+2018-05-14 16:46:24,557 [INFO] Analyzing words for concept &lt;road/path&gt;.
+2018-05-14 16:46:24,567 [INFO] Analyzing words for concept &lt;root&gt;.
+2018-05-14 16:46:24,574 [INFO] Analyzing words for concept &lt;rope&gt;.
+2018-05-14 16:46:24,583 [INFO] Analyzing words for concept &lt;rotten&gt;.
+2018-05-14 16:46:24,593 [INFO] Analyzing words for concept &lt;salt&gt;.
+2018-05-14 16:46:24,601 [INFO] Analyzing words for concept &lt;sand&gt;.
+2018-05-14 16:46:24,607 [INFO] Analyzing words for concept &lt;sea&gt;.
+2018-05-14 16:46:24,623 [INFO] Analyzing words for concept &lt;sharp&gt;.
+SEQUENCE CLUSTERING:  51%|█████     | 107/210 [00:00&lt;00:00, 113.81it/s]2018-05-14 16:46:24,630 [INFO] Analyzing words for concept &lt;short&gt;.
+2018-05-14 16:46:24,639 [INFO] Analyzing words for concept &lt;shoulder&gt;.
+2018-05-14 16:46:24,647 [INFO] Analyzing words for concept &lt;shy, ashamed&gt;.
+2018-05-14 16:46:24,652 [INFO] Analyzing words for concept &lt;skin&gt;.
+2018-05-14 16:46:24,658 [INFO] Analyzing words for concept &lt;sky&gt;.
+2018-05-14 16:46:24,664 [INFO] Analyzing words for concept &lt;small&gt;.
+2018-05-14 16:46:24,676 [INFO] Analyzing words for concept &lt;smoke&gt;.
+2018-05-14 16:46:24,682 [INFO] Analyzing words for concept &lt;snake&gt;.
+2018-05-14 16:46:24,686 [INFO] Analyzing words for concept &lt;spider&gt;.
+2018-05-14 16:46:24,700 [INFO] Analyzing words for concept &lt;star&gt;.
+2018-05-14 16:46:24,709 [INFO] Analyzing words for concept &lt;stick/wood&gt;.
+2018-05-14 16:46:24,715 [INFO] Analyzing words for concept &lt;stone&gt;.
+2018-05-14 16:46:24,729 [INFO] Analyzing words for concept &lt;tail&gt;.
+SEQUENCE CLUSTERING:  57%|█████▋    | 120/210 [00:01&lt;00:00, 113.35it/s]2018-05-14 16:46:24,746 [INFO] Analyzing words for concept &lt;that&gt;.
+2018-05-14 16:46:24,751 [INFO] Analyzing words for concept &lt;thatch/roof&gt;.
+2018-05-14 16:46:24,766 [INFO] Analyzing words for concept &lt;they&gt;.
+2018-05-14 16:46:24,786 [INFO] Analyzing words for concept &lt;thick&gt;.
+2018-05-14 16:46:24,802 [INFO] Analyzing words for concept &lt;thin&gt;.
+2018-05-14 16:46:24,821 [INFO] Analyzing words for concept &lt;this&gt;.
+2018-05-14 16:46:24,830 [INFO] Analyzing words for concept &lt;thou&gt;.
+2018-05-14 16:46:24,837 [INFO] Analyzing words for concept &lt;thunder&gt;.
+2018-05-14 16:46:24,850 [INFO] Analyzing words for concept &lt;to bite&gt;.
+2018-05-14 16:46:24,858 [INFO] Analyzing words for concept &lt;to blow&gt;.
+2018-05-14 16:46:24,881 [INFO] Analyzing words for concept &lt;to breathe&gt;.
+2018-05-14 16:46:24,896 [INFO] Analyzing words for concept &lt;to burn&gt;.
+SEQUENCE CLUSTERING:  63%|██████▎   | 132/210 [00:01&lt;00:00, 95.98it/s] 2018-05-14 16:46:24,916 [INFO] Analyzing words for concept &lt;to buy&gt;.
+2018-05-14 16:46:24,925 [INFO] Analyzing words for concept &lt;to chew&gt;.
+2018-05-14 16:46:24,932 [INFO] Analyzing words for concept &lt;to choose&gt;.
+2018-05-14 16:46:24,939 [INFO] Analyzing words for concept &lt;to climb&gt;.
+2018-05-14 16:46:24,945 [INFO] Analyzing words for concept &lt;to come&gt;.
+2018-05-14 16:46:24,956 [INFO] Analyzing words for concept &lt;to cook&gt;.
+2018-05-14 16:46:24,965 [INFO] Analyzing words for concept &lt;to count&gt;.
+2018-05-14 16:46:24,971 [INFO] Analyzing words for concept &lt;to cry&gt;.
+2018-05-14 16:46:24,979 [INFO] Analyzing words for concept &lt;to cut, hack&gt;.
+2018-05-14 16:46:25,001 [INFO] Analyzing words for concept &lt;to die, be dead&gt;.
+2018-05-14 16:46:25,009 [INFO] Analyzing words for concept &lt;to dig&gt;.
+SEQUENCE CLUSTERING:  68%|██████▊   | 143/210 [00:01&lt;00:00, 98.28it/s]2018-05-14 16:46:25,021 [INFO] Analyzing words for concept &lt;to dream&gt;.
+2018-05-14 16:46:25,037 [INFO] Analyzing words for concept &lt;to drink&gt;.
+2018-05-14 16:46:25,042 [INFO] Analyzing words for concept &lt;to eat&gt;.
+2018-05-14 16:46:25,047 [INFO] Analyzing words for concept &lt;to fall&gt;.
+2018-05-14 16:46:25,076 [INFO] Analyzing words for concept &lt;to fear&gt;.
+2018-05-14 16:46:25,093 [INFO] Analyzing words for concept &lt;to flow&gt;.
+2018-05-14 16:46:25,099 [INFO] Analyzing words for concept &lt;to fly&gt;.
+2018-05-14 16:46:25,107 [INFO] Analyzing words for concept &lt;to grow&gt;.
+2018-05-14 16:46:25,118 [INFO] Analyzing words for concept &lt;to hear&gt;.
+2018-05-14 16:46:25,128 [INFO] Analyzing words for concept &lt;to hide&gt;.
+2018-05-14 16:46:25,137 [INFO] Analyzing words for concept &lt;to hit&gt;.
+SEQUENCE CLUSTERING:  73%|███████▎  | 154/210 [00:01&lt;00:00, 91.10it/s]2018-05-14 16:46:25,163 [INFO] Analyzing words for concept &lt;to hold&gt;.
+2018-05-14 16:46:25,177 [INFO] Analyzing words for concept &lt;to hunt&gt;.
+2018-05-14 16:46:25,188 [INFO] Analyzing words for concept &lt;to kill&gt;.
+2018-05-14 16:46:25,203 [INFO] Analyzing words for concept &lt;to know, be knowledgeable&gt;.
+2018-05-14 16:46:25,214 [INFO] Analyzing words for concept &lt;to laugh&gt;.
+2018-05-14 16:46:25,221 [INFO] Analyzing words for concept &lt;to lie down&gt;.
+2018-05-14 16:46:25,234 [INFO] Analyzing words for concept &lt;to live, be alive&gt;.
+2018-05-14 16:46:25,241 [INFO] Analyzing words for concept &lt;to open, uncover&gt;.
+2018-05-14 16:46:25,255 [INFO] Analyzing words for concept &lt;to plant&gt;.
+2018-05-14 16:46:25,261 [INFO] Analyzing words for concept &lt;to pound, beat&gt;.
+SEQUENCE CLUSTERING:  78%|███████▊  | 164/210 [00:01&lt;00:00, 92.02it/s]2018-05-14 16:46:25,268 [INFO] Analyzing words for concept &lt;to say&gt;.
+2018-05-14 16:46:25,278 [INFO] Analyzing words for concept &lt;to scratch&gt;.
+2018-05-14 16:46:25,290 [INFO] Analyzing words for concept &lt;to see&gt;.
+2018-05-14 16:46:25,297 [INFO] Analyzing words for concept &lt;to sew&gt;.
+2018-05-14 16:46:25,306 [INFO] Analyzing words for concept &lt;to shoot&gt;.
+2018-05-14 16:46:25,311 [INFO] Analyzing words for concept &lt;to sit&gt;.
+2018-05-14 16:46:25,319 [INFO] Analyzing words for concept &lt;to sleep&gt;.
+2018-05-14 16:46:25,325 [INFO] Analyzing words for concept &lt;to sniff, smell&gt;.
+2018-05-14 16:46:25,335 [INFO] Analyzing words for concept &lt;to spit&gt;.
+2018-05-14 16:46:25,347 [INFO] Analyzing words for concept &lt;to split&gt;.
+2018-05-14 16:46:25,361 [INFO] Analyzing words for concept &lt;to squeeze&gt;.
+SEQUENCE CLUSTERING:  83%|████████▎ | 175/210 [00:01&lt;00:00, 94.94it/s]2018-05-14 16:46:25,376 [INFO] Analyzing words for concept &lt;to stab, pierce&gt;.
+2018-05-14 16:46:25,389 [INFO] Analyzing words for concept &lt;to stand&gt;.
+2018-05-14 16:46:25,395 [INFO] Analyzing words for concept &lt;to steal&gt;.
+2018-05-14 16:46:25,403 [INFO] Analyzing words for concept &lt;to suck&gt;.
+2018-05-14 16:46:25,414 [INFO] Analyzing words for concept &lt;to swell&gt;.
+2018-05-14 16:46:25,422 [INFO] Analyzing words for concept &lt;to swim&gt;.
+2018-05-14 16:46:25,427 [INFO] Analyzing words for concept &lt;to think&gt;.
+2018-05-14 16:46:25,437 [INFO] Analyzing words for concept &lt;to throw&gt;.
+2018-05-14 16:46:25,448 [INFO] Analyzing words for concept &lt;to tie up, fasten&gt;.
+2018-05-14 16:46:25,461 [INFO] Analyzing words for concept &lt;to turn&gt;.
+2018-05-14 16:46:25,471 [INFO] Analyzing words for concept &lt;to vomit&gt;.
+SEQUENCE CLUSTERING:  89%|████████▊ | 186/210 [00:01&lt;00:00, 98.59it/s]2018-05-14 16:46:25,477 [INFO] Analyzing words for concept &lt;to walk&gt;.
+2018-05-14 16:46:25,489 [INFO] Analyzing words for concept &lt;to work&gt;.
+2018-05-14 16:46:25,494 [INFO] Analyzing words for concept &lt;to yawn&gt;.
+2018-05-14 16:46:25,502 [INFO] Analyzing words for concept &lt;tongue&gt;.
+2018-05-14 16:46:25,519 [INFO] Analyzing words for concept &lt;tooth&gt;.
+2018-05-14 16:46:25,524 [INFO] Analyzing words for concept &lt;warm&gt;.
+2018-05-14 16:46:25,539 [INFO] Analyzing words for concept &lt;water&gt;.
+2018-05-14 16:46:25,545 [INFO] Analyzing words for concept &lt;we&gt;.
+2018-05-14 16:46:25,615 [INFO] Analyzing words for concept &lt;wet&gt;.
+2018-05-14 16:46:25,628 [INFO] Analyzing words for concept &lt;what?&gt;.
+SEQUENCE CLUSTERING:  93%|█████████▎| 196/210 [00:01&lt;00:00, 84.88it/s]2018-05-14 16:46:25,633 [INFO] Analyzing words for concept &lt;when?&gt;.
+2018-05-14 16:46:25,640 [INFO] Analyzing words for concept &lt;where?&gt;.
+2018-05-14 16:46:25,647 [INFO] Analyzing words for concept &lt;white&gt;.
+2018-05-14 16:46:25,660 [INFO] Analyzing words for concept &lt;who?&gt;.
+2018-05-14 16:46:25,667 [INFO] Analyzing words for concept &lt;wide&gt;.
+2018-05-14 16:46:25,678 [INFO] Analyzing words for concept &lt;wife&gt;.
+2018-05-14 16:46:25,688 [INFO] Analyzing words for concept &lt;wind&gt;.
+2018-05-14 16:46:25,705 [INFO] Analyzing words for concept &lt;wing&gt;.
+2018-05-14 16:46:25,719 [INFO] Analyzing words for concept &lt;woman/female&gt;.
+SEQUENCE CLUSTERING:  98%|█████████▊| 205/210 [00:02&lt;00:00, 84.76it/s]2018-05-14 16:46:25,742 [INFO] Analyzing words for concept &lt;woods/forest&gt;.
+2018-05-14 16:46:25,751 [INFO] Analyzing words for concept &lt;worm (earthworm)&gt;.
+2018-05-14 16:46:25,759 [INFO] Analyzing words for concept &lt;year&gt;.
+2018-05-14 16:46:25,772 [INFO] Analyzing words for concept &lt;yellow&gt;.
+2018-05-14 16:46:25,786 [INFO] Analyzing words for concept &lt;you&gt;.
+                                                                      </pre>
 </div>
 </div>
 
 <div class="output_area">
+
 <div class="prompt"></div>
 
+
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Rapanui              	 va&#39;u 	4 	 1 	 1 	 1
-Maori                	 waru 	1 	 1 	 1 	 1
-Sikaiana             	 valu 	1 	 1 	 1 	 1
-Ra’ivavae            	 vaGu 	6 	 1 	 1 	 1
-North_Marquesan      	 va&#39;u 	4 	 1 	 1 	 1
-Rurutuan             	 vaʔu 	4 	 1 	 1 	 1
-Mangareva            	 varu 	1 	 1 	 1 	 1
-Hawaiian             	 walu 	1 	 1 	 1 	 1
-Tahitian             	 va&#39;u 	4 	 1 	 1 	 1
-Tuamotuan            	 varu 	1 	 1 	 1 	 1
+<pre>Tahitian             	 va&#39;u 	4 	 1 	 4 	 1
+Ra’ivavae            	 vaGu 	6 	 1 	 4 	 1
+Sikaiana             	 valu 	1 	 1 	 4 	 1
+Rurutuan             	 vaʔu 	4 	 1 	 4 	 1
+Rapanui              	 va&#39;u 	4 	 1 	 4 	 1
+North_Marquesan      	 va&#39;u 	4 	 1 	 4 	 1
+Maori                	 waru 	1 	 1 	 4 	 1
+Mangareva            	 varu 	1 	 1 	 4 	 1
+Tuamotuan            	 varu 	1 	 1 	 4 	 1
+Hawaiian             	 walu 	1 	 1 	 4 	 1
 </pre>
 </div>
 </div>
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
 
 <div class="output_subarea output_stream output_stderr output_text">
 <pre></pre>
@@ -14007,8 +15273,7 @@ Tuamotuan            	 varu 	1 	 1 	 1 	 1
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -14029,9 +15294,26 @@ Tuamotuan            	 varu 	1 	 1 	 1 	 1
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>2018-05-14 16:46:25,878 [INFO] Data has been written to file &lt;east-polynesian-lexstat.tsv&gt;.
+</pre>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -14056,8 +15338,7 @@ Tuamotuan            	 varu 	1 	 1 	 1 	 1
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -14091,7 +15372,9 @@ Tuamotuan            	 varu 	1 	 1 	 1 	 1
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Hawaiian             	 Eight 	 w	a	l	u
@@ -14112,8 +15395,7 @@ Tuamotuan            	 Eight 	 v	a	r	u
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -14134,9 +15416,26 @@ Tuamotuan            	 Eight 	 v	a	r	u
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>2018-05-14 16:46:27,858 [INFO] Data has been written to file &lt;east-polynesian-aligned.tsv&gt;.
+</pre>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -14146,8 +15445,7 @@ Tuamotuan            	 Eight 	 v	a	r	u
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -14156,8 +15454,7 @@ Tuamotuan            	 Eight 	 v	a	r	u
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -14166,8 +15463,7 @@ Tuamotuan            	 Eight 	 v	a	r	u
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -14176,8 +15472,7 @@ Tuamotuan            	 Eight 	 v	a	r	u
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -14206,13 +15501,26 @@ Tuamotuan            	 Eight 	 v	a	r	u
 
 
 <div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>2018-05-14 16:46:28,066 [INFO] Data has been written to file &lt;east-polynesian.diff&gt;.
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
 <div class="prompt output_prompt">Out[33]:</div>
 
 
 
+
 <div class="output_text output_subarea output_execute_result">
-<pre>((0.9439543393762582, 0.9262611573706806, 0.9350240551600331),
- (0.9109506684808912, 0.8913394508837174, 0.9010383621391309))</pre>
+<pre>((0.9431961865942957, 0.9237348090024954, 0.933364062550209),
+ (0.9099273097919164, 0.888395965797375, 0.899032740287589))</pre>
 </div>
 
 </div>
@@ -14221,34 +15529,33 @@ Tuamotuan            	 Eight 	 v	a	r	u
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>If you inspect the file <code>east-polynesian.diff</code>, you will see the following output:</p>
 <div class="highlight"><pre><span></span>Concept: above, False Positives: no, False Negatives: yes
-Hawaiian           iluna       1       1
-Mangareva          ruŋa        1       1
-Maori              iruŋa       1       1
-North_Marquesan    ʔuna        1       1
-Rapanui            ruga        1       1
-Ra’ivavae          ɢuʔa        1       1
-Tuamotuan          ruŋa        1       1
-Rurutuan           nuʔa        1       7
-Tahitian           niʔa        1       7
+Hawaiian        iluna      1       1
+Mangareva       ruŋa       1       1
+Maori           iruŋa      1       1
+North_Marquesan ʔuna       1       1
+Rapanui         ruga       1       1
+Ra’ivavae       ɢuʔa       1       1
+Tuamotuan       ruŋa       1       1
+Rurutuan        nuʔa       1       7
+Tahitian        niʔa       1       7
 #
 Concept: all, False Positives: yes, False Negatives: no
-Hawaiian           apau             1       1
-Mangareva          kouroa           2       2
-Maori              katoa            3       3
-Ra’ivavae          ʔatoʔa           3       3
-Rurutuan           paːʔaːtoʔa       3       3
-Sikaiana           katoa            3       3
-Tahitian           atoʔa            3       3
-Tuamotuan          katoŋa           3       3
-North_Marquesan    tiatohu          4       3
-Rapanui            tahi             5       5
+Hawaiian        apau           1       1
+Mangareva       kouroa         2       2
+Maori           katoa          3       3
+Ra’ivavae       ʔatoʔa         3       3
+Rurutuan        paːʔaːtoʔa     3       3
+Sikaiana        katoa          3       3
+Tahitian        atoʔa          3       3
+Tuamotuan       katoŋa         3       3
+North_Marquesan tiatohu        4       3
+Rapanui         tahi           5       5
 #
 </pre></div>
 <p>This output shows you the expert cognate judgment in the first column, and the algorithmic judgments in the second colummn. Differences are easy to spot, as we follow consecutive numerical ordering, so if two numbers are not the same, it means the algorithm differs.</p>
@@ -14256,8 +15563,7 @@ Rapanui            tahi             5       5
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -14292,14 +15598,16 @@ Rapanui            tahi             5       5
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>turchinid 	0.9474	0.6864	0.7960
-editid    	0.8124	0.9605	0.8802
-scaid     	0.8824	0.8349	0.8580
-lexstatid 	0.9503	0.9176	0.9336
-infomap   	0.9455	0.9280	0.9367
+editid    	0.8112	0.9608	0.8797
+scaid     	0.8799	0.8334	0.8560
+lexstatid 	0.9515	0.9173	0.9341
+infomap   	0.9453	0.9261	0.9356
 </pre>
 </div>
 </div>
@@ -14308,8 +15616,7 @@ infomap   	0.9455	0.9280	0.9367
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -14318,8 +15625,7 @@ infomap   	0.9455	0.9280	0.9367
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -14328,8 +15634,7 @@ infomap   	0.9455	0.9280	0.9367
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -14351,9 +15656,26 @@ infomap   	0.9455	0.9280	0.9367
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>2018-05-14 16:46:29,845 [INFO] Data has been written to file &lt;east-polynesian-mb.nex&gt;.
+</pre>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -14374,9 +15696,26 @@ infomap   	0.9455	0.9280	0.9367
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>2018-05-14 16:46:31,526 [INFO] Data has been written to file &lt;east-polynesian-beast.nex&gt;.
+</pre>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -14397,9 +15736,26 @@ infomap   	0.9455	0.9280	0.9367
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>2018-05-14 16:46:33,172 [INFO] Data has been written to file &lt;east-polynesian-beastw.nex&gt;.
+</pre>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -14407,8 +15763,7 @@ infomap   	0.9455	0.9280	0.9367
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -14440,20 +15795,33 @@ infomap   	0.9455	0.9280	0.9367
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>2018-05-14 16:46:33,235 [INFO] Successfully calculated dst.
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre> 10
-Hawaiian   0.00 0.34 0.39 0.31 0.39 0.47 0.38 0.49 0.45 0.30
-Mangareva  0.34 0.00 0.35 0.27 0.35 0.45 0.39 0.42 0.44 0.28
-Maori      0.39 0.35 0.00 0.35 0.40 0.48 0.41 0.44 0.45 0.32
-North_Marqu 0.31 0.27 0.35 0.00 0.38 0.48 0.43 0.39 0.46 0.28
-Rapanui    0.39 0.35 0.40 0.38 0.00 0.48 0.45 0.42 0.46 0.33
-Ra’ivavae  0.47 0.45 0.48 0.48 0.48 0.00 0.24 0.63 0.22 0.45
-Rurutuan   0.38 0.39 0.41 0.43 0.45 0.24 0.00 0.56 0.13 0.34
-Sikaiana   0.49 0.42 0.44 0.39 0.42 0.63 0.56 0.00 0.59 0.37
-Tahitian   0.45 0.44 0.45 0.46 0.46 0.22 0.13 0.59 0.00 0.39
-Tuamotuan  0.30 0.28 0.32 0.28 0.33 0.45 0.34 0.37 0.39 0.00
+Hawaiian   0.00 0.34 0.40 0.31 0.39 0.46 0.37 0.49 0.44 0.31
+Mangareva  0.34 0.00 0.35 0.28 0.35 0.44 0.39 0.42 0.43 0.28
+Maori      0.40 0.35 0.00 0.35 0.40 0.48 0.41 0.45 0.45 0.32
+North_Marqu 0.31 0.28 0.35 0.00 0.38 0.47 0.42 0.40 0.44 0.29
+Rapanui    0.39 0.35 0.40 0.38 0.00 0.49 0.45 0.43 0.46 0.33
+Ra’ivavae  0.46 0.44 0.48 0.47 0.49 0.00 0.25 0.62 0.22 0.45
+Rurutuan   0.37 0.39 0.41 0.42 0.45 0.25 0.00 0.56 0.14 0.34
+Sikaiana   0.49 0.42 0.45 0.40 0.43 0.62 0.56 0.00 0.59 0.38
+Tahitian   0.44 0.43 0.45 0.44 0.46 0.22 0.14 0.59 0.00 0.38
+Tuamotuan  0.31 0.28 0.32 0.29 0.33 0.45 0.34 0.38 0.38 0.00
 
 </pre>
 </div>
@@ -14463,8 +15831,7 @@ Tuamotuan  0.30 0.28 0.32 0.28 0.33 0.45 0.34 0.37 0.39 0.00
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -14492,7 +15859,20 @@ Tuamotuan  0.30 0.28 0.32 0.28 0.33 0.45 0.34 0.37 0.39 0.00
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>2018-05-14 16:46:33,246 [INFO] Successfully calculated tree.
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>                    /-Sikaiana
@@ -14522,8 +15902,7 @@ Tuamotuan  0.30 0.28 0.32 0.28 0.33 0.45 0.34 0.37 0.39 0.00
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -14532,8 +15911,7 @@ Tuamotuan  0.30 0.28 0.32 0.28 0.33 0.45 0.34 0.37 0.39 0.00
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -14548,8 +15926,31 @@ Tuamotuan  0.30 0.28 0.32 0.28 0.33 0.45 0.34 0.37 0.39 0.00
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">lingpy.convert.cldf</span> <span class="k">import</span> <span class="n">to_cldf</span>
-<span class="kn">from</span> <span class="nn">lingpy.basic.wordlist</span> <span class="k">import</span> 
+<span class="kn">from</span> <span class="nn">lingpy.basic.wordlist</span> <span class="k">import</span> <span class="n">from_cldf</span>
 <span class="n">to_cldf</span><span class="p">(</span><span class="n">wl</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="s1">&#39;cldf&#39;</span><span class="p">,</span> <span class="n">source_path</span><span class="o">=</span><span class="s1">&#39;polynesian.bib&#39;</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="s1">&#39;source&#39;</span><span class="p">,</span> <span class="n">form</span><span class="o">=</span><span class="s1">&#39;form&#39;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Once the data has been exported, you can easily import it back, using the <code>from_cldf</code> function. Just make sure to specify the metadata file in JSON format as the path:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[41]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">wl</span> <span class="o">=</span> <span class="n">from_cldf</span><span class="p">(</span><span class="s2">&quot;cldf/Wordlist-metadata.json&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">wl</span><span class="o">.</span><span class="n">height</span><span class="p">,</span> <span class="n">wl</span><span class="o">.</span><span class="n">width</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -14561,14 +15962,12 @@ Tuamotuan  0.30 0.28 0.32 0.28 0.33 0.45 0.34 0.37 0.39 0.00
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
 
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-cyan-fg">  File </span><span class="ansi-green-fg">&#34;&lt;ipython-input-40-23106fa26128&gt;&#34;</span><span class="ansi-cyan-fg">, line </span><span class="ansi-green-fg">2</span>
-<span class="ansi-red-fg">    from lingpy.basic.wordlist import</span>
-                                      ^
-<span class="ansi-red-fg">SyntaxError</span><span class="ansi-red-fg">:</span> invalid syntax
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>210 10
 </pre>
 </div>
 </div>
@@ -14577,32 +15976,7 @@ Tuamotuan  0.30 0.28 0.32 0.28 0.33 0.45 0.34 0.37 0.39 0.00
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Once the ata has been exported, you can easily import it back, using the <code>from_cldf</code> function. Just make sure to specify the metadata file in JSON format as the path:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">wl</span> <span class="o">=</span> <span class="n">from_cldf</span><span class="p">(</span><span class="s2">&quot;cldf/Wordlist-metadata.json&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">wl</span><span class="o">.</span><span class="n">height</span><span class="p">,</span> <span class="n">wl</span><span class="o">.</span><span class="n">width</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
